@@ -12,22 +12,22 @@
     <title>Migrate to VCS :: Infrastructure as Code Lab</title>
 
     
-    <link href="/iac-workshop-intersight/css/nucleus.css?1632928351" rel="stylesheet">
-    <link href="/iac-workshop-intersight/css/fontawesome-all.min.css?1632928351" rel="stylesheet">
-    <link href="/iac-workshop-intersight/css/hybrid.css?1632928351" rel="stylesheet">
-    <link href="/iac-workshop-intersight/css/featherlight.min.css?1632928351" rel="stylesheet">
-    <link href="/iac-workshop-intersight/css/perfect-scrollbar.min.css?1632928351" rel="stylesheet">
-    <link href="/iac-workshop-intersight/css/auto-complete.css?1632928351" rel="stylesheet">
-    <link href="/iac-workshop-intersight/css/atom-one-dark-reasonable.css?1632928351" rel="stylesheet">
-    <link href="/iac-workshop-intersight/css/theme.css?1632928351" rel="stylesheet">
-    <link href="/iac-workshop-intersight/css/tabs.css?1632928351" rel="stylesheet">
-    <link href="/iac-workshop-intersight/css/hugo-theme.css?1632928351" rel="stylesheet">
+    <link href="/iac-workshop-intersight/css/nucleus.css?1632929672" rel="stylesheet">
+    <link href="/iac-workshop-intersight/css/fontawesome-all.min.css?1632929672" rel="stylesheet">
+    <link href="/iac-workshop-intersight/css/hybrid.css?1632929672" rel="stylesheet">
+    <link href="/iac-workshop-intersight/css/featherlight.min.css?1632929672" rel="stylesheet">
+    <link href="/iac-workshop-intersight/css/perfect-scrollbar.min.css?1632929672" rel="stylesheet">
+    <link href="/iac-workshop-intersight/css/auto-complete.css?1632929672" rel="stylesheet">
+    <link href="/iac-workshop-intersight/css/atom-one-dark-reasonable.css?1632929672" rel="stylesheet">
+    <link href="/iac-workshop-intersight/css/theme.css?1632929672" rel="stylesheet">
+    <link href="/iac-workshop-intersight/css/tabs.css?1632929672" rel="stylesheet">
+    <link href="/iac-workshop-intersight/css/hugo-theme.css?1632929672" rel="stylesheet">
     
-    <link href="/iac-workshop-intersight/css/theme-blue.css?1632928351" rel="stylesheet">
+    <link href="/iac-workshop-intersight/css/theme-blue.css?1632929672" rel="stylesheet">
     
     
 
-    <script src="/iac-workshop-intersight/js/jquery-3.3.1.min.js?1632928351"></script>
+    <script src="/iac-workshop-intersight/js/jquery-3.3.1.min.js?1632929672"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -73,14 +73,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/iac-workshop-intersight/js/lunr.min.js?1632928351"></script>
-<script type="text/javascript" src="/iac-workshop-intersight/js/auto-complete.js?1632928351"></script>
+<script type="text/javascript" src="/iac-workshop-intersight/js/lunr.min.js?1632929672"></script>
+<script type="text/javascript" src="/iac-workshop-intersight/js/auto-complete.js?1632929672"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/wookie-labs.github.io\/iac-workshop-intersight\/";
     
 </script>
-<script type="text/javascript" src="/iac-workshop-intersight/js/search.js?1632928351"></script>
+<script type="text/javascript" src="/iac-workshop-intersight/js/search.js?1632929672"></script>
 
     
   </div>
@@ -873,29 +873,29 @@
 
 <h2 id="push-your-configuration-code-to-github">Push your configuration code to GitHub</h2>
 <p>Recall that one of the early steps you followed in creating the project directory was to <strong>clone</strong> a repository from GitHub. That means that your current project directory already has a git configuration. You might have noticed that some of your files in vsCode are colored green and have a &ldquo;U&rdquo; next to them as shown in the image below. vsCode is well integrated with git and is highlighting files that are not being tracked by git. Files not colored are either unchanged or listed in the <code class="disable-clipboard">.gitignore</code> file.</p>
-<img src="/tf_cloud/images/file_view.png?height=300&classes=shadow"/>
+<img src="/iac-workshop-intersight/tf_cloud/images/file_view.png?height=300&classes=shadow"/>
 <p>The first step to using Terraform with a version control system (VCS) is to push your configuration to GitHub. In this section of the lab, you will push your configuration files to GitHub.</p>
 <p>Steps:</p>
 <ol>
 <li>Click on the &ldquo;Source Control&rdquo; icon in the left navigation of vsCode as shown in the image below. In the source control view, you will be able to interact with both git and GitHub using the vsCode GUI instead of typing commands at the terminal.</li>
 <li>Click on the ellipses (<code>...</code>) in the source control window to expose the available commands as shown in the image below. Choose the command &ldquo;Stage All Changes&rdquo; from the &ldquo;Changes&rdquo; menu as shown in the image below.</li>
 </ol>
-<img src="/tf_cloud/images/stage_changes.png?width=500&classes=shadow"/>
+<img src="/iac-workshop-intersight/tf_cloud/images/stage_changes.png?width=500&classes=shadow"/>
 <ol start="3">
 <li>Notice that your files now show up as &ldquo;Staged Changes&rdquo;. They are not yet committed.</li>
 <li>Enter a comment in the &ldquo;Message&rdquo; field as shown in the image below. You can enter any comment you choose.</li>
 <li>Click the checkmark above the &ldquo;Message&rdquo; field to commit these staged changes. You can optionally click on the ellipses and choose the command &ldquo;Commit&rdquo; from the &ldquo;Commit&rdquo; menu.</li>
 </ol>
-<img src="/tf_cloud/images/commit_comment.png?height=300&classes=shadow"/>
+<img src="/iac-workshop-intersight/tf_cloud/images/commit_comment.png?height=300&classes=shadow"/>
 <ol start="6">
 <li>Click on the ellipses (<code>...</code>) in the source control window and choose the <strong>Push</strong> command. This will push your latest commit to GitHub.</li>
 <li>Notice that there are no more files shown in this view of vsCode. The source control view is designed to highlight changes that are not committed but there are none. Click on the Explorer icon in the left navigation of vsCode to view to your files.</li>
 </ol>
-<img src="/tf_cloud/images/explorer.png?width=500&classes=shadow"/>
+<img src="/iac-workshop-intersight/tf_cloud/images/explorer.png?width=500&classes=shadow"/>
 <ol start="8">
 <li>Use the bookmark in the Chrome browser for GitHub to go to your repository on GitHub. Confirm that your files are there with your commit message. Keep in mind that some files like the <code class="disable-clipboard">README.md</code> and <code class="disable-clipboard">.gitignore</code> were created for you and will have a different commit message.</li>
 </ol>
-<img src="/tf_cloud/images/github_files.png?width=600&classes=shadow"/>
+<img src="/iac-workshop-intersight/tf_cloud/images/github_files.png?width=600&classes=shadow"/>
 <p>Your configuration code is now in GitHub. Your teammates who are authorized to write to your repository could clone the repository, make edits, and push changes.</p>
 <h2 id="put-terraform-cloud-in-vcs-mode">Put Terraform Cloud in VCS mode</h2>
 <p>You have been using Terraform Cloud in Remote CLI mode, where your local configuration controls Terraform. You will now put Terraform Cloud in VCS mode, where it will retrieve configuration files from your GitHub repository any time that changes are pushed to the repository.</p>
@@ -904,27 +904,27 @@
 <li>Use the bookmark the Chrome browser to browse to Terraform Cloud. If you are asked to authenticate, remember to use SSO.</li>
 <li>In your workspace, go to the <strong>Settings</strong> menu and choose <strong>Version Control</strong> as shown in the image below.</li>
 </ol>
-<img src="/tf_cloud/images/version_control_menu.png?width=600&classes=shadow"/>
+<img src="/iac-workshop-intersight/tf_cloud/images/version_control_menu.png?width=600&classes=shadow"/>
 <ol start="3">
 <li>Click on <strong>Connect to version control</strong> as shown in the image below to start the wizard for connecting to a GitHub repository.</li>
 </ol>
-<img src="/tf_cloud/images/connect_to_vcs.png?width=600&classes=shadow"/>
+<img src="/iac-workshop-intersight/tf_cloud/images/connect_to_vcs.png?width=600&classes=shadow"/>
 <ol start="4">
 <li>A version control workflow is more common than a CLI-driven workflow (which is what you did in the previous section of this lab). Click on <strong>Version control workflow</strong>.</li>
 </ol>
-<img src="/tf_cloud/images/step1.png?width=600&classes=shadow"/>
+<img src="/iac-workshop-intersight/tf_cloud/images/step1.png?width=600&classes=shadow"/>
 <ol start="5">
 <li>Choose your version control provider. A relationship has already been established (through certificate exchange) between the Wookie Labs Terraform Cloud organization and the Wookie Labs GitHub organization. This was done for you. Only one GitHub organization was linked, so select that organization.</li>
 </ol>
-<img src="/tf_cloud/images/step2.png?width=600&classes=shadow"/>
+<img src="/iac-workshop-intersight/tf_cloud/images/step2.png?width=600&classes=shadow"/>
 <ol start="6">
 <li>The Wookie Labs GitHub organization has many repositories. It is important that you select the repository for your user account. It is possible for you to select the wrong repository, which will result in you attempting to execute another user&rsquo;s configuration. You don&rsquo;t have that other user&rsquo;s credentials, so the configuration will fail. Be careful and select your user&rsquo;s repository.</li>
 </ol>
-<img src="/tf_cloud/images/step3.png?width=600&classes=shadow"/>
+<img src="/iac-workshop-intersight/tf_cloud/images/step3.png?width=600&classes=shadow"/>
 <ol start="7">
 <li>You do not have to make any changes on the confirmation screen. Click <strong>Update VCS settings</strong>.</li>
 </ol>
-<img src="/tf_cloud/images/step4.png?width=600&classes=shadow"/>
+<img src="/iac-workshop-intersight/tf_cloud/images/step4.png?width=600&classes=shadow"/>
 <h2 id="confirm-a-run-has-started">Confirm a run has started</h2>
 <p>Completing the steps above will automatically trigger Terraform Cloud to perform a Terraform &ldquo;plan&rdquo; for the configuration in your GitHub repository. The configuration files should already match the current configuration in Intersight since you performed a <code class="disable-clipboard">tf apply</code> in Remote CLI mode before pushing all of your code to GitHub. In this section, you will confirm that a plan was started automatically and that no changes were detected by Terraform.</p>
 <p>Steps:</p>
@@ -932,12 +932,12 @@
 <li>In Terraform Cloud, click on the <strong>Overview</strong> tab in your workspace.</li>
 <li>If you get there quickly enough, you will see that a run is in the planning phase. Otherwise, you will see a status of &ldquo;Planned and finished&rdquo;. In either case, notice that the name of the run is identical to the commit message you used when committing your code to GitHub.</li>
 </ol>
-<img src="/tf_cloud/images/planning.png?width=600&classes=shadow"/>
-<img src="/tf_cloud/images/planned_and_finished.png?width=600&classes=shadow"/>
+<img src="/iac-workshop-intersight/tf_cloud/images/planning.png?width=600&classes=shadow"/>
+<img src="/iac-workshop-intersight/tf_cloud/images/planned_and_finished.png?width=600&classes=shadow"/>
 <ol start="3">
 <li>Click <strong>See details</strong>. When you scroll to the bottom, you should see that plan finished, but no changes are required because &ldquo;Your infrastructure matches the configuration.&rdquo;</li>
 </ol>
-<img src="/tf_cloud/images/apply_will_not_run.png?width=600&classes=shadow"/>
+<img src="/iac-workshop-intersight/tf_cloud/images/apply_will_not_run.png?width=600&classes=shadow"/>
 <h2 id="congratulations">Congratulations!</h2>
 <p>You have pushed your configuration files to GitHub and migrated Terraform Cloud from Remote CLI mode to VCS mode. In VCS mode, it sources its configuration files from GitHub.</p>
 
@@ -1450,19 +1450,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/iac-workshop-intersight/js/clipboard.min.js?1632928351"></script>
-    <script src="/iac-workshop-intersight/js/perfect-scrollbar.min.js?1632928351"></script>
-    <script src="/iac-workshop-intersight/js/perfect-scrollbar.jquery.min.js?1632928351"></script>
-    <script src="/iac-workshop-intersight/js/jquery.sticky.js?1632928351"></script>
-    <script src="/iac-workshop-intersight/js/featherlight.min.js?1632928351"></script>
-    <script src="/iac-workshop-intersight/js/highlight.pack.js?1632928351"></script>
+    <script src="/iac-workshop-intersight/js/clipboard.min.js?1632929672"></script>
+    <script src="/iac-workshop-intersight/js/perfect-scrollbar.min.js?1632929672"></script>
+    <script src="/iac-workshop-intersight/js/perfect-scrollbar.jquery.min.js?1632929672"></script>
+    <script src="/iac-workshop-intersight/js/jquery.sticky.js?1632929672"></script>
+    <script src="/iac-workshop-intersight/js/featherlight.min.js?1632929672"></script>
+    <script src="/iac-workshop-intersight/js/highlight.pack.js?1632929672"></script>
     <script>hljs.highlightAll();</script>
-    <script src="/iac-workshop-intersight/js/modernizr.custom-3.6.0.js?1632928351"></script>
-    <script src="/iac-workshop-intersight/js/learn.js?1632928351"></script>
-    <script src="/iac-workshop-intersight/js/hugo-learn.js?1632928351"></script>
+    <script src="/iac-workshop-intersight/js/modernizr.custom-3.6.0.js?1632929672"></script>
+    <script src="/iac-workshop-intersight/js/learn.js?1632929672"></script>
+    <script src="/iac-workshop-intersight/js/hugo-learn.js?1632929672"></script>
     
     
-<script type="text/javascript" src="/iac-workshop-intersight/js/terraform.js?1632928351"></script>
+<script type="text/javascript" src="/iac-workshop-intersight/js/terraform.js?1632929672"></script>
 <script type="text/javascript">
     hljs.registerLanguage('terraform', window.hljsDefineTerraform);
     hljs.highlightAll();
@@ -1470,7 +1470,7 @@
         ignoreUnescapedHTML: true
     })
 </script>
-<script type="text/javascript" src="/iac-workshop-intersight/js/user_navigation.js?1632928351"></script>
+<script type="text/javascript" src="/iac-workshop-intersight/js/user_navigation.js?1632929672"></script>
   </body>
 </html>
 

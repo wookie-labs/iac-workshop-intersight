@@ -12,22 +12,22 @@
     <title>Change backend :: Infrastructure as Code Lab</title>
 
     
-    <link href="/iac-workshop-intersight/css/nucleus.css?1632928351" rel="stylesheet">
-    <link href="/iac-workshop-intersight/css/fontawesome-all.min.css?1632928351" rel="stylesheet">
-    <link href="/iac-workshop-intersight/css/hybrid.css?1632928351" rel="stylesheet">
-    <link href="/iac-workshop-intersight/css/featherlight.min.css?1632928351" rel="stylesheet">
-    <link href="/iac-workshop-intersight/css/perfect-scrollbar.min.css?1632928351" rel="stylesheet">
-    <link href="/iac-workshop-intersight/css/auto-complete.css?1632928351" rel="stylesheet">
-    <link href="/iac-workshop-intersight/css/atom-one-dark-reasonable.css?1632928351" rel="stylesheet">
-    <link href="/iac-workshop-intersight/css/theme.css?1632928351" rel="stylesheet">
-    <link href="/iac-workshop-intersight/css/tabs.css?1632928351" rel="stylesheet">
-    <link href="/iac-workshop-intersight/css/hugo-theme.css?1632928351" rel="stylesheet">
+    <link href="/iac-workshop-intersight/css/nucleus.css?1632929672" rel="stylesheet">
+    <link href="/iac-workshop-intersight/css/fontawesome-all.min.css?1632929672" rel="stylesheet">
+    <link href="/iac-workshop-intersight/css/hybrid.css?1632929672" rel="stylesheet">
+    <link href="/iac-workshop-intersight/css/featherlight.min.css?1632929672" rel="stylesheet">
+    <link href="/iac-workshop-intersight/css/perfect-scrollbar.min.css?1632929672" rel="stylesheet">
+    <link href="/iac-workshop-intersight/css/auto-complete.css?1632929672" rel="stylesheet">
+    <link href="/iac-workshop-intersight/css/atom-one-dark-reasonable.css?1632929672" rel="stylesheet">
+    <link href="/iac-workshop-intersight/css/theme.css?1632929672" rel="stylesheet">
+    <link href="/iac-workshop-intersight/css/tabs.css?1632929672" rel="stylesheet">
+    <link href="/iac-workshop-intersight/css/hugo-theme.css?1632929672" rel="stylesheet">
     
-    <link href="/iac-workshop-intersight/css/theme-blue.css?1632928351" rel="stylesheet">
+    <link href="/iac-workshop-intersight/css/theme-blue.css?1632929672" rel="stylesheet">
     
     
 
-    <script src="/iac-workshop-intersight/js/jquery-3.3.1.min.js?1632928351"></script>
+    <script src="/iac-workshop-intersight/js/jquery-3.3.1.min.js?1632929672"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -73,14 +73,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/iac-workshop-intersight/js/lunr.min.js?1632928351"></script>
-<script type="text/javascript" src="/iac-workshop-intersight/js/auto-complete.js?1632928351"></script>
+<script type="text/javascript" src="/iac-workshop-intersight/js/lunr.min.js?1632929672"></script>
+<script type="text/javascript" src="/iac-workshop-intersight/js/auto-complete.js?1632929672"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/wookie-labs.github.io\/iac-workshop-intersight\/";
     
 </script>
-<script type="text/javascript" src="/iac-workshop-intersight/js/search.js?1632928351"></script>
+<script type="text/javascript" src="/iac-workshop-intersight/js/search.js?1632929672"></script>
 
     
   </div>
@@ -880,11 +880,11 @@
 <li>Browse to <a href="https://app.terraform.io">https://app.terraform.io</a>. There is also a bookmark in the Chrome browser for Terraform Cloud.</li>
 <li>Click <strong>Sign in with SSO</strong> as shown in the image below.</li>
 </ol>
-<img src="/remote_cli/images/tfc_login.png?height=400&classes=shadow"/>
+<img src="/iac-workshop-intersight/remote_cli/images/tfc_login.png?height=400&classes=shadow"/>
 <ol start="3">
 <li>Specify the organization name as &ldquo;Wookie-Labs&rdquo; (not case-sensitive) as shown in the image below and click <strong>Next</strong>.</li>
 </ol>
-<img src="/remote_cli/images/tfc_org_name.png?width=300&classes=shadow"/>
+<img src="/iac-workshop-intersight/remote_cli/images/tfc_org_name.png?width=300&classes=shadow"/>
 <ol start="4">
 <li>You may be redirected to authenticate against the Active Directory server again or you may not depending on how much time has elapsed since your last authentication. If you see the screen below, enter the username and password presented to you for this lab. If you do not see this screen, proceed to the next step.</li>
 </ol>
@@ -892,11 +892,11 @@
 <ol start="5">
 <li>Once logged in, you will see a screen listing the workspaces to which you belong as shown below. You should see only one. Click on the workspace name.</li>
 </ol>
-<img src="/remote_cli/images/tfc_workspace.png?width=700&classes=shadow"/>
+<img src="/iac-workshop-intersight/remote_cli/images/tfc_workspace.png?width=700&classes=shadow"/>
 <ol start="6">
 <li>The <strong>Overview</strong> tab of the workspace should look similar to the image below (you can click to enlarge the image). It gives you the instructions for connecting to Terraform Cloud in Remote CLI mode. Notice the example code provided on that page. Copy that code.</li>
 </ol>
-<img src="/remote_cli/images/tfc_workspace_detail.png?width=600&classes=shadow"/>
+<img src="/iac-workshop-intersight/remote_cli/images/tfc_workspace_detail.png?width=600&classes=shadow"/>
 <ol start="7">
 <li>Create a file in your project directory called <code>backend.tf</code> and paste the code you just copied. It should look similar to the snippet below. Save the file.</li>
 </ol>
@@ -917,16 +917,16 @@
 <li>In the vsCode terminal, execute the command <code>tf login</code>.</li>
 <li>You will see a message indicating that Terraform will request an API token using your browser (as shown in the image below). Type &ldquo;yes&rdquo; to confirm.</li>
 </ol>
-<img src="/remote_cli/images/tf_login.png?classes=shadow"/>
+<img src="/iac-workshop-intersight/remote_cli/images/tf_login.png?classes=shadow"/>
 <ol start="3">
 <li>You just authenticated to Terraform Cloud in the previous section, so you likely will not have to do that again. If a long time has passed since your login to Terraform Cloud, you may need to go through the SSO steps outlined in the section above.</li>
 <li>You will be asked to provide a description for the token that will be issued to you from the Terraform Cloud as shown in the image below. Use any description you like and click <strong>Create API token</strong>.</li>
 </ol>
-<img src="/remote_cli/images/tfc_token_name.png?width=600&classes=shadow"/>
+<img src="/iac-workshop-intersight/remote_cli/images/tfc_token_name.png?width=600&classes=shadow"/>
 <ol start="5">
 <li>The API token granted to you by Terraform Cloud will be displayed as shown in the image below. Click the <strong>copy</strong> icon next to the token.</li>
 </ol>
-<img src="/remote_cli/images/tfc_granted_token.png?width=600&classes=shadow"/>
+<img src="/iac-workshop-intersight/remote_cli/images/tfc_granted_token.png?width=600&classes=shadow"/>
 <ol start="6">
 <li>In the vsCode terminal, paste the token where the Terraform login prompt is requesting it. Note that this is considered a sensitive value, so it will not be echoed to the screen when you paste it. It might appear that nothing has happened, but you should only paste once. It is common to mistakenly paste it more than once, so it is recommended to use the paste command from the &ldquo;Edit&rdquo; menu in vsCode rather than attempting to use keyboard shortcuts or right-click actions.</li>
 </ol>
@@ -938,14 +938,14 @@
 <li>From the vsCode terminal, execute the command <code>tf init</code>.</li>
 <li>Notice the confirmation message asks if you want to copy the existing state file to the new backend. Type &ldquo;yes&rdquo; to confirm.</li>
 </ol>
-<img src="/remote_cli/images/tf_init.png?classes=shadow"/>
+<img src="/iac-workshop-intersight/remote_cli/images/tf_init.png?classes=shadow"/>
 <ol start="3">
 <li>Browse to Terraform Cloud at <a href="https://app.terraform.io/">https://app.terraform.io/</a>. There is also a bookmark for Terraform Cloud in the Chrome browser of the Windows host. If prompted for credentials, follow the previous instructions of selecting SSO for login.</li>
 <li>Click on your workspace and then click on the <strong>States</strong> tab as shown below.</li>
 <li>Click on the new state that has been generated. You will see your state file and should see your NTP policies there.</li>
 <li>You must now delete your local state file. From vsCode, delete the file named <code class="disable-clipboard">terraform.tfstate</code>. Keeping the local state file will cause problems during the next part of the lab where you will execute the configuration from Terraform Cloud. Note that you can keep the local backup of the state file named <code class="disable-clipboard">terraform.tfstate.backup</code> if you like.</li>
 </ol>
-<img src="/remote_cli/images/tfc_state_file.png?width=600&classes=shadow"/>
+<img src="/iac-workshop-intersight/remote_cli/images/tfc_state_file.png?width=600&classes=shadow"/>
 
 <div class="checkpoint"><div class="notice">At this point in the lab your configuration files should closely match the code blocks below.  Please expand the files for reference.</div><details>
   <summary>backend.tf</summary>
@@ -1582,19 +1582,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/iac-workshop-intersight/js/clipboard.min.js?1632928351"></script>
-    <script src="/iac-workshop-intersight/js/perfect-scrollbar.min.js?1632928351"></script>
-    <script src="/iac-workshop-intersight/js/perfect-scrollbar.jquery.min.js?1632928351"></script>
-    <script src="/iac-workshop-intersight/js/jquery.sticky.js?1632928351"></script>
-    <script src="/iac-workshop-intersight/js/featherlight.min.js?1632928351"></script>
-    <script src="/iac-workshop-intersight/js/highlight.pack.js?1632928351"></script>
+    <script src="/iac-workshop-intersight/js/clipboard.min.js?1632929672"></script>
+    <script src="/iac-workshop-intersight/js/perfect-scrollbar.min.js?1632929672"></script>
+    <script src="/iac-workshop-intersight/js/perfect-scrollbar.jquery.min.js?1632929672"></script>
+    <script src="/iac-workshop-intersight/js/jquery.sticky.js?1632929672"></script>
+    <script src="/iac-workshop-intersight/js/featherlight.min.js?1632929672"></script>
+    <script src="/iac-workshop-intersight/js/highlight.pack.js?1632929672"></script>
     <script>hljs.highlightAll();</script>
-    <script src="/iac-workshop-intersight/js/modernizr.custom-3.6.0.js?1632928351"></script>
-    <script src="/iac-workshop-intersight/js/learn.js?1632928351"></script>
-    <script src="/iac-workshop-intersight/js/hugo-learn.js?1632928351"></script>
+    <script src="/iac-workshop-intersight/js/modernizr.custom-3.6.0.js?1632929672"></script>
+    <script src="/iac-workshop-intersight/js/learn.js?1632929672"></script>
+    <script src="/iac-workshop-intersight/js/hugo-learn.js?1632929672"></script>
     
     
-<script type="text/javascript" src="/iac-workshop-intersight/js/terraform.js?1632928351"></script>
+<script type="text/javascript" src="/iac-workshop-intersight/js/terraform.js?1632929672"></script>
 <script type="text/javascript">
     hljs.registerLanguage('terraform', window.hljsDefineTerraform);
     hljs.highlightAll();
@@ -1602,7 +1602,7 @@
         ignoreUnescapedHTML: true
     })
 </script>
-<script type="text/javascript" src="/iac-workshop-intersight/js/user_navigation.js?1632928351"></script>
+<script type="text/javascript" src="/iac-workshop-intersight/js/user_navigation.js?1632929672"></script>
   </body>
 </html>
 

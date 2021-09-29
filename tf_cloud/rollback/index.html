@@ -12,22 +12,22 @@
     <title>Rollback :: Infrastructure as Code Lab</title>
 
     
-    <link href="/iac-workshop-intersight/css/nucleus.css?1632928351" rel="stylesheet">
-    <link href="/iac-workshop-intersight/css/fontawesome-all.min.css?1632928351" rel="stylesheet">
-    <link href="/iac-workshop-intersight/css/hybrid.css?1632928351" rel="stylesheet">
-    <link href="/iac-workshop-intersight/css/featherlight.min.css?1632928351" rel="stylesheet">
-    <link href="/iac-workshop-intersight/css/perfect-scrollbar.min.css?1632928351" rel="stylesheet">
-    <link href="/iac-workshop-intersight/css/auto-complete.css?1632928351" rel="stylesheet">
-    <link href="/iac-workshop-intersight/css/atom-one-dark-reasonable.css?1632928351" rel="stylesheet">
-    <link href="/iac-workshop-intersight/css/theme.css?1632928351" rel="stylesheet">
-    <link href="/iac-workshop-intersight/css/tabs.css?1632928351" rel="stylesheet">
-    <link href="/iac-workshop-intersight/css/hugo-theme.css?1632928351" rel="stylesheet">
+    <link href="/iac-workshop-intersight/css/nucleus.css?1632929672" rel="stylesheet">
+    <link href="/iac-workshop-intersight/css/fontawesome-all.min.css?1632929672" rel="stylesheet">
+    <link href="/iac-workshop-intersight/css/hybrid.css?1632929672" rel="stylesheet">
+    <link href="/iac-workshop-intersight/css/featherlight.min.css?1632929672" rel="stylesheet">
+    <link href="/iac-workshop-intersight/css/perfect-scrollbar.min.css?1632929672" rel="stylesheet">
+    <link href="/iac-workshop-intersight/css/auto-complete.css?1632929672" rel="stylesheet">
+    <link href="/iac-workshop-intersight/css/atom-one-dark-reasonable.css?1632929672" rel="stylesheet">
+    <link href="/iac-workshop-intersight/css/theme.css?1632929672" rel="stylesheet">
+    <link href="/iac-workshop-intersight/css/tabs.css?1632929672" rel="stylesheet">
+    <link href="/iac-workshop-intersight/css/hugo-theme.css?1632929672" rel="stylesheet">
     
-    <link href="/iac-workshop-intersight/css/theme-blue.css?1632928351" rel="stylesheet">
+    <link href="/iac-workshop-intersight/css/theme-blue.css?1632929672" rel="stylesheet">
     
     
 
-    <script src="/iac-workshop-intersight/js/jquery-3.3.1.min.js?1632928351"></script>
+    <script src="/iac-workshop-intersight/js/jquery-3.3.1.min.js?1632929672"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -73,14 +73,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/iac-workshop-intersight/js/lunr.min.js?1632928351"></script>
-<script type="text/javascript" src="/iac-workshop-intersight/js/auto-complete.js?1632928351"></script>
+<script type="text/javascript" src="/iac-workshop-intersight/js/lunr.min.js?1632929672"></script>
+<script type="text/javascript" src="/iac-workshop-intersight/js/auto-complete.js?1632929672"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/wookie-labs.github.io\/iac-workshop-intersight\/";
     
 </script>
-<script type="text/javascript" src="/iac-workshop-intersight/js/search.js?1632928351"></script>
+<script type="text/javascript" src="/iac-workshop-intersight/js/search.js?1632929672"></script>
 
     
   </div>
@@ -886,26 +886,26 @@
 <li>Type <code>gitlens</code> in the search box.</li>
 <li>Click <strong>Install</strong> for the GitLens extension. You should install the extension that has more than 10 million downloads and not the GitLens &ldquo;insiders&rdquo; extension.</li>
 </ol>
-<img src="/tf_cloud/images/gitlens.png?width=600&classes=shadow"/>
+<img src="/iac-workshop-intersight/tf_cloud/images/gitlens.png?width=600&classes=shadow"/>
 <h2 id="rollback">Rollback</h2>
 <p>Steps:</p>
 <ol>
 <li>Click the <strong>Source Control</strong> menu in the left navigation of vsCode as shown in the image below.</li>
 <li>Expand the &ldquo;Commits&rdquo; section of the display as shown in the image below. This section and the sections below it were all added as part of the installation of the GitLens extension in the previous section of this lab. You can use this section to view the history of your commits, including the most recent commit to disable one of the NTP policies.</li>
 </ol>
-<img src="/tf_cloud/images/view_last_commit.png?width=600&classes=shadow"/>
+<img src="/iac-workshop-intersight/tf_cloud/images/view_last_commit.png?width=600&classes=shadow"/>
 <ol start="3">
 <li>Right-click on the most recent commit and choose <strong>Revert Commit&hellip;</strong> as shown in the image below.</li>
 </ol>
-<img src="/tf_cloud/images/revert_commit.png?width=600&classes=shadow"/>
+<img src="/iac-workshop-intersight/tf_cloud/images/revert_commit.png?width=600&classes=shadow"/>
 <ol start="4">
 <li>Confirm the revert operation by clicking <strong>Revert</strong> in the &ldquo;Confirm&rdquo; dropdown as shown in the image below. This creates a new commit on the Windows host, but this new commit has not been pushed to GitHub yet.</li>
 </ol>
-<img src="/tf_cloud/images/revert_confirm.png?width=600&classes=shadow"/>
+<img src="/iac-workshop-intersight/tf_cloud/images/revert_confirm.png?width=600&classes=shadow"/>
 <ol start="5">
 <li>Click the ellipses (<code>...</code>) next to &ldquo;Source Control&rdquo; and select <strong>Push</strong> as shown in the image below.</li>
 </ol>
-<img src="/tf_cloud/images/push.png?width=600&classes=shadow"/>
+<img src="/iac-workshop-intersight/tf_cloud/images/push.png?width=600&classes=shadow"/>
 <ol start="6">
 <li>Within a few seconds, you can check your GitHub repository and see the comment next to <code>ntp.tf</code> has changed to show that it has been reverted.</li>
 <li>Browse to <a href="https://app.terraform.io/">Terraform Cloud</a> and verify that a new run is being planned with a name indicating that it is reverting your previous commit.</li>
@@ -1426,19 +1426,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/iac-workshop-intersight/js/clipboard.min.js?1632928351"></script>
-    <script src="/iac-workshop-intersight/js/perfect-scrollbar.min.js?1632928351"></script>
-    <script src="/iac-workshop-intersight/js/perfect-scrollbar.jquery.min.js?1632928351"></script>
-    <script src="/iac-workshop-intersight/js/jquery.sticky.js?1632928351"></script>
-    <script src="/iac-workshop-intersight/js/featherlight.min.js?1632928351"></script>
-    <script src="/iac-workshop-intersight/js/highlight.pack.js?1632928351"></script>
+    <script src="/iac-workshop-intersight/js/clipboard.min.js?1632929672"></script>
+    <script src="/iac-workshop-intersight/js/perfect-scrollbar.min.js?1632929672"></script>
+    <script src="/iac-workshop-intersight/js/perfect-scrollbar.jquery.min.js?1632929672"></script>
+    <script src="/iac-workshop-intersight/js/jquery.sticky.js?1632929672"></script>
+    <script src="/iac-workshop-intersight/js/featherlight.min.js?1632929672"></script>
+    <script src="/iac-workshop-intersight/js/highlight.pack.js?1632929672"></script>
     <script>hljs.highlightAll();</script>
-    <script src="/iac-workshop-intersight/js/modernizr.custom-3.6.0.js?1632928351"></script>
-    <script src="/iac-workshop-intersight/js/learn.js?1632928351"></script>
-    <script src="/iac-workshop-intersight/js/hugo-learn.js?1632928351"></script>
+    <script src="/iac-workshop-intersight/js/modernizr.custom-3.6.0.js?1632929672"></script>
+    <script src="/iac-workshop-intersight/js/learn.js?1632929672"></script>
+    <script src="/iac-workshop-intersight/js/hugo-learn.js?1632929672"></script>
     
     
-<script type="text/javascript" src="/iac-workshop-intersight/js/terraform.js?1632928351"></script>
+<script type="text/javascript" src="/iac-workshop-intersight/js/terraform.js?1632929672"></script>
 <script type="text/javascript">
     hljs.registerLanguage('terraform', window.hljsDefineTerraform);
     hljs.highlightAll();
@@ -1446,7 +1446,7 @@
         ignoreUnescapedHTML: true
     })
 </script>
-<script type="text/javascript" src="/iac-workshop-intersight/js/user_navigation.js?1632928351"></script>
+<script type="text/javascript" src="/iac-workshop-intersight/js/user_navigation.js?1632929672"></script>
   </body>
 </html>
 

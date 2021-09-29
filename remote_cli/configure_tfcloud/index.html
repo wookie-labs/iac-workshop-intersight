@@ -12,22 +12,22 @@
     <title>Move variables to the cloud :: Infrastructure as Code Lab</title>
 
     
-    <link href="/iac-workshop-intersight/css/nucleus.css?1632928351" rel="stylesheet">
-    <link href="/iac-workshop-intersight/css/fontawesome-all.min.css?1632928351" rel="stylesheet">
-    <link href="/iac-workshop-intersight/css/hybrid.css?1632928351" rel="stylesheet">
-    <link href="/iac-workshop-intersight/css/featherlight.min.css?1632928351" rel="stylesheet">
-    <link href="/iac-workshop-intersight/css/perfect-scrollbar.min.css?1632928351" rel="stylesheet">
-    <link href="/iac-workshop-intersight/css/auto-complete.css?1632928351" rel="stylesheet">
-    <link href="/iac-workshop-intersight/css/atom-one-dark-reasonable.css?1632928351" rel="stylesheet">
-    <link href="/iac-workshop-intersight/css/theme.css?1632928351" rel="stylesheet">
-    <link href="/iac-workshop-intersight/css/tabs.css?1632928351" rel="stylesheet">
-    <link href="/iac-workshop-intersight/css/hugo-theme.css?1632928351" rel="stylesheet">
+    <link href="/iac-workshop-intersight/css/nucleus.css?1632929672" rel="stylesheet">
+    <link href="/iac-workshop-intersight/css/fontawesome-all.min.css?1632929672" rel="stylesheet">
+    <link href="/iac-workshop-intersight/css/hybrid.css?1632929672" rel="stylesheet">
+    <link href="/iac-workshop-intersight/css/featherlight.min.css?1632929672" rel="stylesheet">
+    <link href="/iac-workshop-intersight/css/perfect-scrollbar.min.css?1632929672" rel="stylesheet">
+    <link href="/iac-workshop-intersight/css/auto-complete.css?1632929672" rel="stylesheet">
+    <link href="/iac-workshop-intersight/css/atom-one-dark-reasonable.css?1632929672" rel="stylesheet">
+    <link href="/iac-workshop-intersight/css/theme.css?1632929672" rel="stylesheet">
+    <link href="/iac-workshop-intersight/css/tabs.css?1632929672" rel="stylesheet">
+    <link href="/iac-workshop-intersight/css/hugo-theme.css?1632929672" rel="stylesheet">
     
-    <link href="/iac-workshop-intersight/css/theme-blue.css?1632928351" rel="stylesheet">
+    <link href="/iac-workshop-intersight/css/theme-blue.css?1632929672" rel="stylesheet">
     
     
 
-    <script src="/iac-workshop-intersight/js/jquery-3.3.1.min.js?1632928351"></script>
+    <script src="/iac-workshop-intersight/js/jquery-3.3.1.min.js?1632929672"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -73,14 +73,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/iac-workshop-intersight/js/lunr.min.js?1632928351"></script>
-<script type="text/javascript" src="/iac-workshop-intersight/js/auto-complete.js?1632928351"></script>
+<script type="text/javascript" src="/iac-workshop-intersight/js/lunr.min.js?1632929672"></script>
+<script type="text/javascript" src="/iac-workshop-intersight/js/auto-complete.js?1632929672"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/wookie-labs.github.io\/iac-workshop-intersight\/";
     
 </script>
-<script type="text/javascript" src="/iac-workshop-intersight/js/search.js?1632928351"></script>
+<script type="text/javascript" src="/iac-workshop-intersight/js/search.js?1632929672"></script>
 
     
   </div>
@@ -881,15 +881,15 @@
 <li>Click on your workspace and then click on the <strong>Variables</strong> tab as shown in the image below. Notice that under the &ldquo;Terraform Variables&rdquo; heading, there is a statement that these variables are set using a <code class="disable-clipboard">terraform.tfvars</code> file. Remember that that file has the highest precedence among Terraform variable files as discussed in an earlier section.</li>
 <li>Click on <strong>Add variable</strong> as shown below. Be sure to click the button under the &ldquo;Terraform Variables&rdquo; section and not the &ldquo;Environment Variables&rdquo; section of this page.</li>
 </ol>
-<img src="/remote_cli/images/tfc_add_variable.png?width=600&classes=shadow"/>
+<img src="/iac-workshop-intersight/remote_cli/images/tfc_add_variable.png?width=600&classes=shadow"/>
 <p><strong>It is important</strong> to note what you are doing here, as many people get confused by the fact that there is a &ldquo;Description&rdquo; field. You are not <em>defining a variable</em>. You are defining a variable&rsquo;s <em>value</em>. This step serves the same purpose as any line in the <code class="disable-clipboard">myvalues.auto.tfvars</code> file, which follows the format <code class="disable-clipboard">Key=Value</code> to define variable values. Remember that any variable whose value you declare in Terraform Cloud must be defined in your configuration. You actually defined &ldquo;intersight_api_key&rdquo; and &ldquo;intersight_api_secret&rdquo; when you created the <code class="disable-clipboard">variables.tf</code> file in an earlier section of this lab. The guide stated that you would use those variables at a later time. That time is now! Variables must be <em>defined</em> (such as in <code class="disable-clipboard">variables.tf</code>) and then a <em>value</em> can be assigned to them (such as in <code class="disable-clipboard">*.auto.tfvars</code>).</p>
 <ol start="4">
 <li>Enter <code>intersight_api_key</code> as the variable &ldquo;Key&rdquo; and the actual API key as the variable &ldquo;Value&rdquo;. If you&rsquo;ve misplaced your API key, you can retrieve it from your environment variables or log back into Intersight to retrieve it. Click <strong>Save variable</strong>.</li>
 <li>Repeat this process for the API secret. Click <strong>Add variable</strong> in Terraform Cloud. Enter <code>intersight_secret_key</code> as the variable &ldquo;Key&rdquo; and the <em>contents</em> of your <code class="disable-clipboard">SecretKey.txt</code> file as the variable &ldquo;Value&rdquo;. Mark this variable as <strong>Sensitive</strong> as shown in the image below and click <strong>Save variable</strong>.</li>
 </ol>
-<img src="/remote_cli/images/tfc_sensitive_var.png?width=600&classes=shadow"/>
+<img src="/iac-workshop-intersight/remote_cli/images/tfc_sensitive_var.png?width=600&classes=shadow"/>
 <p>Your variables should now look similar to the image below but with a different value for &ldquo;intersight_api_key&rdquo;.</p>
-<img src="/remote_cli/images/tfc_vars_defined.png?width=600&classes=shadow"/>
+<img src="/iac-workshop-intersight/remote_cli/images/tfc_vars_defined.png?width=600&classes=shadow"/>
 <h2 id="update-provider-configuration">Update provider configuration</h2>
 <p>The Intersight provider for Terraform looks for provider-specific parameters in your environment variables if they are not specified in the &ldquo;provider&rdquo; block. You set all of those properties as environment variables earlier in the lab, and that is why you were able to leave the provider block empty as shown below. This must change so that Terraform knows where to find the API key and secret for the provider.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-terraform" data-lang="terraform"><span style="color:#66d9ef">provider</span> <span style="color:#e6db74">&#34;intersight&#34;</span> {<span style="color:#75715e">
@@ -1576,19 +1576,19 @@ unset INTERSIGHT_ENDPOINT_URL
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/iac-workshop-intersight/js/clipboard.min.js?1632928351"></script>
-    <script src="/iac-workshop-intersight/js/perfect-scrollbar.min.js?1632928351"></script>
-    <script src="/iac-workshop-intersight/js/perfect-scrollbar.jquery.min.js?1632928351"></script>
-    <script src="/iac-workshop-intersight/js/jquery.sticky.js?1632928351"></script>
-    <script src="/iac-workshop-intersight/js/featherlight.min.js?1632928351"></script>
-    <script src="/iac-workshop-intersight/js/highlight.pack.js?1632928351"></script>
+    <script src="/iac-workshop-intersight/js/clipboard.min.js?1632929672"></script>
+    <script src="/iac-workshop-intersight/js/perfect-scrollbar.min.js?1632929672"></script>
+    <script src="/iac-workshop-intersight/js/perfect-scrollbar.jquery.min.js?1632929672"></script>
+    <script src="/iac-workshop-intersight/js/jquery.sticky.js?1632929672"></script>
+    <script src="/iac-workshop-intersight/js/featherlight.min.js?1632929672"></script>
+    <script src="/iac-workshop-intersight/js/highlight.pack.js?1632929672"></script>
     <script>hljs.highlightAll();</script>
-    <script src="/iac-workshop-intersight/js/modernizr.custom-3.6.0.js?1632928351"></script>
-    <script src="/iac-workshop-intersight/js/learn.js?1632928351"></script>
-    <script src="/iac-workshop-intersight/js/hugo-learn.js?1632928351"></script>
+    <script src="/iac-workshop-intersight/js/modernizr.custom-3.6.0.js?1632929672"></script>
+    <script src="/iac-workshop-intersight/js/learn.js?1632929672"></script>
+    <script src="/iac-workshop-intersight/js/hugo-learn.js?1632929672"></script>
     
     
-<script type="text/javascript" src="/iac-workshop-intersight/js/terraform.js?1632928351"></script>
+<script type="text/javascript" src="/iac-workshop-intersight/js/terraform.js?1632929672"></script>
 <script type="text/javascript">
     hljs.registerLanguage('terraform', window.hljsDefineTerraform);
     hljs.highlightAll();
@@ -1596,7 +1596,7 @@ unset INTERSIGHT_ENDPOINT_URL
         ignoreUnescapedHTML: true
     })
 </script>
-<script type="text/javascript" src="/iac-workshop-intersight/js/user_navigation.js?1632928351"></script>
+<script type="text/javascript" src="/iac-workshop-intersight/js/user_navigation.js?1632929672"></script>
   </body>
 </html>
 

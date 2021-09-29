@@ -12,22 +12,22 @@
     <title>Basic validation :: Infrastructure as Code Lab</title>
 
     
-    <link href="/iac-workshop-intersight/css/nucleus.css?1632928351" rel="stylesheet">
-    <link href="/iac-workshop-intersight/css/fontawesome-all.min.css?1632928351" rel="stylesheet">
-    <link href="/iac-workshop-intersight/css/hybrid.css?1632928351" rel="stylesheet">
-    <link href="/iac-workshop-intersight/css/featherlight.min.css?1632928351" rel="stylesheet">
-    <link href="/iac-workshop-intersight/css/perfect-scrollbar.min.css?1632928351" rel="stylesheet">
-    <link href="/iac-workshop-intersight/css/auto-complete.css?1632928351" rel="stylesheet">
-    <link href="/iac-workshop-intersight/css/atom-one-dark-reasonable.css?1632928351" rel="stylesheet">
-    <link href="/iac-workshop-intersight/css/theme.css?1632928351" rel="stylesheet">
-    <link href="/iac-workshop-intersight/css/tabs.css?1632928351" rel="stylesheet">
-    <link href="/iac-workshop-intersight/css/hugo-theme.css?1632928351" rel="stylesheet">
+    <link href="/iac-workshop-intersight/css/nucleus.css?1632929672" rel="stylesheet">
+    <link href="/iac-workshop-intersight/css/fontawesome-all.min.css?1632929672" rel="stylesheet">
+    <link href="/iac-workshop-intersight/css/hybrid.css?1632929672" rel="stylesheet">
+    <link href="/iac-workshop-intersight/css/featherlight.min.css?1632929672" rel="stylesheet">
+    <link href="/iac-workshop-intersight/css/perfect-scrollbar.min.css?1632929672" rel="stylesheet">
+    <link href="/iac-workshop-intersight/css/auto-complete.css?1632929672" rel="stylesheet">
+    <link href="/iac-workshop-intersight/css/atom-one-dark-reasonable.css?1632929672" rel="stylesheet">
+    <link href="/iac-workshop-intersight/css/theme.css?1632929672" rel="stylesheet">
+    <link href="/iac-workshop-intersight/css/tabs.css?1632929672" rel="stylesheet">
+    <link href="/iac-workshop-intersight/css/hugo-theme.css?1632929672" rel="stylesheet">
     
-    <link href="/iac-workshop-intersight/css/theme-blue.css?1632928351" rel="stylesheet">
+    <link href="/iac-workshop-intersight/css/theme-blue.css?1632929672" rel="stylesheet">
     
     
 
-    <script src="/iac-workshop-intersight/js/jquery-3.3.1.min.js?1632928351"></script>
+    <script src="/iac-workshop-intersight/js/jquery-3.3.1.min.js?1632929672"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -73,14 +73,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/iac-workshop-intersight/js/lunr.min.js?1632928351"></script>
-<script type="text/javascript" src="/iac-workshop-intersight/js/auto-complete.js?1632928351"></script>
+<script type="text/javascript" src="/iac-workshop-intersight/js/lunr.min.js?1632929672"></script>
+<script type="text/javascript" src="/iac-workshop-intersight/js/auto-complete.js?1632929672"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/wookie-labs.github.io\/iac-workshop-intersight\/";
     
 </script>
-<script type="text/javascript" src="/iac-workshop-intersight/js/search.js?1632928351"></script>
+<script type="text/javascript" src="/iac-workshop-intersight/js/search.js?1632929672"></script>
 
     
   </div>
@@ -885,12 +885,12 @@
 <li>You will start with the Intersight Terraform provider. To determine how to use the provider, search the internet for <code>cisco intersight terraform provider</code> and you will find <a href="https://registry.terraform.io/providers/CiscoDevNet/intersight/latest">this</a> page on the Terraform Registry. There is also a bookmark in your browser for the Terraform Registry if you need to return to that page at any time.</li>
 <li>Look around the Intersight provider page on the Terraform Registry. Notice that the top downloaded modules are listed here. Notice that there is a a tab for <strong>Documentation</strong> and a button labeled <strong>Use Provider</strong>. Click on <strong>Use Provider</strong>.</li>
 </ol>
-<img src="/open_source/images/use_provider.png?width=600&classes=shadow"/>
+<img src="/iac-workshop-intersight/open_source/images/use_provider.png?width=600&classes=shadow"/>
 <ol start="4">
 <li>Copy the code snippet from the <strong>Use Provider</strong> dropdown and paste it in your configuration file <code>providers.tf</code>.</li>
 <li>Save the file and then run <code>tf init</code> from the terminal. You should see messages about Terraform installing the Intersight provider followed by a message that says &ldquo;Terraform has been successfully initialized!&rdquo;</li>
 </ol>
-<img src="/open_source/images/tf_init.png?classes=shadow"/>
+<img src="/iac-workshop-intersight/open_source/images/tf_init.png?classes=shadow"/>
 <p>Pause for a moment and consider what is defined in your single configuration file and what effect the <code class="disable-clipboard">tf init</code> command had.</p>
 <ul>
 <li>The configuration file specifies that the Intersight provider is required as well as the version number for that provider.</li>
@@ -923,7 +923,7 @@
 <li>Search for the term &ldquo;organization&rdquo; as shown in the image below (you can click on any image in this lab guide to zoom in).</li>
 <li>Notice there is a data source called <code class="disable-clipboard">intersight_organization_organization</code>. Click on that data source to inspect its documentation. The documentation shows that this source has a field called &ldquo;name&rdquo;.</li>
 </ol>
-<img src="/open_source/images/provider_docs.png?width=600&classes=shadow"/>
+<img src="/iac-workshop-intersight/open_source/images/provider_docs.png?width=600&classes=shadow"/>
 <ol start="4">
 <li>Create a new file called <code>sources.tf</code> and add the following code snippet to that file. Remember that you could also simply add this code snippet to the end of your <code class="disable-clipboard">providers.tf</code> file instead of creating a new file, but it is advisable to organize your code into separate files.</li>
 </ol>
@@ -1552,19 +1552,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/iac-workshop-intersight/js/clipboard.min.js?1632928351"></script>
-    <script src="/iac-workshop-intersight/js/perfect-scrollbar.min.js?1632928351"></script>
-    <script src="/iac-workshop-intersight/js/perfect-scrollbar.jquery.min.js?1632928351"></script>
-    <script src="/iac-workshop-intersight/js/jquery.sticky.js?1632928351"></script>
-    <script src="/iac-workshop-intersight/js/featherlight.min.js?1632928351"></script>
-    <script src="/iac-workshop-intersight/js/highlight.pack.js?1632928351"></script>
+    <script src="/iac-workshop-intersight/js/clipboard.min.js?1632929672"></script>
+    <script src="/iac-workshop-intersight/js/perfect-scrollbar.min.js?1632929672"></script>
+    <script src="/iac-workshop-intersight/js/perfect-scrollbar.jquery.min.js?1632929672"></script>
+    <script src="/iac-workshop-intersight/js/jquery.sticky.js?1632929672"></script>
+    <script src="/iac-workshop-intersight/js/featherlight.min.js?1632929672"></script>
+    <script src="/iac-workshop-intersight/js/highlight.pack.js?1632929672"></script>
     <script>hljs.highlightAll();</script>
-    <script src="/iac-workshop-intersight/js/modernizr.custom-3.6.0.js?1632928351"></script>
-    <script src="/iac-workshop-intersight/js/learn.js?1632928351"></script>
-    <script src="/iac-workshop-intersight/js/hugo-learn.js?1632928351"></script>
+    <script src="/iac-workshop-intersight/js/modernizr.custom-3.6.0.js?1632929672"></script>
+    <script src="/iac-workshop-intersight/js/learn.js?1632929672"></script>
+    <script src="/iac-workshop-intersight/js/hugo-learn.js?1632929672"></script>
     
     
-<script type="text/javascript" src="/iac-workshop-intersight/js/terraform.js?1632928351"></script>
+<script type="text/javascript" src="/iac-workshop-intersight/js/terraform.js?1632929672"></script>
 <script type="text/javascript">
     hljs.registerLanguage('terraform', window.hljsDefineTerraform);
     hljs.highlightAll();
@@ -1572,7 +1572,7 @@
         ignoreUnescapedHTML: true
     })
 </script>
-<script type="text/javascript" src="/iac-workshop-intersight/js/user_navigation.js?1632928351"></script>
+<script type="text/javascript" src="/iac-workshop-intersight/js/user_navigation.js?1632929672"></script>
   </body>
 </html>
 

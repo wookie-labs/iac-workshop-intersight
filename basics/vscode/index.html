@@ -12,22 +12,22 @@
     <title>Configure the IDE :: Infrastructure as Code Lab</title>
 
     
-    <link href="/iac-workshop-intersight/css/nucleus.css?1632928351" rel="stylesheet">
-    <link href="/iac-workshop-intersight/css/fontawesome-all.min.css?1632928351" rel="stylesheet">
-    <link href="/iac-workshop-intersight/css/hybrid.css?1632928351" rel="stylesheet">
-    <link href="/iac-workshop-intersight/css/featherlight.min.css?1632928351" rel="stylesheet">
-    <link href="/iac-workshop-intersight/css/perfect-scrollbar.min.css?1632928351" rel="stylesheet">
-    <link href="/iac-workshop-intersight/css/auto-complete.css?1632928351" rel="stylesheet">
-    <link href="/iac-workshop-intersight/css/atom-one-dark-reasonable.css?1632928351" rel="stylesheet">
-    <link href="/iac-workshop-intersight/css/theme.css?1632928351" rel="stylesheet">
-    <link href="/iac-workshop-intersight/css/tabs.css?1632928351" rel="stylesheet">
-    <link href="/iac-workshop-intersight/css/hugo-theme.css?1632928351" rel="stylesheet">
+    <link href="/iac-workshop-intersight/css/nucleus.css?1632929672" rel="stylesheet">
+    <link href="/iac-workshop-intersight/css/fontawesome-all.min.css?1632929672" rel="stylesheet">
+    <link href="/iac-workshop-intersight/css/hybrid.css?1632929672" rel="stylesheet">
+    <link href="/iac-workshop-intersight/css/featherlight.min.css?1632929672" rel="stylesheet">
+    <link href="/iac-workshop-intersight/css/perfect-scrollbar.min.css?1632929672" rel="stylesheet">
+    <link href="/iac-workshop-intersight/css/auto-complete.css?1632929672" rel="stylesheet">
+    <link href="/iac-workshop-intersight/css/atom-one-dark-reasonable.css?1632929672" rel="stylesheet">
+    <link href="/iac-workshop-intersight/css/theme.css?1632929672" rel="stylesheet">
+    <link href="/iac-workshop-intersight/css/tabs.css?1632929672" rel="stylesheet">
+    <link href="/iac-workshop-intersight/css/hugo-theme.css?1632929672" rel="stylesheet">
     
-    <link href="/iac-workshop-intersight/css/theme-blue.css?1632928351" rel="stylesheet">
+    <link href="/iac-workshop-intersight/css/theme-blue.css?1632929672" rel="stylesheet">
     
     
 
-    <script src="/iac-workshop-intersight/js/jquery-3.3.1.min.js?1632928351"></script>
+    <script src="/iac-workshop-intersight/js/jquery-3.3.1.min.js?1632929672"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -73,14 +73,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/iac-workshop-intersight/js/lunr.min.js?1632928351"></script>
-<script type="text/javascript" src="/iac-workshop-intersight/js/auto-complete.js?1632928351"></script>
+<script type="text/javascript" src="/iac-workshop-intersight/js/lunr.min.js?1632929672"></script>
+<script type="text/javascript" src="/iac-workshop-intersight/js/auto-complete.js?1632929672"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/wookie-labs.github.io\/iac-workshop-intersight\/";
     
 </script>
-<script type="text/javascript" src="/iac-workshop-intersight/js/search.js?1632928351"></script>
+<script type="text/javascript" src="/iac-workshop-intersight/js/search.js?1632929672"></script>
 
     
   </div>
@@ -871,7 +871,7 @@
         
 
 
-<img src="/basics/images/vscode.png?width=150"/>
+<img src="/iac-workshop-intersight/basics/images/vscode.png?width=150"/>
 <p>This lab will use Microsoft Visual Studio Code (vsCode) for the integrated development environment (IDE). This is a very popular and free IDE that has many free extensions for different programming languages. In this section of the lab, you will configure vsCode for use with Terraform.</p>
 <h2 id="initialize-the-project-directory">Initialize the project directory</h2>
 <p>In this portion of the lab, you will clone a GitHub repository to use as your project directory. It may seem unusual to clone a nearly empty repository, but this specific repository will be important later in the lab when you migrate to Terraform Cloud as a link has been established between your repository and the Terraform Cloud organization. This will be explained in detail later in the lab when it is more relevant. For now, know that there is a reason to clone a nearly empty repository rather than start with an empty folder for this lab.</p>
@@ -880,11 +880,11 @@
 <li>From the Windows 10 host desktop, click on the Visual Studio Code icon to open vsCode.</li>
 <li>From vsCode, either press Ctrl+Shift+P or select &ldquo;Command Palette&hellip;&rdquo; from the &ldquo;View&rdquo; menu as shown in the screenshot below.</li>
 </ol>
-<img src="/basics/images/command_palette.png?width=700&classes=shadow"/>
+<img src="/iac-workshop-intersight/basics/images/command_palette.png?width=700&classes=shadow"/>
 <ol start="3">
 <li>In the command palette, type <code>git clone</code> to filter the list of available commands. Click on the command <strong>Git:Clone</strong> (not the Recursive clone).</li>
 </ol>
-<img src="/basics/images/git_clone.png?width=700&classes=shadow"/>
+<img src="/iac-workshop-intersight/basics/images/git_clone.png?width=700&classes=shadow"/>
 <ol start="4">
 <li>When prompted for the repository URL, copy and paste the text below. This is the SSH format for the GitHub repository, which uses an SSH key that has been loaded on the Windows host for you.</li>
 </ol>
@@ -892,11 +892,11 @@
 </code></pre></div><ol start="5">
 <li>When prompted for a destination, choose the &ldquo;Documents&rdquo; folder and click <strong>Select Repository Location</strong> as shown below.</li>
 </ol>
-<img src="/basics/images/clone_destination.png?width=700&classes=shadow"/>
+<img src="/iac-workshop-intersight/basics/images/clone_destination.png?width=700&classes=shadow"/>
 <ol start="6">
 <li>Once the repository has been cloned, you will be prompted (lower right corner of the vsCode window) to open the local directory where the repository has been cloned. Click <strong>Open</strong>. This prompt does not stay open indefinitely. If you miss the prompt, you will have to choose <strong>File</strong> &ndash;&gt; <strong>Open Folder&hellip;</strong> from within vsCode and browse to your project folder to open it.</li>
 </ol>
-<img src="/basics/images/open_repository.png?classes=shadow"/>
+<img src="/iac-workshop-intersight/basics/images/open_repository.png?classes=shadow"/>
 <h2 id="install-terraform-extension">Install Terraform extension</h2>
 <p>The Terraform extension for vsCode provides conveniences that will make writing code easier and less prone to errors. Some benefits:</p>
 <ul>
@@ -910,13 +910,13 @@
 <li>In vsCode, click on the extensions icon as shown in the image below.</li>
 <li>The extensions view will show both installed and popular extensions. If the <strong>HashiCorp Terraform</strong> extension appears under &ldquo;installed&rdquo; extensions, you are done. Confirm that it is the HashiCorp extension and not an extension from Microsoft or other third party.</li>
 </ol>
-<img src="/basics/images/installed_extensions.png?classes=shadow"/>
+<img src="/iac-workshop-intersight/basics/images/installed_extensions.png?classes=shadow"/>
 <ol start="3">
 <li>If the HashiCorp Terraform extension is not installed (as shown in the image above), use the &ldquo;search extensions in marketplace&rdquo; text box to search for &ldquo;terraform&rdquo; as shown in the image below.</li>
 <li>Click the word <strong>Install</strong> next to the HashiCorp Terraform extension. It will take a few seconds to install.</li>
 <li>Clear the search box and confirm that the extension shows up in the &ldquo;installed&rdquo; group.</li>
 </ol>
-<img src="/basics/images/search_extensions.png?classes=shadow"/>
+<img src="/iac-workshop-intersight/basics/images/search_extensions.png?classes=shadow"/>
 <h2 id="open-the-terminal">Open the terminal</h2>
 <p>You will execute all of the command line commands for this lab from the terminal built into vsCode. vsCode supports multiple terminal types:</p>
 <ul>
@@ -929,10 +929,10 @@
 <li>In vsCode, from the <strong>Terminal</strong> menu choose <strong>New Terminal</strong> if the terminal is not already open. This will open a PowerShell command terminal. If you are comfortable using PowerShell syntax, you can skip the next step.</li>
 <li>Open a new terminal as shown in the diagram below. You can choose from <strong>PowerShell</strong>, <strong>Command Prompt</strong>, and <strong>Git Bash</strong>. Command syntax for all three will be provided throughout this lab guide so you can select the option that makes you comfortable.</li>
 </ol>
-<img src="/basics/images/new_terminal.png?classes=shadow"/>
+<img src="/iac-workshop-intersight/basics/images/new_terminal.png?classes=shadow"/>
 <h2 id="congratulations">Congratulations!</h2>
 <p>You have successfully prepared the Visual Studio Code IDE for use with this lab. Your vsCode window should look something like the image below (click on the image to magnify).</p>
-<img src="/basics/images/vscode_window.png?width=600&classes=shadow"/>
+<img src="/iac-workshop-intersight/basics/images/vscode_window.png?width=600&classes=shadow"/>
 
 <footer class="footline">
 	
@@ -1445,19 +1445,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/iac-workshop-intersight/js/clipboard.min.js?1632928351"></script>
-    <script src="/iac-workshop-intersight/js/perfect-scrollbar.min.js?1632928351"></script>
-    <script src="/iac-workshop-intersight/js/perfect-scrollbar.jquery.min.js?1632928351"></script>
-    <script src="/iac-workshop-intersight/js/jquery.sticky.js?1632928351"></script>
-    <script src="/iac-workshop-intersight/js/featherlight.min.js?1632928351"></script>
-    <script src="/iac-workshop-intersight/js/highlight.pack.js?1632928351"></script>
+    <script src="/iac-workshop-intersight/js/clipboard.min.js?1632929672"></script>
+    <script src="/iac-workshop-intersight/js/perfect-scrollbar.min.js?1632929672"></script>
+    <script src="/iac-workshop-intersight/js/perfect-scrollbar.jquery.min.js?1632929672"></script>
+    <script src="/iac-workshop-intersight/js/jquery.sticky.js?1632929672"></script>
+    <script src="/iac-workshop-intersight/js/featherlight.min.js?1632929672"></script>
+    <script src="/iac-workshop-intersight/js/highlight.pack.js?1632929672"></script>
     <script>hljs.highlightAll();</script>
-    <script src="/iac-workshop-intersight/js/modernizr.custom-3.6.0.js?1632928351"></script>
-    <script src="/iac-workshop-intersight/js/learn.js?1632928351"></script>
-    <script src="/iac-workshop-intersight/js/hugo-learn.js?1632928351"></script>
+    <script src="/iac-workshop-intersight/js/modernizr.custom-3.6.0.js?1632929672"></script>
+    <script src="/iac-workshop-intersight/js/learn.js?1632929672"></script>
+    <script src="/iac-workshop-intersight/js/hugo-learn.js?1632929672"></script>
     
     
-<script type="text/javascript" src="/iac-workshop-intersight/js/terraform.js?1632928351"></script>
+<script type="text/javascript" src="/iac-workshop-intersight/js/terraform.js?1632929672"></script>
 <script type="text/javascript">
     hljs.registerLanguage('terraform', window.hljsDefineTerraform);
     hljs.highlightAll();
@@ -1465,7 +1465,7 @@
         ignoreUnescapedHTML: true
     })
 </script>
-<script type="text/javascript" src="/iac-workshop-intersight/js/user_navigation.js?1632928351"></script>
+<script type="text/javascript" src="/iac-workshop-intersight/js/user_navigation.js?1632929672"></script>
   </body>
 </html>
 

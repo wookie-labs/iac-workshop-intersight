@@ -12,22 +12,22 @@
     <title>Create another policy :: Infrastructure as Code Lab</title>
 
     
-    <link href="/iac-workshop-intersight/css/nucleus.css?1632928351" rel="stylesheet">
-    <link href="/iac-workshop-intersight/css/fontawesome-all.min.css?1632928351" rel="stylesheet">
-    <link href="/iac-workshop-intersight/css/hybrid.css?1632928351" rel="stylesheet">
-    <link href="/iac-workshop-intersight/css/featherlight.min.css?1632928351" rel="stylesheet">
-    <link href="/iac-workshop-intersight/css/perfect-scrollbar.min.css?1632928351" rel="stylesheet">
-    <link href="/iac-workshop-intersight/css/auto-complete.css?1632928351" rel="stylesheet">
-    <link href="/iac-workshop-intersight/css/atom-one-dark-reasonable.css?1632928351" rel="stylesheet">
-    <link href="/iac-workshop-intersight/css/theme.css?1632928351" rel="stylesheet">
-    <link href="/iac-workshop-intersight/css/tabs.css?1632928351" rel="stylesheet">
-    <link href="/iac-workshop-intersight/css/hugo-theme.css?1632928351" rel="stylesheet">
+    <link href="/iac-workshop-intersight/css/nucleus.css?1632929672" rel="stylesheet">
+    <link href="/iac-workshop-intersight/css/fontawesome-all.min.css?1632929672" rel="stylesheet">
+    <link href="/iac-workshop-intersight/css/hybrid.css?1632929672" rel="stylesheet">
+    <link href="/iac-workshop-intersight/css/featherlight.min.css?1632929672" rel="stylesheet">
+    <link href="/iac-workshop-intersight/css/perfect-scrollbar.min.css?1632929672" rel="stylesheet">
+    <link href="/iac-workshop-intersight/css/auto-complete.css?1632929672" rel="stylesheet">
+    <link href="/iac-workshop-intersight/css/atom-one-dark-reasonable.css?1632929672" rel="stylesheet">
+    <link href="/iac-workshop-intersight/css/theme.css?1632929672" rel="stylesheet">
+    <link href="/iac-workshop-intersight/css/tabs.css?1632929672" rel="stylesheet">
+    <link href="/iac-workshop-intersight/css/hugo-theme.css?1632929672" rel="stylesheet">
     
-    <link href="/iac-workshop-intersight/css/theme-blue.css?1632928351" rel="stylesheet">
+    <link href="/iac-workshop-intersight/css/theme-blue.css?1632929672" rel="stylesheet">
     
     
 
-    <script src="/iac-workshop-intersight/js/jquery-3.3.1.min.js?1632928351"></script>
+    <script src="/iac-workshop-intersight/js/jquery-3.3.1.min.js?1632929672"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -73,14 +73,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/iac-workshop-intersight/js/lunr.min.js?1632928351"></script>
-<script type="text/javascript" src="/iac-workshop-intersight/js/auto-complete.js?1632928351"></script>
+<script type="text/javascript" src="/iac-workshop-intersight/js/lunr.min.js?1632929672"></script>
+<script type="text/javascript" src="/iac-workshop-intersight/js/auto-complete.js?1632929672"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/wookie-labs.github.io\/iac-workshop-intersight\/";
     
 </script>
-<script type="text/javascript" src="/iac-workshop-intersight/js/search.js?1632928351"></script>
+<script type="text/javascript" src="/iac-workshop-intersight/js/search.js?1632929672"></script>
 
     
   </div>
@@ -877,27 +877,27 @@
 <li>Open your <code class="disable-clipboard">ntp.tf</code> file and add a few blank lines at the end.</li>
 <li>On a new line, just type the letter &ldquo;r&rdquo; and notice that vsCode displays the keyword &ldquo;resource&rdquo; as shown below. Click on the word or press the tab key to autocomplete the resource keyword and a very simple resource block.</li>
 </ol>
-<img src="/open_source/images/typing_r.png?classes=shadow"/>
+<img src="/iac-workshop-intersight/open_source/images/typing_r.png?classes=shadow"/>
 <ol start="3">
 <li>Your cursor is automatically placed where resource type is defined and you can see a very long list of resource types for every provider that you have defined (you have only defined one provider in this lab). Start typing &ldquo;intersight_n&rdquo; to see the list get filtered down. Click on &ldquo;intersight_ntp_policy&rdquo;.</li>
 </ol>
-<img src="/open_source/images/typing_resource_type.png?classes=shadow"/>
+<img src="/iac-workshop-intersight/open_source/images/typing_resource_type.png?classes=shadow"/>
 <ol start="4">
 <li>Give your new resource a <strong>local name</strong> such as &ldquo;west&rdquo;.</li>
 <li>Within the resource block, type the letter &ldquo;n&rdquo; and notice that vsCode displays the two valid parameters for this resource type that begin with the letter &ldquo;n&rdquo;.</li>
 <li>Click on &ldquo;name&rdquo; and give your policy a name such as <code>&quot;${var.policy_name_prefix}-ntp-west&quot;</code>.</li>
 </ol>
-<img src="/open_source/images/typing_n.png?classes=shadow"/>
+<img src="/iac-workshop-intersight/open_source/images/typing_n.png?classes=shadow"/>
 <ol start="7">
 <li>On the next line after the &ldquo;name&rdquo; property, start typing the word &ldquo;description&rdquo; and hit the tab key when it is the top item (or only item) in the popup list.</li>
 <li>You will see a popup list of values that can be assigned to that property. Notice that &ldquo;var.policy_description&rdquo; is in that list. Click on &ldquo;var.policy_description&rdquo;.</li>
 </ol>
-<img src="/open_source/images/adding_description.png?classes=shadow"/>
+<img src="/iac-workshop-intersight/open_source/images/adding_description.png?classes=shadow"/>
 <ol start="9">
 <li>You have defined two properties and will probably notice that the equals signs (=) do not line up like they did in previous code snippets you have used. Formatting is not technically required, but it is more aesthetically pleasing to have those lined up. The Terraform extension can do that for you. Go to the vsCode Command Palette (Ctrl+Shift+P) and type the command &ldquo;Format Document&rdquo;. Your lines will now be lined up. The difference can be seen in the two images below.</li>
 </ol>
-<img src="/open_source/images/unaligned.png?classes=shadow"/>
-<img src="/open_source/images/aligned.png?classes=shadow"/>
+<img src="/iac-workshop-intersight/open_source/images/unaligned.png?classes=shadow"/>
+<img src="/iac-workshop-intersight/open_source/images/aligned.png?classes=shadow"/>
 <ol start="10">
 <li>Complete the remainder of the resource definition for your second NTP policy. It should look something like the code snippet below.</li>
 <li>Use the <strong>Format Document</strong> trick you learned above to make your document more readable.</li>
@@ -1544,19 +1544,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/iac-workshop-intersight/js/clipboard.min.js?1632928351"></script>
-    <script src="/iac-workshop-intersight/js/perfect-scrollbar.min.js?1632928351"></script>
-    <script src="/iac-workshop-intersight/js/perfect-scrollbar.jquery.min.js?1632928351"></script>
-    <script src="/iac-workshop-intersight/js/jquery.sticky.js?1632928351"></script>
-    <script src="/iac-workshop-intersight/js/featherlight.min.js?1632928351"></script>
-    <script src="/iac-workshop-intersight/js/highlight.pack.js?1632928351"></script>
+    <script src="/iac-workshop-intersight/js/clipboard.min.js?1632929672"></script>
+    <script src="/iac-workshop-intersight/js/perfect-scrollbar.min.js?1632929672"></script>
+    <script src="/iac-workshop-intersight/js/perfect-scrollbar.jquery.min.js?1632929672"></script>
+    <script src="/iac-workshop-intersight/js/jquery.sticky.js?1632929672"></script>
+    <script src="/iac-workshop-intersight/js/featherlight.min.js?1632929672"></script>
+    <script src="/iac-workshop-intersight/js/highlight.pack.js?1632929672"></script>
     <script>hljs.highlightAll();</script>
-    <script src="/iac-workshop-intersight/js/modernizr.custom-3.6.0.js?1632928351"></script>
-    <script src="/iac-workshop-intersight/js/learn.js?1632928351"></script>
-    <script src="/iac-workshop-intersight/js/hugo-learn.js?1632928351"></script>
+    <script src="/iac-workshop-intersight/js/modernizr.custom-3.6.0.js?1632929672"></script>
+    <script src="/iac-workshop-intersight/js/learn.js?1632929672"></script>
+    <script src="/iac-workshop-intersight/js/hugo-learn.js?1632929672"></script>
     
     
-<script type="text/javascript" src="/iac-workshop-intersight/js/terraform.js?1632928351"></script>
+<script type="text/javascript" src="/iac-workshop-intersight/js/terraform.js?1632929672"></script>
 <script type="text/javascript">
     hljs.registerLanguage('terraform', window.hljsDefineTerraform);
     hljs.highlightAll();
@@ -1564,7 +1564,7 @@
         ignoreUnescapedHTML: true
     })
 </script>
-<script type="text/javascript" src="/iac-workshop-intersight/js/user_navigation.js?1632928351"></script>
+<script type="text/javascript" src="/iac-workshop-intersight/js/user_navigation.js?1632929672"></script>
   </body>
 </html>
 
