@@ -8,11 +8,11 @@ if (Object.keys(params).includes('pod')) {
     let root = document.documentElement;
     if (localStorage.getItem('pod') === null) {
         root.style.setProperty('--showUserWarnings', 'block');
-    } else {
-        pod_objects = document.querySelectorAll(".pod");
-        pod_objects.forEach(element => {
-            let text = document.createTextNode(localStorage.getItem('pod'));
-            element.appendChild(text);
-        });
     }
+    pod_objects = document.querySelectorAll(".pod");
+    pod_objects.forEach(element => {
+        let pod = localStorage.getItem('pod');
+        let text = document.createTextNode(pod ? pod : 'X');
+        element.appendChild(text);
+    });
 }
