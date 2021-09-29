@@ -2,55 +2,55 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>IaC Fundamentals with Intersight on Infrastructure as Code Lab</title>
-    <link>./</link>
+    <link>https://wookie-labs.github.io/iac-workshop-intersight/</link>
     <description>Recent content in IaC Fundamentals with Intersight on Infrastructure as Code Lab</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 22 Sep 2021 16:40:00 -0500</lastBuildDate><atom:link href="./index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 22 Sep 2021 16:40:00 -0500</lastBuildDate><atom:link href="https://wookie-labs.github.io/iac-workshop-intersight/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Infrastructure as Code</title>
-      <link>./terraform_primer/infrastructure_as_code/</link>
+      <link>https://wookie-labs.github.io/iac-workshop-intersight/terraform_primer/infrastructure_as_code/</link>
       <pubDate>Tue, 21 Sep 2021 12:54:50 -0500</pubDate>
       
-      <guid>./terraform_primer/infrastructure_as_code/</guid>
+      <guid>https://wookie-labs.github.io/iac-workshop-intersight/terraform_primer/infrastructure_as_code/</guid>
       <description>Infrastructure as Code (IaC) allows you to document the configuration needs of your infrastructure through a vendor agnostic language vs using a device specific graphical/command line interface. Imagine a sysadmin needs to configure their VCenter/ESXi cluster including data centers, clusters, networks, and VMs. One option would be to click through the GUI to configure each of the required settings. Not only does this take time, but it likely introduces configuration drift as individual settings are configured over the lifetime of the platform.</description>
     </item>
     
     <item>
       <title>Migrate to VCS</title>
-      <link>./tf_cloud/github_repo/</link>
+      <link>https://wookie-labs.github.io/iac-workshop-intersight/tf_cloud/github_repo/</link>
       <pubDate>Wed, 08 Sep 2021 14:16:05 -0500</pubDate>
       
-      <guid>./tf_cloud/github_repo/</guid>
+      <guid>https://wookie-labs.github.io/iac-workshop-intersight/tf_cloud/github_repo/</guid>
       <description>Push your configuration code to GitHub Recall that one of the early steps you followed in creating the project directory was to clone a repository from GitHub. That means that your current project directory already has a git configuration. You might have noticed that some of your files in vsCode are colored green and have a &amp;ldquo;U&amp;rdquo; next to them as shown in the image below. vsCode is well integrated with git and is highlighting files that are not being tracked by git.</description>
     </item>
     
     <item>
       <title>Change backend</title>
-      <link>./remote_cli/specify_remote/</link>
+      <link>https://wookie-labs.github.io/iac-workshop-intersight/remote_cli/specify_remote/</link>
       <pubDate>Wed, 08 Sep 2021 14:08:10 -0500</pubDate>
       
-      <guid>./remote_cli/specify_remote/</guid>
+      <guid>https://wookie-labs.github.io/iac-workshop-intersight/remote_cli/specify_remote/</guid>
       <description>So far in this lab you have been using the &amp;ldquo;local backend&amp;rdquo; for Terraform. In other words, you&amp;rsquo;ve been using your locally-installed instance of Terraform to execute your configuration. Using the local backend is the default behavior and does not require any additional configuration.
 In this portion of the lab, you will start using a remote backend. This means your local configuration files will actually be executed by Terraform Cloud rather than your local instance of Terraform.</description>
     </item>
     
     <item>
       <title>Basic validation</title>
-      <link>./open_source/first_plan/</link>
+      <link>https://wookie-labs.github.io/iac-workshop-intersight/open_source/first_plan/</link>
       <pubDate>Wed, 08 Sep 2021 13:53:35 -0500</pubDate>
       
-      <guid>./open_source/first_plan/</guid>
+      <guid>https://wookie-labs.github.io/iac-workshop-intersight/open_source/first_plan/</guid>
       <description>In this section of the lab, you will create a very basic Terraform configuration. The goals of this section are to:
  teach you an efficient way to find content in the Terraform docs validate that your credentials are correct  Create a simple HCL file HashiCorp Configuration Language (HCL) files look like a mix between JSON and YAML as you will see momentarily. As discussed in Terraform Primer &amp;gt; Basic validation, Terraform will evaluate all the configuration files in your project directory and treat them as a single document.</description>
     </item>
     
     <item>
       <title>Verify connectivity</title>
-      <link>./basics/verify_environment/</link>
+      <link>https://wookie-labs.github.io/iac-workshop-intersight/basics/verify_environment/</link>
       <pubDate>Tue, 07 Sep 2021 11:34:19 -0500</pubDate>
       
-      <guid>./basics/verify_environment/</guid>
+      <guid>https://wookie-labs.github.io/iac-workshop-intersight/basics/verify_environment/</guid>
       <description>In this section of the lab you will
  verify connectivity and credentials for the Windows 10 host you will use for the lab verify credentials for Cisco Intersight  Guacamole Guacamole is an open source project that provides remote access such as RDP and SSH over HTTPS. If you are unfamiliar with Guacamole, please read the Guacamole page in the Resources section of this guide before proceeding.
 Steps:
@@ -59,30 +59,30 @@ Steps:
     
     <item>
       <title>Configure the IDE</title>
-      <link>./basics/vscode/</link>
+      <link>https://wookie-labs.github.io/iac-workshop-intersight/basics/vscode/</link>
       <pubDate>Wed, 08 Sep 2021 16:33:54 -0500</pubDate>
       
-      <guid>./basics/vscode/</guid>
+      <guid>https://wookie-labs.github.io/iac-workshop-intersight/basics/vscode/</guid>
       <description>This lab will use Microsoft Visual Studio Code (vsCode) for the integrated development environment (IDE). This is a very popular and free IDE that has many free extensions for different programming languages. In this section of the lab, you will configure vsCode for use with Terraform.
 Initialize the project directory In this portion of the lab, you will clone a GitHub repository to use as your project directory. It may seem unusual to clone a nearly empty repository, but this specific repository will be important later in the lab when you migrate to Terraform Cloud as a link has been established between your repository and the Terraform Cloud organization.</description>
     </item>
     
     <item>
       <title>Core Concepts</title>
-      <link>./terraform_primer/core_concepts/</link>
+      <link>https://wookie-labs.github.io/iac-workshop-intersight/terraform_primer/core_concepts/</link>
       <pubDate>Tue, 21 Sep 2021 13:04:01 -0500</pubDate>
       
-      <guid>./terraform_primer/core_concepts/</guid>
+      <guid>https://wookie-labs.github.io/iac-workshop-intersight/terraform_primer/core_concepts/</guid>
       <description>Configuration Files When managing infrastructure with Terraform, all configuration is written into documents called Configuration files using the Terraform Language, which is Terraform&amp;rsquo;s primary user interface. Terraform’s configuration language is declarative, meaning that it describes the desired end-state for your infrastructure, in contrast to procedural programming languages that require step-by-step instructions to perform tasks (more on this later).
 Terraform language is a rich language designed to be relatively easy for humans to read and write.</description>
     </item>
     
     <item>
       <title>Push changes to GitHub</title>
-      <link>./tf_cloud/push_changes/</link>
+      <link>https://wookie-labs.github.io/iac-workshop-intersight/tf_cloud/push_changes/</link>
       <pubDate>Wed, 08 Sep 2021 14:15:20 -0500</pubDate>
       
-      <guid>./tf_cloud/push_changes/</guid>
+      <guid>https://wookie-labs.github.io/iac-workshop-intersight/tf_cloud/push_changes/</guid>
       <description>In this section of the lab, you will push a small change to GitHub and confirm that Terraform Cloud automatically starts planning for the configuration change that you made.
 Change the configuration Make a small change to your configuration, commit that change, and push it to GitHub.
 Steps:
@@ -91,30 +91,30 @@ Steps:
     
     <item>
       <title>Move variables to the cloud</title>
-      <link>./remote_cli/configure_tfcloud/</link>
+      <link>https://wookie-labs.github.io/iac-workshop-intersight/remote_cli/configure_tfcloud/</link>
       <pubDate>Wed, 08 Sep 2021 14:08:20 -0500</pubDate>
       
-      <guid>./remote_cli/configure_tfcloud/</guid>
+      <guid>https://wookie-labs.github.io/iac-workshop-intersight/remote_cli/configure_tfcloud/</guid>
       <description>Although you have configured Terraform to use Terraform Cloud to execute your configuration, your credentials are still stored as environment variables on your Windows host. Terraform Cloud cannot access those environment variables. In this portion of the lab, you will save your credentials as variables within Terraform Cloud and update your configuration files to use those new variables.
 Configure variables in Terraform Cloud You must add your credentials to Terraform Cloud.</description>
     </item>
     
     <item>
       <title>Create a policy</title>
-      <link>./open_source/ntp_policy/</link>
+      <link>https://wookie-labs.github.io/iac-workshop-intersight/open_source/ntp_policy/</link>
       <pubDate>Wed, 08 Sep 2021 13:54:48 -0500</pubDate>
       
-      <guid>./open_source/ntp_policy/</guid>
+      <guid>https://wookie-labs.github.io/iac-workshop-intersight/open_source/ntp_policy/</guid>
       <description>So far, you have only retrieved an existing item from Intersight. In this section, you will create a policy in the organization that you retrieved in the previous step. Terraform can create any policy that can be created by the Intersight API. You will focus on NTP policy as it has multiple parameters yet is self-contained.
 Create an NTP policy You will use the Terraform resource block to define a new policy.</description>
     </item>
     
     <item>
       <title>Obtain API keys</title>
-      <link>./basics/api_keys/</link>
+      <link>https://wookie-labs.github.io/iac-workshop-intersight/basics/api_keys/</link>
       <pubDate>Tue, 07 Sep 2021 11:31:57 -0500</pubDate>
       
-      <guid>./basics/api_keys/</guid>
+      <guid>https://wookie-labs.github.io/iac-workshop-intersight/basics/api_keys/</guid>
       <description>Terraform will use an API key to authenticate to Intersight on your behalf. In this section of the lab, you will generate an API key in Intersight and set environment variables on the Windows host so that Terraform can use that API key.
 Obtain Intersight API keys You must generate an API key for your user account. Perform the following from within the Intersight user interface.
 Steps:
@@ -123,48 +123,48 @@ Steps:
     
     <item>
       <title>Destroy operations</title>
-      <link>./open_source/destroy/</link>
+      <link>https://wookie-labs.github.io/iac-workshop-intersight/open_source/destroy/</link>
       <pubDate>Thu, 09 Sep 2021 13:42:13 -0500</pubDate>
       
-      <guid>./open_source/destroy/</guid>
+      <guid>https://wookie-labs.github.io/iac-workshop-intersight/open_source/destroy/</guid>
       <description>One of the advantages of Terraform and other IaC tools is its ability to remove the infastructure that it created. Some tools, like Ansible, require the administrator to write the delete plan, which is often just as complex as the create plan. Terraform uses the state file and the configuration you&amp;rsquo;ve already written to delete resources that it created, and it knows how to do it in the correct sequence.</description>
     </item>
     
     <item>
       <title>Configuration Blocks</title>
-      <link>./terraform_primer/configuration_files/</link>
+      <link>https://wookie-labs.github.io/iac-workshop-intersight/terraform_primer/configuration_files/</link>
       <pubDate>Wed, 22 Sep 2021 08:33:59 -0500</pubDate>
       
-      <guid>./terraform_primer/configuration_files/</guid>
+      <guid>https://wookie-labs.github.io/iac-workshop-intersight/terraform_primer/configuration_files/</guid>
       <description>Resources Resources are the most important element in the Terraform language. Each resource block describes one or more infrastructure objects, such as an Intersight NTP policy, server profile, identity pool, AWS virtual network, compute instance, or high-level components such as DNS records. A resource block is also referred to as managed resource as Terraform is managing the configuration of that infrastructure object.
 A resource block in a .tf config file declares a resource of a given type e.</description>
     </item>
     
     <item>
       <title>Rollback</title>
-      <link>./tf_cloud/rollback/</link>
+      <link>https://wookie-labs.github.io/iac-workshop-intersight/tf_cloud/rollback/</link>
       <pubDate>Wed, 08 Sep 2021 14:14:35 -0500</pubDate>
       
-      <guid>./tf_cloud/rollback/</guid>
+      <guid>https://wookie-labs.github.io/iac-workshop-intersight/tf_cloud/rollback/</guid>
       <description>Sometimes mistakes are made. In the previous section of the lab, you committed a change to disable an NTP policy. If this had been a mistake, it would be trivial for you to change the configuration back to enabled=true and commit the change. If there had been dozens of changes, it would be more difficult to manually undo each change. In this section you will learn to rollback the previous commit using git revert through vsCode.</description>
     </item>
     
     <item>
       <title>Employ variables</title>
-      <link>./open_source/variables/</link>
+      <link>https://wookie-labs.github.io/iac-workshop-intersight/open_source/variables/</link>
       <pubDate>Wed, 08 Sep 2021 13:55:06 -0500</pubDate>
       
-      <guid>./open_source/variables/</guid>
+      <guid>https://wookie-labs.github.io/iac-workshop-intersight/open_source/variables/</guid>
       <description>It is a good idea to start implementing variables before the configuration gets too large. Variables are helpful when a value is repeated in multiple places in your configuration but also when you don&amp;rsquo;t know the value at the time of writing the HCL (it will be supplied later by the person using the code).
 Create variable definitions In this section of the lab, you will define the variables that will be used for the remainder of the lab.</description>
     </item>
     
     <item>
       <title>Create alias</title>
-      <link>./basics/create_alias/</link>
+      <link>https://wookie-labs.github.io/iac-workshop-intersight/basics/create_alias/</link>
       <pubDate>Tue, 07 Sep 2021 11:31:34 -0500</pubDate>
       
-      <guid>./basics/create_alias/</guid>
+      <guid>https://wookie-labs.github.io/iac-workshop-intersight/basics/create_alias/</guid>
       <description>Most developers tire of typing the command terraform repeatedly and prefer to abbreviate that as tf. In this section of the lab, you will create an alias on the Windows 10 host to do the same.
 Steps:
  Choose the appropriate syntax below and paste that command into the vsCode terminal. Enter the command tf -version into the vsCode terminal. If you receive a message displaying the running Terraform version, you have successfully created the alias.</description>
@@ -172,20 +172,20 @@ Steps:
     
     <item>
       <title>State Management</title>
-      <link>./terraform_primer/state_management/</link>
+      <link>https://wookie-labs.github.io/iac-workshop-intersight/terraform_primer/state_management/</link>
       <pubDate>Wed, 22 Sep 2021 16:39:04 -0500</pubDate>
       
-      <guid>./terraform_primer/state_management/</guid>
+      <guid>https://wookie-labs.github.io/iac-workshop-intersight/terraform_primer/state_management/</guid>
       <description>As mentioned previously, Terraform&amp;rsquo;s ability to store any infrastructure&amp;rsquo;s configuration into a consistent state format is a key differentiator to how this IaC toolset works. Because state is so important it merits it&amp;rsquo;s own section to explain further.
 Purpose of Terraform State Terraform uses state to document the expected configuration of managed infrastructure. You may wonder if Terraform could work without state by simply re-inspecting the managed resources prior to applying any configuration changes.</description>
     </item>
     
     <item>
       <title>Create another policy</title>
-      <link>./open_source/second_policy/</link>
+      <link>https://wookie-labs.github.io/iac-workshop-intersight/open_source/second_policy/</link>
       <pubDate>Wed, 08 Sep 2021 13:55:06 -0500</pubDate>
       
-      <guid>./open_source/second_policy/</guid>
+      <guid>https://wookie-labs.github.io/iac-workshop-intersight/open_source/second_policy/</guid>
       <description>So far in this lab, you have been copying and pasting either from the lab guide or the online documentation. In this section of the lab, you will create a resource manually but with a lot of help from the Terraform extension for vsCode.
 Enjoy Terraform extension for vsCode The Terraform extension for vsCode is particularly powerful at autocompletion. In this section of the lab, you will explore that.
 Steps:</description>
@@ -193,10 +193,10 @@ Steps:</description>
     
     <item>
       <title>Actions</title>
-      <link>./terraform_primer/actions/</link>
+      <link>https://wookie-labs.github.io/iac-workshop-intersight/terraform_primer/actions/</link>
       <pubDate>Wed, 22 Sep 2021 16:39:42 -0500</pubDate>
       
-      <guid>./terraform_primer/actions/</guid>
+      <guid>https://wookie-labs.github.io/iac-workshop-intersight/terraform_primer/actions/</guid>
       <description>Terraform&amp;rsquo;s primary function is to create, modify, and destroy infrastructure resources to match the desired state described in a Terraform configuration.
 When people refer to &amp;ldquo;running Terraform&amp;rdquo;, they generally mean performing these provisioning actions in order to affect real infrastructure objects. The Terraform binary has many other subcommands for a wide variety of administrative actions, but these basic provisioning tasks are the core of Terraform.
 Terraform&amp;rsquo;s provisioning workflow relies on four commands: init, plan, apply, and destroy.</description>
@@ -204,29 +204,29 @@ Terraform&amp;rsquo;s provisioning workflow relies on four commands: init, plan,
     
     <item>
       <title>Terraform Offerings</title>
-      <link>./terraform_primer/terraform_offerings/</link>
+      <link>https://wookie-labs.github.io/iac-workshop-intersight/terraform_primer/terraform_offerings/</link>
       <pubDate>Wed, 22 Sep 2021 16:40:00 -0500</pubDate>
       
-      <guid>./terraform_primer/terraform_offerings/</guid>
+      <guid>https://wookie-labs.github.io/iac-workshop-intersight/terraform_primer/terraform_offerings/</guid>
       <description>Terraform is available in three different offerings from Hashicorp today: Terraform OSS, Terraform Enterprise, and Terraform Cloud. Which offering you choose will depend upon things like your operational team size, security needs, version control support, governance needs, etc. Below we will discuss each Terraform offering.
 Terraform OSS (CLI) As mentioned in the Terraform Primer  Core Concepts  section, the core of Terraform&amp;rsquo;s capability is distributed as a standalone executable called Terraform OSS (Open Source Software).</description>
     </item>
     
     <item>
       <title>Guacamole</title>
-      <link>./resources/guacamole/</link>
+      <link>https://wookie-labs.github.io/iac-workshop-intersight/resources/guacamole/</link>
       <pubDate>Tue, 07 Sep 2021 10:35:18 -0500</pubDate>
       
-      <guid>./resources/guacamole/</guid>
+      <guid>https://wookie-labs.github.io/iac-workshop-intersight/resources/guacamole/</guid>
       <description>This page contains some background about using Guacamole properly.</description>
     </item>
     
     <item>
       <title>Terraform background</title>
-      <link>./resources/tf_background/</link>
+      <link>https://wookie-labs.github.io/iac-workshop-intersight/resources/tf_background/</link>
       <pubDate>Tue, 07 Sep 2021 10:35:18 -0500</pubDate>
       
-      <guid>./resources/tf_background/</guid>
+      <guid>https://wookie-labs.github.io/iac-workshop-intersight/resources/tf_background/</guid>
       <description>This page contains some background about Terraform providers and modules.
 Definitions Provider Module State file Configuration Configuration file contents Resource Data Output Variables Commands terraform init terraform plan terraform apply terraform destroy </description>
     </item>

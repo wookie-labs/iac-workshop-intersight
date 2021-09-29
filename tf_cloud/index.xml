@@ -2,26 +2,26 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>GitHub &#43; Terraform Cloud on Infrastructure as Code Lab</title>
-    <link>./tf_cloud/</link>
+    <link>https://wookie-labs.github.io/iac-workshop-intersight/tf_cloud/</link>
     <description>Recent content in GitHub &#43; Terraform Cloud on Infrastructure as Code Lab</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 08 Sep 2021 14:11:00 -0500</lastBuildDate><atom:link href="./tf_cloud/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 08 Sep 2021 14:11:00 -0500</lastBuildDate><atom:link href="https://wookie-labs.github.io/iac-workshop-intersight/tf_cloud/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Migrate to VCS</title>
-      <link>./tf_cloud/github_repo/</link>
+      <link>https://wookie-labs.github.io/iac-workshop-intersight/tf_cloud/github_repo/</link>
       <pubDate>Wed, 08 Sep 2021 14:16:05 -0500</pubDate>
       
-      <guid>./tf_cloud/github_repo/</guid>
+      <guid>https://wookie-labs.github.io/iac-workshop-intersight/tf_cloud/github_repo/</guid>
       <description>Push your configuration code to GitHub Recall that one of the early steps you followed in creating the project directory was to clone a repository from GitHub. That means that your current project directory already has a git configuration. You might have noticed that some of your files in vsCode are colored green and have a &amp;ldquo;U&amp;rdquo; next to them as shown in the image below. vsCode is well integrated with git and is highlighting files that are not being tracked by git.</description>
     </item>
     
     <item>
       <title>Push changes to GitHub</title>
-      <link>./tf_cloud/push_changes/</link>
+      <link>https://wookie-labs.github.io/iac-workshop-intersight/tf_cloud/push_changes/</link>
       <pubDate>Wed, 08 Sep 2021 14:15:20 -0500</pubDate>
       
-      <guid>./tf_cloud/push_changes/</guid>
+      <guid>https://wookie-labs.github.io/iac-workshop-intersight/tf_cloud/push_changes/</guid>
       <description>In this section of the lab, you will push a small change to GitHub and confirm that Terraform Cloud automatically starts planning for the configuration change that you made.
 Change the configuration Make a small change to your configuration, commit that change, and push it to GitHub.
 Steps:
@@ -30,10 +30,10 @@ Steps:
     
     <item>
       <title>Rollback</title>
-      <link>./tf_cloud/rollback/</link>
+      <link>https://wookie-labs.github.io/iac-workshop-intersight/tf_cloud/rollback/</link>
       <pubDate>Wed, 08 Sep 2021 14:14:35 -0500</pubDate>
       
-      <guid>./tf_cloud/rollback/</guid>
+      <guid>https://wookie-labs.github.io/iac-workshop-intersight/tf_cloud/rollback/</guid>
       <description>Sometimes mistakes are made. In the previous section of the lab, you committed a change to disable an NTP policy. If this had been a mistake, it would be trivial for you to change the configuration back to enabled=true and commit the change. If there had been dozens of changes, it would be more difficult to manually undo each change. In this section you will learn to rollback the previous commit using git revert through vsCode.</description>
     </item>
     
