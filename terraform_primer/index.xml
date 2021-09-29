@@ -2,56 +2,56 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Terraform Primer on Infrastructure as Code Lab</title>
-    <link>/terraform_primer/</link>
+    <link>./terraform_primer/</link>
     <description>Recent content in Terraform Primer on Infrastructure as Code Lab</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 21 Sep 2021 12:58:54 -0500</lastBuildDate><atom:link href="/terraform_primer/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 21 Sep 2021 12:58:54 -0500</lastBuildDate><atom:link href="./terraform_primer/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Infrastructure as Code</title>
-      <link>/terraform_primer/infrastructure_as_code/</link>
+      <link>./terraform_primer/infrastructure_as_code/</link>
       <pubDate>Tue, 21 Sep 2021 12:54:50 -0500</pubDate>
       
-      <guid>/terraform_primer/infrastructure_as_code/</guid>
+      <guid>./terraform_primer/infrastructure_as_code/</guid>
       <description>Infrastructure as Code (IaC) allows you to document the configuration needs of your infrastructure through a vendor agnostic language vs using a device specific graphical/command line interface. Imagine a sysadmin needs to configure their VCenter/ESXi cluster including data centers, clusters, networks, and VMs. One option would be to click through the GUI to configure each of the required settings. Not only does this take time, but it likely introduces configuration drift as individual settings are configured over the lifetime of the platform.</description>
     </item>
     
     <item>
       <title>Core Concepts</title>
-      <link>/terraform_primer/core_concepts/</link>
+      <link>./terraform_primer/core_concepts/</link>
       <pubDate>Tue, 21 Sep 2021 13:04:01 -0500</pubDate>
       
-      <guid>/terraform_primer/core_concepts/</guid>
+      <guid>./terraform_primer/core_concepts/</guid>
       <description>Configuration Files When managing infrastructure with Terraform, all configuration is written into documents called Configuration files using the Terraform Language, which is Terraform&amp;rsquo;s primary user interface. Terraform’s configuration language is declarative, meaning that it describes the desired end-state for your infrastructure, in contrast to procedural programming languages that require step-by-step instructions to perform tasks (more on this later).
 Terraform language is a rich language designed to be relatively easy for humans to read and write.</description>
     </item>
     
     <item>
       <title>Configuration Blocks</title>
-      <link>/terraform_primer/configuration_files/</link>
+      <link>./terraform_primer/configuration_files/</link>
       <pubDate>Wed, 22 Sep 2021 08:33:59 -0500</pubDate>
       
-      <guid>/terraform_primer/configuration_files/</guid>
+      <guid>./terraform_primer/configuration_files/</guid>
       <description>Resources Resources are the most important element in the Terraform language. Each resource block describes one or more infrastructure objects, such as an Intersight NTP policy, server profile, identity pool, AWS virtual network, compute instance, or high-level components such as DNS records. A resource block is also referred to as managed resource as Terraform is managing the configuration of that infrastructure object.
 A resource block in a .tf config file declares a resource of a given type e.</description>
     </item>
     
     <item>
       <title>State Management</title>
-      <link>/terraform_primer/state_management/</link>
+      <link>./terraform_primer/state_management/</link>
       <pubDate>Wed, 22 Sep 2021 16:39:04 -0500</pubDate>
       
-      <guid>/terraform_primer/state_management/</guid>
+      <guid>./terraform_primer/state_management/</guid>
       <description>As mentioned previously, Terraform&amp;rsquo;s ability to store any infrastructure&amp;rsquo;s configuration into a consistent state format is a key differentiator to how this IaC toolset works. Because state is so important it merits it&amp;rsquo;s own section to explain further.
 Purpose of Terraform State Terraform uses state to document the expected configuration of managed infrastructure. You may wonder if Terraform could work without state by simply re-inspecting the managed resources prior to applying any configuration changes.</description>
     </item>
     
     <item>
       <title>Actions</title>
-      <link>/terraform_primer/actions/</link>
+      <link>./terraform_primer/actions/</link>
       <pubDate>Wed, 22 Sep 2021 16:39:42 -0500</pubDate>
       
-      <guid>/terraform_primer/actions/</guid>
+      <guid>./terraform_primer/actions/</guid>
       <description>Terraform&amp;rsquo;s primary function is to create, modify, and destroy infrastructure resources to match the desired state described in a Terraform configuration.
 When people refer to &amp;ldquo;running Terraform&amp;rdquo;, they generally mean performing these provisioning actions in order to affect real infrastructure objects. The Terraform binary has many other subcommands for a wide variety of administrative actions, but these basic provisioning tasks are the core of Terraform.
 Terraform&amp;rsquo;s provisioning workflow relies on four commands: init, plan, apply, and destroy.</description>
@@ -59,10 +59,10 @@ Terraform&amp;rsquo;s provisioning workflow relies on four commands: init, plan,
     
     <item>
       <title>Terraform Offerings</title>
-      <link>/terraform_primer/terraform_offerings/</link>
+      <link>./terraform_primer/terraform_offerings/</link>
       <pubDate>Wed, 22 Sep 2021 16:40:00 -0500</pubDate>
       
-      <guid>/terraform_primer/terraform_offerings/</guid>
+      <guid>./terraform_primer/terraform_offerings/</guid>
       <description>Terraform is available in three different offerings from Hashicorp today: Terraform OSS, Terraform Enterprise, and Terraform Cloud. Which offering you choose will depend upon things like your operational team size, security needs, version control support, governance needs, etc. Below we will discuss each Terraform offering.
 Terraform OSS (CLI) As mentioned in the Terraform Primer  Core Concepts  section, the core of Terraform&amp;rsquo;s capability is distributed as a standalone executable called Terraform OSS (Open Source Software).</description>
     </item>
