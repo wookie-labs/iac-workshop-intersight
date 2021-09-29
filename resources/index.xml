@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Resources on Infrastructure as Code Lab</title>
+    <link>/resources/</link>
+    <description>Recent content in Resources on Infrastructure as Code Lab</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 07 Sep 2021 10:35:18 -0500</lastBuildDate><atom:link href="/resources/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Guacamole</title>
+      <link>/resources/guacamole/</link>
+      <pubDate>Tue, 07 Sep 2021 10:35:18 -0500</pubDate>
+      
+      <guid>/resources/guacamole/</guid>
+      <description>This page contains some background about using Guacamole properly.</description>
+    </item>
+    
+    <item>
+      <title>Terraform background</title>
+      <link>/resources/tf_background/</link>
+      <pubDate>Tue, 07 Sep 2021 10:35:18 -0500</pubDate>
+      
+      <guid>/resources/tf_background/</guid>
+      <description>This page contains some background about Terraform providers and modules.
+Definitions Provider Module State file Configuration Configuration file contents Resource Data Output Variables Commands terraform init terraform plan terraform apply terraform destroy </description>
+    </item>
+    
+  </channel>
+</rss>

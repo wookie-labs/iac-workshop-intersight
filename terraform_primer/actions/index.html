@@ -1,0 +1,1444 @@
+<!DOCTYPE html>
+<html lang="en" class="js csstransforms3d">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="Hugo 0.88.1" />
+    <meta name="description" content="Cisco IaC Lab">
+<meta name="author" content="Cisco Systems, Inc.">
+
+    <link rel="icon" href="/images/favicon.png" type="image/png">
+
+    <title>Actions :: Infrastructure as Code Lab</title>
+
+    
+    <link href="/css/nucleus.css?1632924933" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1632924933" rel="stylesheet">
+    <link href="/css/hybrid.css?1632924933" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1632924933" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1632924933" rel="stylesheet">
+    <link href="/css/auto-complete.css?1632924933" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1632924933" rel="stylesheet">
+    <link href="/css/theme.css?1632924933" rel="stylesheet">
+    <link href="/css/tabs.css?1632924933" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1632924933" rel="stylesheet">
+    
+    <link href="/css/theme-blue.css?1632924933" rel="stylesheet">
+    
+    
+
+    <script src="/js/jquery-3.3.1.min.js?1632924933"></script>
+
+    <style>
+      :root #header + #content > #left > #rlblock_left{
+          display:none !important;
+      }
+      
+    </style>
+    
+<link href="/css/custom.css" rel="stylesheet">
+<style>
+    :not(div.featherlight-content) > img {
+        cursor: zoom-in !important;
+    }
+    
+     
+    :not(pre) > code.disable-clipboard + span.copy-to-clipboard {
+        display: none;
+    }
+    
+</style>
+<div class="notices warning user-warning"><p>
+    This lab guide is currently <strong>NOT</strong> associated with a pod assignment. To avoid confusion and incomplete documentation please access this lab guide using the URL emailed to you.
+    </p></div>
+
+
+  </head>
+  <body class="" data-url="/terraform_primer/actions/">
+    <nav id="sidebar" class="showVisitedLinks">
+
+
+
+  <div id="header-wrapper">
+    <div id="header">
+      <a id="logo"
+  href='/'>
+  <svg xmlns="http://www.w3.org/2000/svg" style="height:10%;width:100%;" viewBox="0 0 651.27 318.7"><defs><style>.cls-1{fill:#fff;}</style></defs><g id="Layer_2" data-name="Layer 2"><g id="Text"><path class="cls-1" d="M239.33,204.36l-7.39,10.43H221l-9.72-29.71h-8.79v-12.6h19.39l5.8,18.28,11.49-15,12.1,15,3.92-18.28h13.63L258.4,214.79H246.24Z"/><path class="cls-1" d="M311.4,193.87a22.82,22.82,0,0,1-2.9,11.83,18.06,18.06,0,0,1-8.4,7.36A31.89,31.89,0,0,1,287,215.52,31.5,31.5,0,0,1,273.91,213a17.76,17.76,0,0,1-8.28-7.32,23.3,23.3,0,0,1-2.81-11.85,25,25,0,0,1,1.61-9.33,17.8,17.8,0,0,1,4.72-6.79,20.77,20.77,0,0,1,7.62-4.17A33.84,33.84,0,0,1,287,172.16a31.44,31.44,0,0,1,13.1,2.5,18.32,18.32,0,0,1,8.41,7.39A22.76,22.76,0,0,1,311.4,193.87Zm-33.55.11a13.39,13.39,0,0,0,1.83,7.09c1.22,2,3.63,3,7.22,3,2.78,0,4.85-.53,6.23-1.58a6.59,6.59,0,0,0,2.58-3.62,27.59,27.59,0,0,0,.69-4.91,15.09,15.09,0,0,0-2-7.1q-1.79-3-7.53-3Q277.86,183.85,277.85,194Z"/><path class="cls-1" d="M360.53,193.87a22.82,22.82,0,0,1-2.9,11.83,18,18,0,0,1-8.4,7.36,31.89,31.89,0,0,1-13.11,2.46A31.5,31.5,0,0,1,323,213a17.69,17.69,0,0,1-8.27-7.32A23.2,23.2,0,0,1,312,193.87a25,25,0,0,1,1.61-9.33,17.8,17.8,0,0,1,4.72-6.79,20.77,20.77,0,0,1,7.62-4.17,33.88,33.88,0,0,1,10.22-1.42,31.44,31.44,0,0,1,13.1,2.5,18.32,18.32,0,0,1,8.41,7.39A22.76,22.76,0,0,1,360.53,193.87ZM327,194a13.39,13.39,0,0,0,1.83,7.09c1.22,2,3.63,3,7.23,3q4.15,0,6.22-1.58a6.59,6.59,0,0,0,2.58-3.62,27.59,27.59,0,0,0,.69-4.91,15,15,0,0,0-2-7.1q-1.79-3-7.52-3Q327,183.85,327,194Z"/><path class="cls-1" d="M376.32,172.48v13.77L386,172.48h13.77L384,193.63l3.52,4.28a11.28,11.28,0,0,0,9.14,4.28h7v12.6H393.43q-6.45,0-11.78-6.3l-5.33-6.3v12.6H362.55V172.48Z"/><path class="cls-1" d="M403.1,172.48h13.77v42.31H403.1Z"/><path class="cls-1" d="M419.8,214.79V172.48h36.27v12.6h-22.5v2.75H443V196h-9.43v6.15h26.07v12.6Z"/><path class="cls-1" d="M487.47,214.79V185.08h-8.79v-12.6h22.56v29.71h22.91v12.6Z"/><path class="cls-1" d="M521.81,214.79l13.91-42.31h21l14.15,42.31h-16l-2.66-7.62H539.65L537,214.79Zm24.46-32.93-6.06,16.75h11.66Z"/><path class="cls-1" d="M570.29,214.79V172.48h28.86q6.95.06,10.56,2.4t4.38,7.85a9,9,0,0,1-1.78,6.63q-2.05,2.4-6.77,3.95v.12a13.69,13.69,0,0,1,4.28,1.24,12.65,12.65,0,0,1,3.29,2.26,9.58,9.58,0,0,1,2.07,2.94,7.87,7.87,0,0,1,.73,3.23c0,3.34-.86,5.87-2.56,7.58a12.36,12.36,0,0,1-6.6,3.37,49.36,49.36,0,0,1-9.77.74Zm14.59-32.06v6.42h10.26a2.69,2.69,0,0,0,1.78-.89,3.33,3.33,0,0,0,1-2.39,3,3,0,0,0-1.13-2.43,3.18,3.18,0,0,0-1.68-.71Zm0,15.68v7.82h9.41a7.3,7.3,0,0,0,4.25-1,3.31,3.31,0,0,0,1.81-2.82,2.9,2.9,0,0,0-1.48-2.9,8.51,8.51,0,0,0-4.58-1.05Z"/><path class="cls-1" d="M651.27,185.08H641q-7.53-.24-2.23,4.16,9.49,8.32,9.32,16.17t-9.32,9.38h-22.5v-12.6h8.91q8.29.23,2.11-4.63-10.2-9.37-8.67-17.23t9.6-7.85h23.09Z"/></g><g id="Logo"><path d="M6.39,108.43c-.86-1.38-1.34-1-1.92.28a15.43,15.43,0,0,1-3.26,4.73,91,91,0,0,1,3-8.8c1.41-3.17,4.48-4.48,7.68-4.59,2.48-.09,3.56-1.39,4.73-3.12,1.87-2.79,4-5.37,7.58-6l7.75-8-1.29-1.21-4.45,5.4-1.79-.45,10.22-9a12,12,0,0,1,2.92-9.06l-.26,1.28.52.26c1.16-2.61,2.72-5.12,3.36-7.85s.17-5.77.56-8.61c.35-2.5,1.43-4.89,1.76-7.39.23-1.66-.48-3.43-.44-5.15a16,16,0,0,1,.9-4.4c.36-1.1,1.18-2.06,1.6-3.15a91.86,91.86,0,0,0,4-14.68A22.14,22.14,0,0,1,60.62,3.55,25.05,25.05,0,0,1,77.27.38c2.87.42,6-.83,8.8-.2a16,16,0,0,1,7.15,4.18c3.65,3.54,7.38,7.2,8.32,12.6,4.3,1.62,2.87,5.12,2.87,8.27A6.54,6.54,0,0,0,105.84,29c3.91,4.84,2,10,1.23,15.2a99.81,99.81,0,0,0-1.18,11.82c-.11,4.1,2.88,6.6,6,8.42s3.26,4.18,3.39,7.18l-7-9-1,.75c2.25,3.47,4.67,6.84,6.68,10.44,1,1.83,1.26,4.1,2,6.13a12.06,12.06,0,0,0,1.31,2.45c1.83,2.88,3.64,5.79,5.57,8.61a10.33,10.33,0,0,0,2.94,3.27c5.06,2.92,7.79,7.8,10.38,12.6,1.29,2.38,2.54,6.2,1.51,8.13-2.38,4.43-.94,8.79-.83,12.92.21,7.54,1.95,15,3,21.93l-1.76-2.6c-.08.46-.29.85-.17,1.08,1.95,3.89.73,8.07,1.15,12.09a31.43,31.43,0,0,0,1,3.19c.44,2,2.25,3.83.62,6.28-.47.7.27,2.7,1,3.63,1.52,1.82,3.86,3.05,5.08,5s1.7,4.7,2.49,7.08l-1.2.39L146,180.26c-.2,1.54-.33,2.53-.48,3.67l-3.94-8.46c-1.47,4.38-.77,8.36.38,13,1.08,4.38,4.68,5.92,6.08,9.37a12.23,12.23,0,0,1,1.35,3.18l-5.81-4.4,1.27,4.43-.83.28-2-4.55L141,197c.52,2.9,1.38,5.8,1.43,8.72,0,2,1.38,4.5-1.14,6.24a2.5,2.5,0,0,0-.63,2.37c2.35,4.31-.06,9,1.38,13.39-3.75,5,.19,10-.33,15-.19-.73-.42-1.45-.58-2.18a4.72,4.72,0,0,0-.84-2.2c-.7,9.17,1.4,18.11,2.14,27.21L140,254.36l-.92-.05c-.14,6.1.73,12.41-3.15,17.75l2.11-6.79c-3.91,2.22-3.45,5.51-3.1,8,.5,3.67-1.73,5.53-3.42,8,.28-4.47.55-8.73.83-13-1.86,3.92-.86,8.59-4.19,11.58v-11c-3.62,4.6-7.29,8.45-9.91,12.91-1.47,2.5-1.48,6-1.64,9.08a116.75,116.75,0,0,0,0,15.08c.21,2.83,1.55,5.58,2,8.61l-2.7-4c.46,3,.82,5.34,1.22,8H68.64V298.32c-2.07,1.68-2.29,3.72-1.52,6,.69,2,.77,3.62-1.67,4.44-.33.1-.59.79-.65,1.24-.4,2.86-.73,5.72-1.1,8.73H15.43c3.08-7.77,6.74-15.21,4.4-24.47l-2,4.35-.47-.14c.62-2,1.34-4.07,1.82-6.14a7.38,7.38,0,0,0,.16-3.69,19.8,19.8,0,0,0-2.3-4l-2.69,2.68c.09-1.91.53-4.25.2-6.47A25.19,25.19,0,0,0,12.3,274a67.83,67.83,0,0,0-3.89-6.39c-3,5.16-4.14,10.21-.7,15.66l-1.28.21c-.7-1.13-1.86-2.21-2-3.42a63.37,63.37,0,0,1,.25-19.39A84,84,0,0,0,5.26,252l-2.09-.76a32,32,0,0,0,1.53-18.4c-.17-.83-.4-2,0-2.55,2.87-3.64-.53-7.41.94-11l-.9-.39-.8,1.4a4.23,4.23,0,0,1-.08-1c.68-3.75,1.52-7.49,2-11.27a23.23,23.23,0,0,0-.43-5v-9.77l-1.74,1.58c1.91-4.2,2.9-8.5.86-13.3l-2,4.92-.41-.1c.69-2.69.75-5.79,2.21-8,2.17-3.23.93-5.87-.07-8.74a31.88,31.88,0,0,0-1.83-3.68L.58,168.72l3-14.51-3,.79L0,154.33c5-3.12,3-8.14,3.76-12.38.43-2.47.08-5.06.08-8.22l-1.13,1.93-.74-.2C3,131,4,126.52,5.16,121.65l-2.59,1.61c4.17-4.24,5-9.32,3.74-14.93l1.42,2.86,5.08-9.74C8.34,102.54,6.56,104.52,6.39,108.43ZM108.66,153l-5.3-2.87c-3,5.75-5.89,11.09-8.72,16.41,5,3.48,5.47,3.43,8-1.47C104.66,161.27,106.49,157.39,108.66,153Zm-17.13,12.4c2.21-5.24,4.14-10.24,6.43-15.08,1.46-3.08.12-4-2.69-4.5L86.73,163Zm29.14-51.86L113.61,130l4.09,1.26c2.7-5,5.36-10,8.12-15.13ZM110.92,109l-6.87,16.48.64.87c1-.26,2.52-.21,2.9-.85,2.92-4.86,5.61-9.85,8.46-15Zm-9,20.53c-.46,1.17-.76,2-1.11,2.81s-.76,1.85-1.21,2.75c-2.56,5.08-1.14,4.33,2.69,5.68l4.68-8.83ZM79.54,181.15c-1.29,2.15-2.29,4-3.47,5.77-2.53,3.77-2.48,4,1.94,5.87l5.65-8.39ZM91.2,189.6l-4.28-3.42c-1.25,2.36-2.11,4.33-3.28,6.09-2,3-1.09,4.68,2.54,5.68C87.79,195.28,89.43,192.53,91.2,189.6Zm20.2-43.87,4.68-8.6-4.5-2.44c-1.64,3.09-3.09,5.84-4.6,8.7ZM78.75,201.54l-6.15,9.4,3.72,1.86,6.47-9.66ZM68.3,208l6.29-9.66-3.59-2-6,9.73Zm25.85-25.63L98.66,175c-1.74-.77-4.34-2.32-4.64-2-1.54,1.87-2.5,4.22-3.77,6.6ZM66.26,225.9c2.21-2.77,4.19-5.26,6.3-7.89l-3.4-2-5.63,8.19Zm-4.12-14.29c-5.58,6.18-6.09,8-2.54,9.66l4.91-7.73ZM85.07,169c-1,2.18-1.84,4.18-2.81,6.4l3.1,1.71,3.78-6.29ZM56.65,225.51,53.85,224l-3.45,5L53,231.2C54.24,229.23,55.36,227.49,56.65,225.51Zm2.4,9.63c1.38-1.86,2.64-3.54,4-5.38l-2.57-1.83c-1.31,1.9-2.5,3.62-3.79,5.47Zm-11.32-1.75c-3.79,5-3.84,5.21-1.85,7.1l4.06-5.09Zm7,4.07-1-.13a52.86,52.86,0,0,0-3.5,4,7.61,7.61,0,0,0-.71,2.57,7,7,0,0,0,2.45-.86,14.22,14.22,0,0,0,2.73-3.35C55,239.14,54.71,238.22,54.71,237.46ZM41.23,250.85a18.32,18.32,0,0,0,2.3-3.81c.1-.32-1.73-1.73-2-1.57A5.14,5.14,0,0,0,39.51,248C39.34,248.55,40.34,249.45,41.23,250.85Z"/><path class="cls-1" d="M108.66,153c-2.17,4.4-4,8.28-6,12.07-2.57,4.9-3,4.95-8,1.47,2.83-5.32,5.67-10.66,8.72-16.41Z"/><path class="cls-1" d="M91.53,165.39,86.73,163l8.54-17.22c2.81.54,4.15,1.42,2.69,4.5C95.67,155.15,93.74,160.15,91.53,165.39Z"/><path class="cls-1" d="M120.67,113.53l5.15,2.56c-2.76,5.14-5.42,10.11-8.12,15.13L113.61,130Z"/><path class="cls-1" d="M110.92,109l5.13,1.54c-2.85,5.11-5.54,10.1-8.46,15-.38.64-1.9.59-2.9.85l-.64-.87Z"/><path class="cls-1" d="M102,129.52l5.05,2.41-4.68,8.83c-3.83-1.35-5.25-.6-2.69-5.68.45-.9.83-1.82,1.21-2.75S101.5,130.69,102,129.52Z"/><path class="cls-1" d="M79.54,181.15l4.12,3.25L78,192.79c-4.42-1.84-4.47-2.1-1.94-5.87C77.25,185.17,78.25,183.3,79.54,181.15Z"/><path class="cls-1" d="M91.2,189.6c-1.77,2.93-3.41,5.68-5,8.35-3.63-1-4.52-2.69-2.54-5.68,1.17-1.76,2-3.73,3.28-6.09Z"/><path class="cls-1" d="M111.4,145.73,107,143.39c1.51-2.86,3-5.61,4.6-8.7l4.5,2.44Z"/><path class="cls-1" d="M78.75,201.54l4,1.6-6.47,9.66-3.72-1.86Z"/><path class="cls-1" d="M68.3,208,65.05,206l6-9.73,3.59,2Z"/><path class="cls-1" d="M94.15,182.32l-3.9-2.72c1.27-2.38,2.23-4.73,3.77-6.6.3-.36,2.9,1.19,4.64,2Z"/><path class="cls-1" d="M66.26,225.9l-2.73-1.72L69.16,216l3.4,2C70.45,220.64,68.47,223.13,66.26,225.9Z"/><path class="cls-1" d="M62.14,211.61l2.37,1.93-4.91,7.73C56.05,219.66,56.56,217.79,62.14,211.61Z"/><path class="cls-1" d="M85.07,169l4.07,1.82-3.78,6.29-3.1-1.71C83.23,173.21,84.11,171.21,85.07,169Z"/><path class="cls-1" d="M56.65,225.51c-1.29,2-2.41,3.72-3.68,5.69L50.4,229l3.45-5Z"/><path class="cls-1" d="M59.05,235.14l-2.34-1.74c1.29-1.85,2.48-3.57,3.79-5.47l2.57,1.83C61.69,231.6,60.43,233.28,59.05,235.14Z"/><path class="cls-1" d="M47.73,233.39l2.21,2-4.06,5.09C43.89,238.6,43.94,238.39,47.73,233.39Z"/><path class="cls-1" d="M54.71,237.46c0,.76.28,1.68-.05,2.24a14.22,14.22,0,0,1-2.73,3.35,7,7,0,0,1-2.45.86,7.61,7.61,0,0,1,.71-2.57,52.86,52.86,0,0,1,3.5-4Z"/><path class="cls-1" d="M41.23,250.85c-.89-1.4-1.89-2.3-1.72-2.85a5.14,5.14,0,0,1,2.07-2.53c.22-.16,2.05,1.25,2,1.57A18.32,18.32,0,0,1,41.23,250.85Z"/></g><g id="Cisco_Logo" data-name="Cisco Logo"><g id="Layer_2-2" data-name="Layer 2"><g id="Layer_1-2" data-name="Layer 1-2"><path class="cls-1" d="M264.82,119.71a20.55,20.55,0,0,1,3-5,6.38,6.38,0,0,1,7.46-.91,6.69,6.69,0,0,1,4.13,6.3v15.44a7.13,7.13,0,0,1-5.91,7,7.26,7.26,0,0,1-8.29-5,16.67,16.67,0,0,1-.42-1.66Z"/><path class="cls-1" d="M358.85,111.7v38.13A7.19,7.19,0,0,1,345,152.56a10,10,0,0,1-.63-3.55V74.21a7.39,7.39,0,0,1,4.4-7.49,7.24,7.24,0,0,1,8.12,1.91,7.48,7.48,0,0,1,2,5.34C358.66,86.56,358.85,99.15,358.85,111.7Z"/><path class="cls-1" d="M517.23,111.7v38a6.88,6.88,0,0,1-4.46,6.82,7.14,7.14,0,0,1-7.88-1.61,7.64,7.64,0,0,1-2.06-5.64V73.7a7.19,7.19,0,1,1,14.37-.34v16.9Z"/><path class="cls-1" d="M556.85,118.07v17.05a7,7,0,0,1-6.44,7.53,6.77,6.77,0,0,1-.78,0,7.12,7.12,0,0,1-7.32-6.93,5.76,5.76,0,0,1,0-.59V100.84a7.27,7.27,0,0,1,7-7.54h.37a7.16,7.16,0,0,1,7.16,7.15v.37C556.88,106.58,556.85,112.31,556.85,118.07Z"/><path class="cls-1" d="M319.05,118.16V135a7.07,7.07,0,0,1-6.47,7.62l-.5,0a7.17,7.17,0,0,1-7.56-6.74q0-.39,0-.78V100.84a7.37,7.37,0,0,1,7.19-7.55H312a7.19,7.19,0,0,1,7.11,7.27c0,.11,0,.23,0,.34Z"/><path class="cls-1" d="M398.28,118.16V135a7.25,7.25,0,0,1-14.5,0h0V100.72a7.34,7.34,0,0,1,7.12-7.55h.28a7.2,7.2,0,0,1,7.12,7.26c0,.16,0,.32,0,.47Z"/><path class="cls-1" d="M477.59,118v17.77a7.18,7.18,0,0,1-13.62,3,10.41,10.41,0,0,1-.85-4V101.18a7.32,7.32,0,0,1,6.71-7.87,7.41,7.41,0,0,1,4.27,1,7.07,7.07,0,0,1,3.61,6.49V118Z"/><path class="cls-1" d="M596.43,127.9v7.43a7.22,7.22,0,1,1-14.44.39V120.1a7.22,7.22,0,0,1,14.44.52h0Z"/><path class="cls-1" d="M437.92,128.08v7.43a7.22,7.22,0,1,1-14.44.21h0c-.18-5.15-.15-10.31,0-15.43a7.25,7.25,0,0,1,14.47.15C438,123,437.92,125.53,437.92,128.08Z"/></g></g></g></g></svg>
+</a>
+    </div>
+    
+        <div class="searchbox">
+    <label for="search-by"><i class="fas fa-search"></i></label>
+    <input data-search-input id="search-by" type="search" placeholder="Search...">
+    <span data-search-clear=""><i class="fas fa-times"></i></span>
+</div>
+
+<script type="text/javascript" src="/js/lunr.min.js?1632924933"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1632924933"></script>
+<script type="text/javascript">
+    
+        var baseurl = "\/";
+    
+</script>
+<script type="text/javascript" src="/js/search.js?1632924933"></script>
+
+    
+  </div>
+  
+
+    <div class="highlightable">
+    <ul class="topics">
+
+        
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/terraform_primer/" title="Terraform Primer" class="dd-item
+        parent
+        
+        
+        ">
+      <a href="/terraform_primer/">
+          <b>1. </b>Terraform Primer
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/terraform_primer/infrastructure_as_code/" title="Infrastructure as Code" class="dd-item ">
+        <a href="/terraform_primer/infrastructure_as_code/">
+        Infrastructure as Code
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/terraform_primer/core_concepts/" title="Core Concepts" class="dd-item ">
+        <a href="/terraform_primer/core_concepts/">
+        Core Concepts
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/terraform_primer/configuration_files/" title="Configuration Blocks" class="dd-item ">
+        <a href="/terraform_primer/configuration_files/">
+        Configuration Blocks
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/terraform_primer/state_management/" title="State Management" class="dd-item ">
+        <a href="/terraform_primer/state_management/">
+        State Management
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/terraform_primer/actions/" title="Actions" class="dd-item active">
+        <a href="/terraform_primer/actions/">
+        Actions
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/terraform_primer/terraform_offerings/" title="Terraform Offerings" class="dd-item ">
+        <a href="/terraform_primer/terraform_offerings/">
+        Terraform Offerings
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/basics/" title="Getting started" class="dd-item
+        
+        
+        
+        ">
+      <a href="/basics/">
+          <b>2. </b>Getting started
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/basics/verify_environment/" title="Verify connectivity" class="dd-item ">
+        <a href="/basics/verify_environment/">
+        Verify connectivity
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/basics/vscode/" title="Configure the IDE" class="dd-item ">
+        <a href="/basics/vscode/">
+        Configure the IDE
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/basics/api_keys/" title="Obtain API keys" class="dd-item ">
+        <a href="/basics/api_keys/">
+        Obtain API keys
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/basics/create_alias/" title="Create alias" class="dd-item ">
+        <a href="/basics/create_alias/">
+        Create alias
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/open_source/" title="Terraform open source" class="dd-item
+        
+        
+        
+        ">
+      <a href="/open_source/">
+          <b>3. </b>Terraform open source
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/open_source/first_plan/" title="Basic validation" class="dd-item ">
+        <a href="/open_source/first_plan/">
+        Basic validation
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/open_source/ntp_policy/" title="Create a policy" class="dd-item ">
+        <a href="/open_source/ntp_policy/">
+        Create a policy
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/open_source/destroy/" title="Destroy operations" class="dd-item ">
+        <a href="/open_source/destroy/">
+        Destroy operations
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/open_source/variables/" title="Employ variables" class="dd-item ">
+        <a href="/open_source/variables/">
+        Employ variables
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/open_source/second_policy/" title="Create another policy" class="dd-item ">
+        <a href="/open_source/second_policy/">
+        Create another policy
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/remote_cli/" title="Terraform remote CLI" class="dd-item
+        
+        
+        
+        ">
+      <a href="/remote_cli/">
+          <b>4. </b>Terraform remote CLI
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/remote_cli/specify_remote/" title="Change backend" class="dd-item ">
+        <a href="/remote_cli/specify_remote/">
+        Change backend
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/remote_cli/configure_tfcloud/" title="Move variables to the cloud" class="dd-item ">
+        <a href="/remote_cli/configure_tfcloud/">
+        Move variables to the cloud
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/tf_cloud/" title="GitHub &#43; Terraform Cloud" class="dd-item
+        
+        
+        
+        ">
+      <a href="/tf_cloud/">
+          <b>5. </b>GitHub &#43; Terraform Cloud
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/tf_cloud/github_repo/" title="Migrate to VCS" class="dd-item ">
+        <a href="/tf_cloud/github_repo/">
+        Migrate to VCS
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/tf_cloud/push_changes/" title="Push changes to GitHub" class="dd-item ">
+        <a href="/tf_cloud/push_changes/">
+        Push changes to GitHub
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/tf_cloud/rollback/" title="Rollback" class="dd-item ">
+        <a href="/tf_cloud/rollback/">
+        Rollback
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/resources/" title="Resources" class="dd-item
+        
+        
+        
+        ">
+      <a href="/resources/">
+          Resources
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/resources/guacamole/" title="Guacamole" class="dd-item ">
+        <a href="/resources/guacamole/">
+        Guacamole
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/resources/tf_background/" title="Terraform background" class="dd-item ">
+        <a href="/resources/tf_background/">
+        Terraform background
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+          
+        
+    </ul>
+
+    
+    
+
+    
+    <section id="prefooter">
+      <hr/>
+      <ul>
+      
+
+      
+        <li><a class="padding" href="#" data-clear-history-toggle=""><i class="fas fa-history fa-fw"></i> Clear History</a></li>
+      
+      </ul>
+    </section>
+    
+    <section id="footer">
+      <p>Created by <strong>Doron Chosnek</strong> and <strong>Brandon Beck</strong></p>
+
+    </section>
+  </div>
+</nav>
+
+
+
+
+        <section id="body">
+        <div id="overlay"></div>
+        <div class="padding highlightable">
+              
+              <div>
+                <div id="top-bar">
+                
+                
+                <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                    <span id="sidebar-toggle-span">
+                        <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
+                          <i class="fas fa-bars"></i>
+                        </a>
+                    </span>
+                  
+                  <span id="toc-menu"><i class="fas fa-list-alt"></i></span>
+                  
+                  <span class="links">
+                 
+                 
+                    
+          
+          
+            
+            
+          
+          
+            
+            
+          
+          
+            <a href='/'>IaC Fundamentals with Intersight</a> > <a href='/terraform_primer/'>Terraform Primer</a> > Actions
+          
+        
+          
+        
+          
+        
+                 
+                  </span>
+                </div>
+                
+                    <div class="progress">
+    <div class="wrapper">
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#initialization">Initialization</a></li>
+    <li><a href="#planning">Planning</a></li>
+    <li><a href="#applying">Applying</a></li>
+    <li><a href="#destroying">Destroying</a></li>
+    <li><a href="#moving-forward">Moving Forward</a></li>
+  </ul>
+</nav>
+    </div>
+</div>
+
+                
+              </div>
+            </div>
+            
+        <div id="head-tags">
+        
+        </div>
+        
+        <div id="body-inner">
+          
+            <h1>
+              
+              Actions
+            </h1>
+          
+
+        
+
+
+<p>Terraform&rsquo;s primary function is to create, modify, and destroy infrastructure resources to match the desired state described in a Terraform configuration.</p>
+<p>When people refer to &ldquo;running Terraform&rdquo;, they generally mean performing these provisioning actions in order to affect real infrastructure objects. The Terraform binary has many other subcommands for a wide variety of administrative actions, but these basic provisioning tasks are the core of Terraform.</p>
+<p>Terraform&rsquo;s provisioning workflow relies on four commands: 
+<code class="disable-clipboard">init</code>, 
+<code class="disable-clipboard">plan</code>, 
+<code class="disable-clipboard">apply</code>, and 
+<code class="disable-clipboard">destroy</code>. All of these commands require an initialized working directory, and all of them act only upon the currently selected directory/workspace.</p>
+<h2 id="initialization">Initialization</h2>
+<p>The 
+<code class="disable-clipboard">terraform init</code> command is used to initialize a working directory containing Terraform configuration files. This is the first command that should be run after writing a new Terraform configuration or cloning an existing one from version control. It is safe to run this command multiple times.</p>
+<p>Most Terraform providers are published separately from Terraform as plugins. During init, Terraform searches the configuration for both direct and indirect references to providers and attempts to install the plugins for those providers.</p>
+<p>For providers that are published in either the public 
+<a href="https://registry.terraform.io/" target="_blank">Terraform Registry</a> or in a third-party provider registry, 
+<code class="disable-clipboard">terraform init</code> will automatically find, download, and install the necessary provider plugins.</p>
+<h2 id="planning">Planning</h2>
+<p>The 
+<code class="disable-clipboard">terraform plan</code> command evaluates a Terraform configuration to determine the desired state of all the resources it declares, then compares that desired state to the real infrastructure objects being managed with the current working directory and workspace. It uses state data to determine which real objects correspond to which declared resources, and checks the current state of each resource using the relevant infrastructure provider&rsquo;s API.</p>
+<p>Once it has determined the difference between the current state and the desired state, 
+<code class="disable-clipboard">terraform plan</code> presents a description of the changes necessary to achieve the desired state. It does not perform any actual changes to real world infrastructure objects; it only presents a plan for making changes.</p>
+<p>Plans are usually run to validate configuration changes and confirm that the resulting actions are as expected. However, 
+<code class="disable-clipboard">terraform plan</code> can also save its plan as a runnable artifact, which 
+<code class="disable-clipboard">terraform apply</code> can use to carry out those exact changes.</p>
+<h2 id="applying">Applying</h2>
+<p>The 
+<code class="disable-clipboard">terraform apply</code> command performs a plan just like 
+<code class="disable-clipboard">terraform plan</code> does, but then actually carries out the planned changes to each resource using the relevant infrastructure provider&rsquo;s API. It asks for confirmation from the user before making any changes, unless it was explicitly told to skip approval.</p>
+<p>By default, 
+<code class="disable-clipboard">terraform apply</code> performs a fresh plan right before applying changes, and displays the plan to the user when asking for confirmation. However, it can also accept a plan file produced by 
+<code class="disable-clipboard">terraform plan</code> in lieu of running a new plan. You can use this to reliably perform an exact set of pre-approved changes, even if the configuration or the state of the real infrastructure has changed in the minutes since the original plan was created.</p>
+<h2 id="destroying">Destroying</h2>
+<p>The 
+<code class="disable-clipboard">terraform destroy</code> command destroys all of the resources being managed by the current working directory and workspace, using state data to determine which real world objects correspond to managed resources. Like 
+<code class="disable-clipboard">terraform apply</code>, it asks for confirmation before proceeding.</p>
+<p>A destroy behaves exactly like deleting every resource from the configuration and then running an apply, except that it doesn&rsquo;t require editing the configuration. This is more convenient if you intend to provision similar resources at a later date.</p>
+<h2 id="moving-forward">Moving Forward</h2>
+<p>You have now learned how to create, execute and read configuration using Terraform.  Lastly, we will look at the various consumption models Hashicorp offers for Terraform.</p>
+
+
+<footer class="footline">
+	
+</footer>
+
+        
+        </div>
+        
+
+      </div>
+
+    <div id="navigation">
+        
+        
+
+        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+            
+        
+
+        
+
+
+	 
+	 
+		
+			<a class="nav nav-prev" href="/terraform_primer/state_management/" title="State Management"> <i class="fa fa-chevron-left"></i></a>
+		
+		
+			<a class="nav nav-next" href="/terraform_primer/terraform_offerings/" title="Terraform Offerings" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+		
+	
+    </div>
+
+    </section>
+
+    <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
+      <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
+    </div>
+    <script src="/js/clipboard.min.js?1632924933"></script>
+    <script src="/js/perfect-scrollbar.min.js?1632924933"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1632924933"></script>
+    <script src="/js/jquery.sticky.js?1632924933"></script>
+    <script src="/js/featherlight.min.js?1632924933"></script>
+    <script src="/js/highlight.pack.js?1632924933"></script>
+    <script>hljs.highlightAll();</script>
+    <script src="/js/modernizr.custom-3.6.0.js?1632924933"></script>
+    <script src="/js/learn.js?1632924933"></script>
+    <script src="/js/hugo-learn.js?1632924933"></script>
+    
+    
+<script type="text/javascript" src="/js/terraform.js?1632924933"></script>
+<script type="text/javascript">
+    hljs.registerLanguage('terraform', window.hljsDefineTerraform);
+    hljs.highlightAll();
+    hljs.configure({
+        ignoreUnescapedHTML: true
+    })
+</script>
+<script type="text/javascript" src="/js/user_navigation.js?1632924933"></script>
+  </body>
+</html>
+
