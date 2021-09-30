@@ -81,6 +81,30 @@ div.highlight table td:last-of-type pre code {
     border-bottom-left-radius: 0%;
 }
 
+span.hidden {
+    display: none !important;
+}
+span.api_key {
+    font-size: 16px;
+    /* font-weight: bold; */
+    margin-left: 10px;
+}
+button.api-button {
+    background-color: #F44336;
+    color: white;
+}
+button.api-button:hover {
+    background-color: #D32F2F !important;
+}
+span.api-key-placeholder {
+    border: 1px solid rgb(97, 97, 97);
+    padding: 4px 12px 4px 8px;
+    border-top-left-radius: 4px !important;
+    border-bottom-left-radius: 4px !important;
+    width: 100%;
+    font-family: "Consolas", menlo, monospace;
+    word-break: break-all;
+}
 /* img:hover {
     transition: transform .2s;
     transform: scale(2.0);

@@ -12,22 +12,22 @@
     <title>Create an Intersight policy :: Infrastructure as Code Lab</title>
 
     
-    <link href="/iac-workshop-intersight/css/nucleus.css?1633022284" rel="stylesheet">
-    <link href="/iac-workshop-intersight/css/fontawesome-all.min.css?1633022284" rel="stylesheet">
-    <link href="/iac-workshop-intersight/css/hybrid.css?1633022284" rel="stylesheet">
-    <link href="/iac-workshop-intersight/css/featherlight.min.css?1633022284" rel="stylesheet">
-    <link href="/iac-workshop-intersight/css/perfect-scrollbar.min.css?1633022284" rel="stylesheet">
-    <link href="/iac-workshop-intersight/css/auto-complete.css?1633022284" rel="stylesheet">
-    <link href="/iac-workshop-intersight/css/atom-one-dark-reasonable.css?1633022284" rel="stylesheet">
-    <link href="/iac-workshop-intersight/css/theme.css?1633022284" rel="stylesheet">
-    <link href="/iac-workshop-intersight/css/tabs.css?1633022284" rel="stylesheet">
-    <link href="/iac-workshop-intersight/css/hugo-theme.css?1633022284" rel="stylesheet">
+    <link href="/iac-workshop-intersight/css/nucleus.css?1633037185" rel="stylesheet">
+    <link href="/iac-workshop-intersight/css/fontawesome-all.min.css?1633037185" rel="stylesheet">
+    <link href="/iac-workshop-intersight/css/hybrid.css?1633037185" rel="stylesheet">
+    <link href="/iac-workshop-intersight/css/featherlight.min.css?1633037185" rel="stylesheet">
+    <link href="/iac-workshop-intersight/css/perfect-scrollbar.min.css?1633037185" rel="stylesheet">
+    <link href="/iac-workshop-intersight/css/auto-complete.css?1633037185" rel="stylesheet">
+    <link href="/iac-workshop-intersight/css/atom-one-dark-reasonable.css?1633037185" rel="stylesheet">
+    <link href="/iac-workshop-intersight/css/theme.css?1633037185" rel="stylesheet">
+    <link href="/iac-workshop-intersight/css/tabs.css?1633037185" rel="stylesheet">
+    <link href="/iac-workshop-intersight/css/hugo-theme.css?1633037185" rel="stylesheet">
     
-    <link href="/iac-workshop-intersight/css/theme-blue.css?1633022284" rel="stylesheet">
+    <link href="/iac-workshop-intersight/css/theme-blue.css?1633037185" rel="stylesheet">
     
     
 
-    <script src="/iac-workshop-intersight/js/jquery-3.3.1.min.js?1633022284"></script>
+    <script src="/iac-workshop-intersight/js/jquery-3.3.1.min.js?1633037185"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -73,14 +73,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/iac-workshop-intersight/js/lunr.min.js?1633022284"></script>
-<script type="text/javascript" src="/iac-workshop-intersight/js/auto-complete.js?1633022284"></script>
+<script type="text/javascript" src="/iac-workshop-intersight/js/lunr.min.js?1633037185"></script>
+<script type="text/javascript" src="/iac-workshop-intersight/js/auto-complete.js?1633037185"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/wookie-labs.github.io\/iac-workshop-intersight\/";
     
 </script>
-<script type="text/javascript" src="/iac-workshop-intersight/js/search.js?1633022284"></script>
+<script type="text/javascript" src="/iac-workshop-intersight/js/search.js?1633037185"></script>
 
     
   </div>
@@ -944,7 +944,7 @@
 <ol>
 <li>Locate your NTP policy in the Intersight GUI.</li>
 <li>Edit the policy to set the timezone to the east coast (America/New_York). You may also change the name, description, or even delete one of the NTP servers from the list if you choose.</li>
-<li>From the vsCode terminal, run the command <code>tf apply</code>. Notice that Terraform details the changes that will take place in yellow, indicating that this policy will be altered <em>in place</em> rather than deleted and recreated. Type &ldquo;yes&rdquo; to confirm those changes.</li>
+<li>From the vsCode terminal, run the command <code>tf apply</code>. Notice that Terraform details the changes that will take place with a yellow tilde (<code>~</code>), indicating that this policy will be altered <em>in place</em> rather than deleted and recreated. Type &ldquo;yes&rdquo; to confirm those changes.</li>
 <li>Refresh the page in the Intersight GUI showing your NTP policy and notice that it has been changed back to the original configuration.</li>
 <li>From the vsCode terminal, run the command <code>tf apply</code> again. Notice this time Terraform indicates that <strong>no changes</strong> are necessary because now the environment perfectly matches your specified configuration.</li>
 </ol>
@@ -956,7 +956,7 @@
 <code class="disable-clipboard">timezone</code> is a property just like 
 <code class="disable-clipboard">name</code> and 
 <code class="disable-clipboard">description</code> and should be defined similarly using the <code class="disable-clipboard">property = &ldquo;value&rdquo;</code> syntax. Keep in mind that HCL is very flexible and the order in which parameters are defined in a resource block does not matter.</li>
-<li>Save the changes to <code class="disable-clipboard">ntp.tf</code> and run the <code>tf apply</code> command again in the terminal. Notice that Terraform details the changes that will take place in yellow, indicating that this policy will be altered in place rather than deleted and recreated.</li>
+<li>Save the changes to <code class="disable-clipboard">ntp.tf</code> and run the <code>tf apply</code> command again in the terminal. Notice that Terraform details the changes that will take place with a yellow tilde (<code>~</code>), indicating that this policy will be altered in place rather than deleted and recreated.</li>
 <li>Type &ldquo;yes&rdquo; to confirm that Terraform should execute the changes.</li>
 <li>Confirm in Intersight that the NTP policy timezone has been updated.</li>
 </ol>
@@ -1545,19 +1545,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/iac-workshop-intersight/js/clipboard.min.js?1633022284"></script>
-    <script src="/iac-workshop-intersight/js/perfect-scrollbar.min.js?1633022284"></script>
-    <script src="/iac-workshop-intersight/js/perfect-scrollbar.jquery.min.js?1633022284"></script>
-    <script src="/iac-workshop-intersight/js/jquery.sticky.js?1633022284"></script>
-    <script src="/iac-workshop-intersight/js/featherlight.min.js?1633022284"></script>
-    <script src="/iac-workshop-intersight/js/highlight.pack.js?1633022284"></script>
+    <script src="/iac-workshop-intersight/js/clipboard.min.js?1633037185"></script>
+    <script src="/iac-workshop-intersight/js/perfect-scrollbar.min.js?1633037185"></script>
+    <script src="/iac-workshop-intersight/js/perfect-scrollbar.jquery.min.js?1633037185"></script>
+    <script src="/iac-workshop-intersight/js/jquery.sticky.js?1633037185"></script>
+    <script src="/iac-workshop-intersight/js/featherlight.min.js?1633037185"></script>
+    <script src="/iac-workshop-intersight/js/highlight.pack.js?1633037185"></script>
     <script>hljs.highlightAll();</script>
-    <script src="/iac-workshop-intersight/js/modernizr.custom-3.6.0.js?1633022284"></script>
-    <script src="/iac-workshop-intersight/js/learn.js?1633022284"></script>
-    <script src="/iac-workshop-intersight/js/hugo-learn.js?1633022284"></script>
+    <script src="/iac-workshop-intersight/js/modernizr.custom-3.6.0.js?1633037185"></script>
+    <script src="/iac-workshop-intersight/js/learn.js?1633037185"></script>
+    <script src="/iac-workshop-intersight/js/hugo-learn.js?1633037185"></script>
     
     
-<script type="text/javascript" src="/iac-workshop-intersight/js/terraform.js?1633022284"></script>
+<script type="text/javascript" src="/iac-workshop-intersight/js/terraform.js?1633037185"></script>
 <script type="text/javascript">
     hljs.registerLanguage('terraform', window.hljsDefineTerraform);
     hljs.highlightAll();
@@ -1565,7 +1565,7 @@
         ignoreUnescapedHTML: true
     })
 </script>
-<script type="text/javascript" src="/iac-workshop-intersight/js/user_navigation.js?1633022284"></script>
+<script type="text/javascript" src="/iac-workshop-intersight/js/user_navigation.js?1633037185"></script>
   </body>
 </html>
 
