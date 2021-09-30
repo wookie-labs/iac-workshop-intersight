@@ -13,7 +13,7 @@
       <pubDate>Tue, 21 Sep 2021 12:54:50 -0500</pubDate>
       
       <guid>https://wookie-labs.github.io/iac-workshop-intersight/terraform_primer/infrastructure_as_code/</guid>
-      <description>Infrastructure as Code (IaC) allows you to document the configuration needs of your infrastructure through a vendor agnostic language vs using a device specific graphical/command line interface. Imagine a sysadmin needs to configure their VCenter/ESXi cluster including data centers, clusters, networks, and VMs. One option would be to click through the GUI to configure each of the required settings. Not only does this take time, but it likely introduces configuration drift as individual settings are configured over the lifetime of the platform.</description>
+      <description>Infrastructure as Code (IaC) allows you to document the configuration needs of your infrastructure through a vendor agnostic language vs using a device specific graphical/command line interface. Imagine a sysadmin needs to configure their vCenter/ESXi cluster including data centers, clusters, networks, and VMs. One option would be to click through the GUI to configure each of the required settings. Not only does this take time, but it likely introduces configuration drift as individual settings are configured over the lifetime of the platform.</description>
     </item>
     
     <item>
@@ -100,13 +100,13 @@ Configure variables in Terraform Cloud You must add your credentials to Terrafor
     </item>
     
     <item>
-      <title>Create a policy</title>
+      <title>Create an Intersight policy</title>
       <link>https://wookie-labs.github.io/iac-workshop-intersight/open_source/ntp_policy/</link>
       <pubDate>Wed, 08 Sep 2021 13:54:48 -0500</pubDate>
       
       <guid>https://wookie-labs.github.io/iac-workshop-intersight/open_source/ntp_policy/</guid>
       <description>So far, you have only retrieved an existing item from Intersight. In this section, you will create a policy in the organization that you retrieved in the previous step. Terraform can create any policy that can be created by the Intersight API. You will focus on NTP policy as it has multiple parameters yet is self-contained.
-Create an NTP policy You will use the Terraform resource block to define a new policy.</description>
+Create an NTP policy in Intersight You will use the Terraform resource block to define a new policy.</description>
     </item>
     
     <item>

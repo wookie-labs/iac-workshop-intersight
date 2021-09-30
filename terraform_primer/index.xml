@@ -13,7 +13,7 @@
       <pubDate>Tue, 21 Sep 2021 12:54:50 -0500</pubDate>
       
       <guid>https://wookie-labs.github.io/iac-workshop-intersight/terraform_primer/infrastructure_as_code/</guid>
-      <description>Infrastructure as Code (IaC) allows you to document the configuration needs of your infrastructure through a vendor agnostic language vs using a device specific graphical/command line interface. Imagine a sysadmin needs to configure their VCenter/ESXi cluster including data centers, clusters, networks, and VMs. One option would be to click through the GUI to configure each of the required settings. Not only does this take time, but it likely introduces configuration drift as individual settings are configured over the lifetime of the platform.</description>
+      <description>Infrastructure as Code (IaC) allows you to document the configuration needs of your infrastructure through a vendor agnostic language vs using a device specific graphical/command line interface. Imagine a sysadmin needs to configure their vCenter/ESXi cluster including data centers, clusters, networks, and VMs. One option would be to click through the GUI to configure each of the required settings. Not only does this take time, but it likely introduces configuration drift as individual settings are configured over the lifetime of the platform.</description>
     </item>
     
     <item>

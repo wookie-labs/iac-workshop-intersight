@@ -9,25 +9,25 @@
 
     <link rel="icon" href="/iac-workshop-intersight/images/favicon.png" type="image/png">
 
-    <title>Create a policy :: Infrastructure as Code Lab</title>
+    <title>Create an Intersight policy :: Infrastructure as Code Lab</title>
 
     
-    <link href="/iac-workshop-intersight/css/nucleus.css?1632964735" rel="stylesheet">
-    <link href="/iac-workshop-intersight/css/fontawesome-all.min.css?1632964735" rel="stylesheet">
-    <link href="/iac-workshop-intersight/css/hybrid.css?1632964735" rel="stylesheet">
-    <link href="/iac-workshop-intersight/css/featherlight.min.css?1632964735" rel="stylesheet">
-    <link href="/iac-workshop-intersight/css/perfect-scrollbar.min.css?1632964735" rel="stylesheet">
-    <link href="/iac-workshop-intersight/css/auto-complete.css?1632964735" rel="stylesheet">
-    <link href="/iac-workshop-intersight/css/atom-one-dark-reasonable.css?1632964735" rel="stylesheet">
-    <link href="/iac-workshop-intersight/css/theme.css?1632964735" rel="stylesheet">
-    <link href="/iac-workshop-intersight/css/tabs.css?1632964735" rel="stylesheet">
-    <link href="/iac-workshop-intersight/css/hugo-theme.css?1632964735" rel="stylesheet">
+    <link href="/iac-workshop-intersight/css/nucleus.css?1633020289" rel="stylesheet">
+    <link href="/iac-workshop-intersight/css/fontawesome-all.min.css?1633020289" rel="stylesheet">
+    <link href="/iac-workshop-intersight/css/hybrid.css?1633020289" rel="stylesheet">
+    <link href="/iac-workshop-intersight/css/featherlight.min.css?1633020289" rel="stylesheet">
+    <link href="/iac-workshop-intersight/css/perfect-scrollbar.min.css?1633020289" rel="stylesheet">
+    <link href="/iac-workshop-intersight/css/auto-complete.css?1633020289" rel="stylesheet">
+    <link href="/iac-workshop-intersight/css/atom-one-dark-reasonable.css?1633020289" rel="stylesheet">
+    <link href="/iac-workshop-intersight/css/theme.css?1633020289" rel="stylesheet">
+    <link href="/iac-workshop-intersight/css/tabs.css?1633020289" rel="stylesheet">
+    <link href="/iac-workshop-intersight/css/hugo-theme.css?1633020289" rel="stylesheet">
     
-    <link href="/iac-workshop-intersight/css/theme-blue.css?1632964735" rel="stylesheet">
+    <link href="/iac-workshop-intersight/css/theme-blue.css?1633020289" rel="stylesheet">
     
     
 
-    <script src="/iac-workshop-intersight/js/jquery-3.3.1.min.js?1632964735"></script>
+    <script src="/iac-workshop-intersight/js/jquery-3.3.1.min.js?1633020289"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -73,14 +73,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/iac-workshop-intersight/js/lunr.min.js?1632964735"></script>
-<script type="text/javascript" src="/iac-workshop-intersight/js/auto-complete.js?1632964735"></script>
+<script type="text/javascript" src="/iac-workshop-intersight/js/lunr.min.js?1633020289"></script>
+<script type="text/javascript" src="/iac-workshop-intersight/js/auto-complete.js?1633020289"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/wookie-labs.github.io\/iac-workshop-intersight\/";
     
 </script>
-<script type="text/javascript" src="/iac-workshop-intersight/js/search.js?1632964735"></script>
+<script type="text/javascript" src="/iac-workshop-intersight/js/search.js?1633020289"></script>
 
     
   </div>
@@ -431,9 +431,9 @@
  
   
     
-      <li data-nav-id="/iac-workshop-intersight/open_source/ntp_policy/" title="Create a policy" class="dd-item active">
+      <li data-nav-id="/iac-workshop-intersight/open_source/ntp_policy/" title="Create an Intersight policy" class="dd-item active">
         <a href="/iac-workshop-intersight/open_source/ntp_policy/">
-        Create a policy
+        Create an Intersight policy
         <i class="fas fa-check read-icon"></i>
         </a>
     </li>
@@ -849,7 +849,7 @@
             
           
           
-            <a href='/iac-workshop-intersight/'>IaC Fundamentals with Intersight</a> > <a href='/iac-workshop-intersight/open_source/'>Terraform open source</a> > Create a policy
+            <a href='/iac-workshop-intersight/'>IaC Fundamentals with Intersight</a> > <a href='/iac-workshop-intersight/open_source/'>Terraform open source</a> > Create an Intersight policy
           
         
           
@@ -864,7 +864,7 @@
     <div class="wrapper">
 <nav id="TableOfContents">
   <ul>
-    <li><a href="#create-an-ntp-policy">Create an NTP policy</a></li>
+    <li><a href="#create-an-ntp-policy-in-intersight">Create an NTP policy in Intersight</a></li>
     <li><a href="#create-more-outputs">Create more outputs</a></li>
     <li><a href="#set-timezone-manually">Set timezone manually</a></li>
     <li><a href="#fix-the-timezone-in-hcl">Fix the timezone in HCL</a></li>
@@ -886,7 +886,7 @@
           
             <h1>
               
-              Create a policy
+              Create an Intersight policy
             </h1>
           
 
@@ -894,7 +894,7 @@
 
 
 <p>So far, you have only retrieved an existing item from Intersight. In this section, you will create a policy in the organization that you retrieved in the previous step. Terraform can create any policy that can be created by the Intersight API. You will focus on NTP policy as it has multiple parameters yet is self-contained.</p>
-<h2 id="create-an-ntp-policy">Create an NTP policy</h2>
+<h2 id="create-an-ntp-policy-in-intersight">Create an NTP policy in Intersight</h2>
 <p>You will use the Terraform <strong>resource</strong> block to define a new policy. A resource block starts with the keyword &ldquo;resource&rdquo; and includes the resource <strong>type</strong> (&ldquo;intersight_ntp_policy&rdquo; in the snippet below) and the resource <strong>local name</strong> (&ldquo;east&rdquo; in the snippet below). The code between the curly braces are the configuration arguments for this resource. Example:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-terraform" data-lang="terraform"><span style="color:#66d9ef">resource</span> <span style="color:#e6db74">&#34;intersight_ntp_policy&#34;</span> <span style="color:#e6db74">&#34;east&#34;</span> {
   <span style="color:#a6e22e">INSERT_CONFIGURATION_ARGUMENTS_HERE</span>
@@ -1545,19 +1545,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/iac-workshop-intersight/js/clipboard.min.js?1632964735"></script>
-    <script src="/iac-workshop-intersight/js/perfect-scrollbar.min.js?1632964735"></script>
-    <script src="/iac-workshop-intersight/js/perfect-scrollbar.jquery.min.js?1632964735"></script>
-    <script src="/iac-workshop-intersight/js/jquery.sticky.js?1632964735"></script>
-    <script src="/iac-workshop-intersight/js/featherlight.min.js?1632964735"></script>
-    <script src="/iac-workshop-intersight/js/highlight.pack.js?1632964735"></script>
+    <script src="/iac-workshop-intersight/js/clipboard.min.js?1633020289"></script>
+    <script src="/iac-workshop-intersight/js/perfect-scrollbar.min.js?1633020289"></script>
+    <script src="/iac-workshop-intersight/js/perfect-scrollbar.jquery.min.js?1633020289"></script>
+    <script src="/iac-workshop-intersight/js/jquery.sticky.js?1633020289"></script>
+    <script src="/iac-workshop-intersight/js/featherlight.min.js?1633020289"></script>
+    <script src="/iac-workshop-intersight/js/highlight.pack.js?1633020289"></script>
     <script>hljs.highlightAll();</script>
-    <script src="/iac-workshop-intersight/js/modernizr.custom-3.6.0.js?1632964735"></script>
-    <script src="/iac-workshop-intersight/js/learn.js?1632964735"></script>
-    <script src="/iac-workshop-intersight/js/hugo-learn.js?1632964735"></script>
+    <script src="/iac-workshop-intersight/js/modernizr.custom-3.6.0.js?1633020289"></script>
+    <script src="/iac-workshop-intersight/js/learn.js?1633020289"></script>
+    <script src="/iac-workshop-intersight/js/hugo-learn.js?1633020289"></script>
     
     
-<script type="text/javascript" src="/iac-workshop-intersight/js/terraform.js?1632964735"></script>
+<script type="text/javascript" src="/iac-workshop-intersight/js/terraform.js?1633020289"></script>
 <script type="text/javascript">
     hljs.registerLanguage('terraform', window.hljsDefineTerraform);
     hljs.highlightAll();
@@ -1565,7 +1565,7 @@
         ignoreUnescapedHTML: true
     })
 </script>
-<script type="text/javascript" src="/iac-workshop-intersight/js/user_navigation.js?1632964735"></script>
+<script type="text/javascript" src="/iac-workshop-intersight/js/user_navigation.js?1633020289"></script>
   </body>
 </html>
 

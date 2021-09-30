@@ -12,22 +12,22 @@
     <title>Basic validation :: Infrastructure as Code Lab</title>
 
     
-    <link href="/iac-workshop-intersight/css/nucleus.css?1632964735" rel="stylesheet">
-    <link href="/iac-workshop-intersight/css/fontawesome-all.min.css?1632964735" rel="stylesheet">
-    <link href="/iac-workshop-intersight/css/hybrid.css?1632964735" rel="stylesheet">
-    <link href="/iac-workshop-intersight/css/featherlight.min.css?1632964735" rel="stylesheet">
-    <link href="/iac-workshop-intersight/css/perfect-scrollbar.min.css?1632964735" rel="stylesheet">
-    <link href="/iac-workshop-intersight/css/auto-complete.css?1632964735" rel="stylesheet">
-    <link href="/iac-workshop-intersight/css/atom-one-dark-reasonable.css?1632964735" rel="stylesheet">
-    <link href="/iac-workshop-intersight/css/theme.css?1632964735" rel="stylesheet">
-    <link href="/iac-workshop-intersight/css/tabs.css?1632964735" rel="stylesheet">
-    <link href="/iac-workshop-intersight/css/hugo-theme.css?1632964735" rel="stylesheet">
+    <link href="/iac-workshop-intersight/css/nucleus.css?1633020289" rel="stylesheet">
+    <link href="/iac-workshop-intersight/css/fontawesome-all.min.css?1633020289" rel="stylesheet">
+    <link href="/iac-workshop-intersight/css/hybrid.css?1633020289" rel="stylesheet">
+    <link href="/iac-workshop-intersight/css/featherlight.min.css?1633020289" rel="stylesheet">
+    <link href="/iac-workshop-intersight/css/perfect-scrollbar.min.css?1633020289" rel="stylesheet">
+    <link href="/iac-workshop-intersight/css/auto-complete.css?1633020289" rel="stylesheet">
+    <link href="/iac-workshop-intersight/css/atom-one-dark-reasonable.css?1633020289" rel="stylesheet">
+    <link href="/iac-workshop-intersight/css/theme.css?1633020289" rel="stylesheet">
+    <link href="/iac-workshop-intersight/css/tabs.css?1633020289" rel="stylesheet">
+    <link href="/iac-workshop-intersight/css/hugo-theme.css?1633020289" rel="stylesheet">
     
-    <link href="/iac-workshop-intersight/css/theme-blue.css?1632964735" rel="stylesheet">
+    <link href="/iac-workshop-intersight/css/theme-blue.css?1633020289" rel="stylesheet">
     
     
 
-    <script src="/iac-workshop-intersight/js/jquery-3.3.1.min.js?1632964735"></script>
+    <script src="/iac-workshop-intersight/js/jquery-3.3.1.min.js?1633020289"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -73,14 +73,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/iac-workshop-intersight/js/lunr.min.js?1632964735"></script>
-<script type="text/javascript" src="/iac-workshop-intersight/js/auto-complete.js?1632964735"></script>
+<script type="text/javascript" src="/iac-workshop-intersight/js/lunr.min.js?1633020289"></script>
+<script type="text/javascript" src="/iac-workshop-intersight/js/auto-complete.js?1633020289"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/wookie-labs.github.io\/iac-workshop-intersight\/";
     
 </script>
-<script type="text/javascript" src="/iac-workshop-intersight/js/search.js?1632964735"></script>
+<script type="text/javascript" src="/iac-workshop-intersight/js/search.js?1633020289"></script>
 
     
   </div>
@@ -431,9 +431,9 @@
  
   
     
-      <li data-nav-id="/iac-workshop-intersight/open_source/ntp_policy/" title="Create a policy" class="dd-item ">
+      <li data-nav-id="/iac-workshop-intersight/open_source/ntp_policy/" title="Create an Intersight policy" class="dd-item ">
         <a href="/iac-workshop-intersight/open_source/ntp_policy/">
-        Create a policy
+        Create an Intersight policy
         <i class="fas fa-check read-icon"></i>
         </a>
     </li>
@@ -901,6 +901,10 @@
 <h2 id="create-a-simple-hcl-file">Create a simple HCL file</h2>
 <p>HashiCorp Configuration Language (HCL) files look like a mix between JSON and YAML as you will see momentarily. As discussed in <a href="/iac-workshop-intersight/terraform_primer/core_concepts/#directories-and-modules">Terraform Primer &gt; Basic validation</a>, Terraform will evaluate all the configuration files in your project directory and treat them as a single document. For the purposes of this lab, you will not have a nested folder structure and your project directory will contain your <strong>root module</strong>. The names of the files do not matter as Terraform inspects all <code class="disable-clipboard">.tf</code> and <code class="disable-clipboard">.tfvars</code> files at the root level of the project directory.</p>
 <p>Steps:</p>
+<ol>
+<li>In vsCode, hover your mouse over the file tree</li>
+</ol>
+<img src="/iac-workshop-intersight/open_source/images/create_new_file.png?width=600&classes=shadow"/>
 <ol>
 <li>In vsCode, create a file named <code>providers.tf</code>. Again, the name doesn&rsquo;t actually matter but this lab will attempt to guide you through best practices. When your configuration grows, it is much easier to manage with multiple files each named appropriately.</li>
 <li>You will start with the Intersight Terraform provider. To determine how to use the provider, search the internet for <code>cisco intersight terraform provider</code> and you will find <a href="https://registry.terraform.io/providers/CiscoDevNet/intersight/latest">this</a> page on the Terraform Registry. There is also a bookmark in your browser for the Terraform Registry if you need to return to that page at any time.</li>
@@ -1579,7 +1583,7 @@
 			<a class="nav nav-prev" href="/iac-workshop-intersight/open_source/" title="Terraform open source"> <i class="fa fa-chevron-left"></i></a>
 		
 		
-			<a class="nav nav-next" href="/iac-workshop-intersight/open_source/ntp_policy/" title="Create a policy" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+			<a class="nav nav-next" href="/iac-workshop-intersight/open_source/ntp_policy/" title="Create an Intersight policy" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>
@@ -1589,19 +1593,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/iac-workshop-intersight/js/clipboard.min.js?1632964735"></script>
-    <script src="/iac-workshop-intersight/js/perfect-scrollbar.min.js?1632964735"></script>
-    <script src="/iac-workshop-intersight/js/perfect-scrollbar.jquery.min.js?1632964735"></script>
-    <script src="/iac-workshop-intersight/js/jquery.sticky.js?1632964735"></script>
-    <script src="/iac-workshop-intersight/js/featherlight.min.js?1632964735"></script>
-    <script src="/iac-workshop-intersight/js/highlight.pack.js?1632964735"></script>
+    <script src="/iac-workshop-intersight/js/clipboard.min.js?1633020289"></script>
+    <script src="/iac-workshop-intersight/js/perfect-scrollbar.min.js?1633020289"></script>
+    <script src="/iac-workshop-intersight/js/perfect-scrollbar.jquery.min.js?1633020289"></script>
+    <script src="/iac-workshop-intersight/js/jquery.sticky.js?1633020289"></script>
+    <script src="/iac-workshop-intersight/js/featherlight.min.js?1633020289"></script>
+    <script src="/iac-workshop-intersight/js/highlight.pack.js?1633020289"></script>
     <script>hljs.highlightAll();</script>
-    <script src="/iac-workshop-intersight/js/modernizr.custom-3.6.0.js?1632964735"></script>
-    <script src="/iac-workshop-intersight/js/learn.js?1632964735"></script>
-    <script src="/iac-workshop-intersight/js/hugo-learn.js?1632964735"></script>
+    <script src="/iac-workshop-intersight/js/modernizr.custom-3.6.0.js?1633020289"></script>
+    <script src="/iac-workshop-intersight/js/learn.js?1633020289"></script>
+    <script src="/iac-workshop-intersight/js/hugo-learn.js?1633020289"></script>
     
     
-<script type="text/javascript" src="/iac-workshop-intersight/js/terraform.js?1632964735"></script>
+<script type="text/javascript" src="/iac-workshop-intersight/js/terraform.js?1633020289"></script>
 <script type="text/javascript">
     hljs.registerLanguage('terraform', window.hljsDefineTerraform);
     hljs.highlightAll();
@@ -1609,7 +1613,7 @@
         ignoreUnescapedHTML: true
     })
 </script>
-<script type="text/javascript" src="/iac-workshop-intersight/js/user_navigation.js?1632964735"></script>
+<script type="text/javascript" src="/iac-workshop-intersight/js/user_navigation.js?1633020289"></script>
   </body>
 </html>
 
