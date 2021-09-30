@@ -9,7 +9,7 @@
 
     <link rel="icon" href="/iac-workshop-intersight/images/favicon.png" type="image/png">
 
-    <title>Configure the IDE :: Infrastructure as Code Lab</title>
+    <title>Use Community Modules :: Infrastructure as Code Lab</title>
 
     
     <link href="/iac-workshop-intersight/css/nucleus.css?1632964735" rel="stylesheet">
@@ -54,7 +54,7 @@
 
 
   </head>
-  <body class="" data-url="/iac-workshop-intersight/basics/vscode/">
+  <body class="" data-url="/iac-workshop-intersight/tf_cloud/modules/">
     <nav id="sidebar" class="showVisitedLinks">
 
 
@@ -262,7 +262,7 @@
   
     
     <li data-nav-id="/iac-workshop-intersight/basics/" title="Getting started" class="dd-item
-        parent
+        
         
         
         ">
@@ -311,7 +311,7 @@
  
   
     
-      <li data-nav-id="/iac-workshop-intersight/basics/vscode/" title="Configure the IDE" class="dd-item active">
+      <li data-nav-id="/iac-workshop-intersight/basics/vscode/" title="Configure the IDE" class="dd-item ">
         <a href="/iac-workshop-intersight/basics/vscode/">
         Configure the IDE
         <i class="fas fa-check read-icon"></i>
@@ -601,7 +601,7 @@
   
     
     <li data-nav-id="/iac-workshop-intersight/tf_cloud/" title="GitHub &#43; Terraform Cloud" class="dd-item
-        
+        parent
         
         
         ">
@@ -692,7 +692,7 @@
  
   
     
-      <li data-nav-id="/iac-workshop-intersight/tf_cloud/modules/" title="Use Community Modules" class="dd-item ">
+      <li data-nav-id="/iac-workshop-intersight/tf_cloud/modules/" title="Use Community Modules" class="dd-item active">
         <a href="/iac-workshop-intersight/tf_cloud/modules/">
         Use Community Modules
         <i class="fas fa-check read-icon"></i>
@@ -849,7 +849,7 @@
             
           
           
-            <a href='/iac-workshop-intersight/'>IaC Fundamentals with Intersight</a> > <a href='/iac-workshop-intersight/basics/'>Getting started</a> > Configure the IDE
+            <a href='/iac-workshop-intersight/'>IaC Fundamentals with Intersight</a> > <a href='/iac-workshop-intersight/tf_cloud/'>GitHub + Terraform Cloud</a> > Use Community Modules
           
         
           
@@ -864,9 +864,8 @@
     <div class="wrapper">
 <nav id="TableOfContents">
   <ul>
-    <li><a href="#initialize-the-project-directory">Initialize the project directory</a></li>
-    <li><a href="#install-terraform-extension">Install Terraform extension</a></li>
-    <li><a href="#open-the-terminal">Open the terminal</a></li>
+    <li><a href="#retrieve-existing-pools">Retrieve existing pools</a></li>
+    <li><a href="#instantiate-a-module">Instantiate a module</a></li>
     <li><a href="#congratulations">Congratulations!</a></li>
   </ul>
 </nav>
@@ -885,75 +884,211 @@
           
             <h1>
               
-              Configure the IDE
+              Use Community Modules
             </h1>
           
 
         
 
 
-<img src="/iac-workshop-intersight/basics/images/vscode.png?width=150"/>
-<p>This lab will use Microsoft Visual Studio Code (vsCode) for the integrated development environment (IDE). This is a very popular and free IDE that has many free extensions for different programming languages. In this section of the lab, you will configure vsCode for use with Terraform.</p>
-<h2 id="initialize-the-project-directory">Initialize the project directory</h2>
-<p>In this portion of the lab, you will clone a GitHub repository to use as your project directory. It may seem unusual to clone a nearly empty repository, but this specific repository will be important later in the lab when you migrate to Terraform Cloud as a link has been established between your repository and the Terraform Cloud organization. This will be explained in detail later in the lab when it is more relevant. For now, know that there is a reason to clone a nearly empty repository rather than start with an empty folder for this lab.</p>
+<p>A <a href="/iac-workshop-intersight/terraform_primer/core_concepts/#directories-and-modules">module</a> can be formally registered with the Terraform Registry or it can simply be a GitHub repository or even a subfolder within your project directory. If you find the need to write a module that others may benefit from, you may choose to publish your module. Sometimes it makes more sense to keep your module private. In this section of the lab, you will locate and use a published module.</p>
+<h2 id="retrieve-existing-pools">Retrieve existing pools</h2>
+<p>The module that you will use requires references (MOID) to an Intersight IP pool and MAC pool. Recall that much earlier in the lab you obtained a reference to your Intersight organization using a Terraform data source. You will do the same here for the two pools.</p>
 <p>Steps:</p>
 <ol>
-<li>From the Windows 10 host desktop, click on the Visual Studio Code icon to open vsCode.</li>
-<li>From vsCode, either press Ctrl+Shift+P or select &ldquo;Command Palette&hellip;&rdquo; from the &ldquo;View&rdquo; menu as shown in the screenshot below.</li>
+<li>In the Intersight left navigation, browse to <strong>Configure -&gt; Pools</strong>. Make note of the names of the IP and MAC pools that have been created for you.</li>
+<li>Update your <code class="disable-clipboard">sources.tf</code> file by adding two <strong>data</strong> blocks: one for your <a href="https://registry.terraform.io/providers/CiscoDevNet/intersight/latest/docs/data-sources/ippool_pool">IP pool</a> and one for your <a href="https://registry.terraform.io/providers/CiscoDevNet/intersight/latest/docs/data-sources/macpool_pool">MAC pool</a>. Use your data block for the organization as a reference. You can use the same <strong>local</strong> name for all three data sources. You simply have to change the resource <strong>type</strong> and the actual name of the object. There is a checkpoint at the end of this page if you get stuck.</li>
+<li>Confirm that your syntax is correct by pushing your configuration to GitHub, which will trigger a run in Terraform Cloud. Recall that you must commit your changed file first, then push it to GitHub. If you forget the steps, you can refer back to <a href="/iac-workshop-intersight/tf_cloud/push_changes/#change-the-configuration">the last time</a> you pushed changes.</li>
 </ol>
-<img src="/iac-workshop-intersight/basics/images/command_palette.png?width=700&classes=shadow"/>
-<ol start="3">
-<li>In the command palette, type <code>git clone</code> to filter the list of available commands. Click on the command <strong>Git:Clone</strong> (not the Recursive clone).</li>
+<h2 id="instantiate-a-module">Instantiate a module</h2>
+<p>There is a publicly available module for the Intersight provider that creates roughly two dozen sample policies in Intersight with a small number of inputs.</p>
+<p>Steps:</p>
+<ol>
+<li>Browse to the Intersight provider page on the <a href="https://registry.terraform.io/providers/CiscoDevNet/intersight/latest">Terraform Registry</a>.</li>
+<li>Notice that under the summary of the Intersight provider, there is a section labeled &ldquo;Top downloaded intersight modules&rdquo;. These are modules whose authors have registered their modules with HashiCorp. Click on the module named <strong>policy-bundle</strong>.</li>
 </ol>
-<img src="/iac-workshop-intersight/basics/images/git_clone.png?width=700&classes=shadow"/>
-<ol start="4">
-<li>When prompted for the repository URL, copy and paste the text below. This is the SSH format for the GitHub repository, which uses an SSH key that has been loaded on the Windows host for you.</li>
-</ol>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-terraform" data-lang="terraform"><span style="color:#a6e22e">git</span><span style="color:#960050;background-color:#1e0010">@</span><span style="color:#a6e22e">github</span>.<span style="color:#a6e22e">com</span><span style="color:#f92672">:</span><span style="color:#a6e22e">wookie</span><span style="color:#f92672">-</span><span style="color:#a6e22e">labs</span><span style="color:#f92672">/</span><span style="color:#a6e22e">iac</span><span style="color:#f92672">-</span><span style="color:#a6e22e">user</span><span style="color:#f92672">-</span>{{<span style="color:#a6e22e">pod</span>}}.<span style="color:#a6e22e">git</span>
-</code></pre></div><ol start="5">
-<li>When prompted for a destination, choose the &ldquo;Documents&rdquo; folder and click <strong>Select Repository Location</strong> as shown below.</li>
-</ol>
-<img src="/iac-workshop-intersight/basics/images/clone_destination.png?width=700&classes=shadow"/>
-<ol start="6">
-<li>Once the repository has been cloned, you will be prompted (lower right corner of the vsCode window) to open the local directory where the repository has been cloned. Click <strong>Open</strong>. This prompt does not stay open indefinitely. If you miss the prompt, you will have to choose <strong>File</strong> &ndash;&gt; <strong>Open Folder&hellip;</strong> from within vsCode and browse to your project folder to open it.</li>
-</ol>
-<img src="/iac-workshop-intersight/basics/images/open_repository.png?classes=shadow"/>
-<h2 id="install-terraform-extension">Install Terraform extension</h2>
-<p>The Terraform extension for vsCode provides conveniences that will make writing code easier and less prone to errors. Some benefits:</p>
+<p>There are several things to note on this page:</p>
 <ul>
-<li>syntax highlighting for <code class="disable-clipboard">.tf</code> and <code class="disable-clipboard">.tfvars</code> files</li>
-<li>closes curly braces and quotation marks</li>
-<li>completion of resource names, data source names, and attribute names for initialized providers</li>
+<li>There is a link to the source code for this module on GitHub and a place to report defects. You can look through the module&rsquo;s code if you have questions about what it does.</li>
+<li>There is a snippet showing how to provision this module, much like the snippet shown in the Registry for provisioning a provider. You will probably find the examples more useful, though.</li>
+<li>There is a dropdown for <strong>Examples</strong> showing how to use the module.</li>
+<li>There are multiple tabs for documentation across the bottom of the page (Readme, Inputs, Outputs, Dependency, Resources).</li>
+<li>There may be multiple versions for a module as features are added or issues are addressed. There is a dropdown towards the top of the page to select a different version of the module.</li>
 </ul>
-<p>In this section you will verify the presence of the extension or install it if missing.</p>
-<p>Steps:</p>
-<ol>
-<li>In vsCode, click on the extensions icon as shown in the image below.</li>
-<li>The extensions view will show both installed and popular extensions. If the <strong>HashiCorp Terraform</strong> extension appears under &ldquo;installed&rdquo; extensions, you are done. Confirm that it is the HashiCorp extension and not an extension from Microsoft or other third party.</li>
-</ol>
-<img src="/iac-workshop-intersight/basics/images/installed_extensions.png?classes=shadow"/>
+<img src="/iac-workshop-intersight/tf_cloud/images/module_main.png?width=700&classes=shadow"/>
 <ol start="3">
-<li>If the HashiCorp Terraform extension is not installed (as shown in the image above), use the &ldquo;search extensions in marketplace&rdquo; text box to search for &ldquo;terraform&rdquo; as shown in the image below.</li>
-<li>Click the word <strong>Install</strong> next to the HashiCorp Terraform extension. It will take a few seconds to install.</li>
-<li>Clear the search box and confirm that the extension shows up in the &ldquo;installed&rdquo; group.</li>
+<li>Click on <strong>Examples</strong> and choose <strong>minimal</strong>.</li>
+<li>The sample code from the &ldquo;minimal&rdquo; example is nearly identical to the snippet below. Only the references to the organization, MAC pool, and IP pool have changed from the example. Make sure you understand those changes.</li>
+<li>Copy the code snippet below with and paste it into a new file called <code>policy.tf</code>. Make any appropriate changes to the file and save it.</li>
+<li>Commit and push your new file.</li>
+<li>Confirm and Apply the run in Terraform Cloud.</li>
+<li>In the Intersight left navigation, browse to <strong>Configure -&gt; Policies</strong> and notice the large number of new policies with very similar names. These were created by the module.</li>
 </ol>
-<img src="/iac-workshop-intersight/basics/images/search_extensions.png?classes=shadow"/>
-<h2 id="open-the-terminal">Open the terminal</h2>
-<p>You will execute all of the command line commands for this lab from the terminal built into vsCode. vsCode supports multiple terminal types:</p>
-<ul>
-<li>PowerShell</li>
-<li>Command Prompt (traditional Windows command line)</li>
-<li>Git Bash (Mac or Linux style command line)</li>
-</ul>
-<p>Steps:</p>
-<ol>
-<li>In vsCode, from the <strong>Terminal</strong> menu choose <strong>New Terminal</strong> if the terminal is not already open. This will open a PowerShell command terminal. If you are comfortable using PowerShell syntax, you can skip the next step.</li>
-<li>Open a new terminal as shown in the diagram below. You can choose from <strong>PowerShell</strong>, <strong>Command Prompt</strong>, and <strong>Git Bash</strong>. Command syntax for all three will be provided throughout this lab guide so you can select the option that makes you comfortable.</li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-terraform" data-lang="terraform"><span style="color:#66d9ef">module</span> <span style="color:#e6db74">&#34;intersight_policy_bundle&#34;</span> {
+  <span style="color:#a6e22e">source</span> = <span style="color:#e6db74">&#34;terraform-cisco-modules/policy-bundle/intersight&#34;</span><span style="color:#75715e">
+</span><span style="color:#75715e">
+</span><span style="color:#75715e">  # external sources
+</span><span style="color:#75715e"></span>  <span style="color:#a6e22e">organization</span>    = data.<span style="color:#a6e22e">intersight_organization_organization</span>.<span style="color:#a6e22e">iac</span>.<span style="color:#a6e22e">results</span>[<span style="color:#ae81ff">0</span>].<span style="color:#a6e22e">moid</span>
+  <span style="color:#a6e22e">vnic_mac_pool</span>   = data.<span style="color:#a6e22e">intersight_macpool_pool</span>.<span style="color:#a6e22e">iac</span>.<span style="color:#a6e22e">results</span>[<span style="color:#ae81ff">0</span>].<span style="color:#a6e22e">moid</span>
+  <span style="color:#a6e22e">imc_access_pool</span> = data.<span style="color:#a6e22e">intersight_ippool_pool</span>.<span style="color:#a6e22e">iac</span>.<span style="color:#a6e22e">results</span>[<span style="color:#ae81ff">0</span>].<span style="color:#a6e22e">moid</span><span style="color:#75715e">
+</span><span style="color:#75715e">
+</span><span style="color:#75715e">  # every policy created will have this prefix in its name
+</span><span style="color:#75715e"></span>  <span style="color:#a6e22e">policy_prefix</span> = <span style="color:#e6db74">&#34;my-first&#34;</span><span style="color:#75715e">
+</span><span style="color:#75715e">
+</span><span style="color:#75715e">  # Fabric Interconnect 6454 config specifics
+</span><span style="color:#75715e"></span>  <span style="color:#a6e22e">server_ports_6454</span> = [<span style="color:#ae81ff">17</span>, <span style="color:#ae81ff">18</span>, <span style="color:#ae81ff">19</span>, <span style="color:#ae81ff">20</span>]
+  <span style="color:#a6e22e">port_channel_6454</span> = [<span style="color:#ae81ff">49</span>, <span style="color:#ae81ff">50</span>]
+  <span style="color:#a6e22e">uplink_vlans_6454</span> = {
+    <span style="color:#e6db74">&#34;vlan1020&#34;</span> <span style="color:#f92672">:</span> <span style="color:#ae81ff">1020</span>,
+    <span style="color:#e6db74">&#34;vlan1021&#34;</span> <span style="color:#f92672">:</span> <span style="color:#ae81ff">1021</span>
+  }
+
+  <span style="color:#a6e22e">imc_access_vlan</span>    = <span style="color:#ae81ff">1020</span>
+  <span style="color:#a6e22e">imc_admin_password</span> = <span style="color:#e6db74">&#34;Inters!ght&#34;</span>
+
+  <span style="color:#a6e22e">ntp_servers</span> = [<span style="color:#e6db74">&#34;time-a-g.nist.gov&#34;</span>]
+
+  <span style="color:#a6e22e">dns_preferred</span> = <span style="color:#e6db74">&#34;172.16.1.98&#34;</span>
+}
+</code></pre></div><ol start="9">
+<li>Notice that the documentation for the module <a href="https://registry.terraform.io/modules/terraform-cisco-modules/policy-bundle/intersight/latest?tab=inputs">inputs</a> shows both <strong>required</strong> and <strong>optional</strong> inputs. Not every input used in the module instantiation above is required, meaning that certain parameters could be deleted. Delete the line <code class="disable-clipboard">policy_prefix = &ldquo;my-first&rdquo;</code> from the <code class="disable-clipboard">policy.tf</code> file and trigger another Terraform run (by committing and pushing your code). Notice what happens to the policies that had been created in Terraform. They are all renamed!</li>
 </ol>
-<img src="/iac-workshop-intersight/basics/images/new_terminal.png?classes=shadow"/>
+
+<div class="checkpoint"><div class="notice">At this point in the lab your configuration files should closely match the code blocks below.  Please expand the files for reference.</div><details>
+  <summary>myvalues.auto.tfvars</summary>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-terraform" data-lang="terraform"><span style="color:#a6e22e">policy_name_prefix</span> = <span style="color:#e6db74">&#34;iac-lab&#34;</span>
+<span style="color:#a6e22e">policy_description</span> = <span style="color:#e6db74">&#34;created by Terraform&#34;</span>
+<span style="color:#a6e22e">east_timezone</span>      = <span style="color:#e6db74">&#34;America/New_York&#34;</span>
+<span style="color:#a6e22e">west_timezone</span>      = <span style="color:#e6db74">&#34;America/Los_Angeles&#34;</span>
+</code></pre></div></details>
+<details>
+  <summary>ntp.tf</summary>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-terraform" data-lang="terraform"><span style="color:#66d9ef">resource</span> <span style="color:#e6db74">&#34;intersight_ntp_policy&#34;</span> <span style="color:#e6db74">&#34;east&#34;</span> {
+  <span style="color:#a6e22e">name</span>        = <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>var.<span style="color:#a6e22e">policy_name_prefix</span><span style="color:#e6db74">}</span><span style="color:#e6db74">-ntp-east&#34;</span>
+  <span style="color:#a6e22e">description</span> = var.<span style="color:#a6e22e">policy_description</span>
+  <span style="color:#a6e22e">enabled</span>     = <span style="color:#66d9ef">true</span>
+  <span style="color:#a6e22e">timezone</span>    = var.<span style="color:#a6e22e">east_timezone</span>
+  <span style="color:#a6e22e">ntp_servers</span> = [
+    <span style="color:#e6db74">&#34;ntp.esl.cisco.com&#34;</span>,
+    <span style="color:#e6db74">&#34;time-a-g.nist.gov&#34;</span>,
+    <span style="color:#e6db74">&#34;time-b-g.nist.gov&#34;</span>
+  ]
+  <span style="color:#a6e22e">organization</span> {
+    <span style="color:#a6e22e">object_type</span> = <span style="color:#e6db74">&#34;organization.Organization&#34;</span>
+    <span style="color:#a6e22e">moid</span>        = data.<span style="color:#a6e22e">intersight_organization_organization</span>.<span style="color:#a6e22e">iac</span>.<span style="color:#a6e22e">results</span>[<span style="color:#ae81ff">0</span>].<span style="color:#a6e22e">moid</span>
+  }
+}
+
+</code></pre></div></details>
+<details>
+  <summary>outputs.tf</summary>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-terraform" data-lang="terraform"><span style="color:#66d9ef">output</span> <span style="color:#e6db74">&#34;my_org_moid&#34;</span> {
+    <span style="color:#a6e22e">value</span> = data.<span style="color:#a6e22e">intersight_organization_organization</span>.<span style="color:#a6e22e">iac</span>.<span style="color:#a6e22e">results</span>[<span style="color:#ae81ff">0</span>].<span style="color:#a6e22e">moid</span>
+}
+<span style="color:#66d9ef">
+</span><span style="color:#66d9ef">output</span> <span style="color:#e6db74">&#34;ntp_east_moid&#34;</span> {
+    <span style="color:#a6e22e">value</span> = <span style="color:#a6e22e">intersight_ntp_policy</span>.<span style="color:#a6e22e">east</span>.<span style="color:#a6e22e">moid</span>
+}
+<span style="color:#66d9ef">output</span> <span style="color:#e6db74">&#34;ntp_east_timezone&#34;</span> {
+    <span style="color:#a6e22e">value</span> = <span style="color:#a6e22e">intersight_ntp_policy</span>.<span style="color:#a6e22e">east</span>.<span style="color:#a6e22e">timezone</span>
+}
+</code></pre></div></details>
+<details>
+  <summary>policy.tf</summary>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-terraform" data-lang="terraform"><span style="color:#66d9ef">module</span> <span style="color:#e6db74">&#34;intersight_policy_bundle&#34;</span> {
+  <span style="color:#a6e22e">source</span> = <span style="color:#e6db74">&#34;terraform-cisco-modules/policy-bundle/intersight&#34;</span><span style="color:#75715e">
+</span><span style="color:#75715e">
+</span><span style="color:#75715e">  # external sources
+</span><span style="color:#75715e"></span>  <span style="color:#a6e22e">organization</span>    = data.<span style="color:#a6e22e">intersight_organization_organization</span>.<span style="color:#a6e22e">iac</span>.<span style="color:#a6e22e">results</span>[<span style="color:#ae81ff">0</span>].<span style="color:#a6e22e">moid</span>
+  <span style="color:#a6e22e">vnic_mac_pool</span>   = data.<span style="color:#a6e22e">intersight_macpool_pool</span>.<span style="color:#a6e22e">iac</span>.<span style="color:#a6e22e">results</span>[<span style="color:#ae81ff">0</span>].<span style="color:#a6e22e">moid</span>
+  <span style="color:#a6e22e">imc_access_pool</span> = data.<span style="color:#a6e22e">intersight_ippool_pool</span>.<span style="color:#a6e22e">iac</span>.<span style="color:#a6e22e">results</span>[<span style="color:#ae81ff">0</span>].<span style="color:#a6e22e">moid</span><span style="color:#75715e">
+</span><span style="color:#75715e">
+</span><span style="color:#75715e">  # every policy created will have this prefix in its name
+</span><span style="color:#75715e"></span>  <span style="color:#a6e22e">policy_prefix</span> = <span style="color:#e6db74">&#34;my-first&#34;</span><span style="color:#75715e">
+</span><span style="color:#75715e">
+</span><span style="color:#75715e">  # Fabric Interconnect 6454 config specifics
+</span><span style="color:#75715e"></span>  <span style="color:#a6e22e">server_ports_6454</span> = [<span style="color:#ae81ff">17</span>, <span style="color:#ae81ff">18</span>, <span style="color:#ae81ff">19</span>, <span style="color:#ae81ff">20</span>]
+  <span style="color:#a6e22e">port_channel_6454</span> = [<span style="color:#ae81ff">49</span>, <span style="color:#ae81ff">50</span>]
+  <span style="color:#a6e22e">uplink_vlans_6454</span> = {
+    <span style="color:#e6db74">&#34;vlan1020&#34;</span> <span style="color:#f92672">:</span> <span style="color:#ae81ff">1020</span>,
+    <span style="color:#e6db74">&#34;vlan1021&#34;</span> <span style="color:#f92672">:</span> <span style="color:#ae81ff">1021</span>
+  }
+
+  <span style="color:#a6e22e">imc_access_vlan</span>    = <span style="color:#ae81ff">1020</span>
+  <span style="color:#a6e22e">imc_admin_password</span> = <span style="color:#e6db74">&#34;Inters!ght&#34;</span>
+
+  <span style="color:#a6e22e">ntp_servers</span> = [<span style="color:#e6db74">&#34;time-a-g.nist.gov&#34;</span>]
+
+  <span style="color:#a6e22e">dns_preferred</span> = <span style="color:#e6db74">&#34;172.16.1.98&#34;</span>
+}
+</code></pre></div></details>
+<details>
+  <summary>providers.tf</summary>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-terraform" data-lang="terraform"><span style="color:#a6e22e">terraform</span> {
+  <span style="color:#a6e22e">required_providers</span> {
+    <span style="color:#a6e22e">intersight</span> = {
+      <span style="color:#a6e22e">source</span> = <span style="color:#e6db74">&#34;CiscoDevNet/intersight&#34;</span>
+      <span style="color:#a6e22e">version</span> = <span style="color:#e6db74">&#34;1.0.15&#34;</span>
+    }
+  }
+}
+<span style="color:#66d9ef">
+</span><span style="color:#66d9ef">provider</span> <span style="color:#e6db74">&#34;intersight&#34;</span> {<span style="color:#75715e">
+</span><span style="color:#75715e">  # Configuration options
+</span><span style="color:#75715e"></span>}
+</code></pre></div></details>
+<details>
+  <summary>sources.tf</summary>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-terraform" data-lang="terraform"><span style="color:#66d9ef">data</span> <span style="color:#e6db74">&#34;intersight_organization_organization&#34;</span> <span style="color:#e6db74">&#34;iac&#34;</span> {
+    <span style="color:#a6e22e">name</span> = <span style="color:#e6db74">&#34;IaC_User_{{pod}}&#34;</span>
+}
+<span style="color:#66d9ef">
+</span><span style="color:#66d9ef">data</span> <span style="color:#e6db74">&#34;intersight_ippool_pool&#34;</span> <span style="color:#e6db74">&#34;iac&#34;</span> {
+  <span style="color:#a6e22e">name</span> = <span style="color:#e6db74">&#34;iac-user-{{pod}}-ip-pool&#34;</span>
+}
+<span style="color:#66d9ef">
+</span><span style="color:#66d9ef">data</span> <span style="color:#e6db74">&#34;intersight_macpool_pool&#34;</span> <span style="color:#e6db74">&#34;iac&#34;</span> {
+  <span style="color:#a6e22e">name</span> = <span style="color:#e6db74">&#34;iac-user-{{pod}}-mac-pool&#34;</span>
+}
+</code></pre></div></details>
+<details>
+  <summary>variables.tf</summary>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-terraform" data-lang="terraform"><span style="color:#66d9ef">variable</span> <span style="color:#e6db74">&#34;policy_name_prefix&#34;</span> {
+    <span style="color:#a6e22e">description</span> = <span style="color:#e6db74">&#34;contents of the description field for policies&#34;</span>
+    <span style="color:#a6e22e">type</span> = <span style="color:#a6e22e">string</span>
+}
+<span style="color:#66d9ef">
+</span><span style="color:#66d9ef">variable</span> <span style="color:#e6db74">&#34;policy_description&#34;</span> {
+    <span style="color:#a6e22e">description</span> = <span style="color:#e6db74">&#34;contents of the description field for policies&#34;</span>
+    <span style="color:#a6e22e">type</span> = <span style="color:#a6e22e">string</span>
+}
+<span style="color:#66d9ef">
+</span><span style="color:#66d9ef">variable</span> <span style="color:#e6db74">&#34;east_timezone&#34;</span> {
+    <span style="color:#a6e22e">description</span> = <span style="color:#e6db74">&#34;timezone used for east NTP policy&#34;</span>
+    <span style="color:#a6e22e">type</span> = <span style="color:#a6e22e">string</span>
+    <span style="color:#a6e22e">default</span> = <span style="color:#e6db74">&#34;America/Chicago&#34;</span>
+}
+<span style="color:#66d9ef">
+</span><span style="color:#66d9ef">variable</span> <span style="color:#e6db74">&#34;west_timezone&#34;</span> {
+    <span style="color:#a6e22e">description</span> = <span style="color:#e6db74">&#34;timezone used for west NTP policy&#34;</span>
+    <span style="color:#a6e22e">type</span> = <span style="color:#a6e22e">string</span>
+    <span style="color:#a6e22e">default</span> = <span style="color:#e6db74">&#34;America/Chicago&#34;</span>
+}
+<span style="color:#66d9ef">
+</span><span style="color:#66d9ef">variable</span> <span style="color:#e6db74">&#34;intersight_api_secret&#34;</span> {
+    <span style="color:#a6e22e">type</span> = <span style="color:#a6e22e">string</span>
+    <span style="color:#a6e22e">default</span> = <span style="color:#e6db74">&#34;&#34;</span>
+}
+<span style="color:#66d9ef">
+</span><span style="color:#66d9ef">variable</span> <span style="color:#e6db74">&#34;intersight_api_key&#34;</span> {
+    <span style="color:#a6e22e">type</span> = <span style="color:#a6e22e">string</span>
+    <span style="color:#a6e22e">default</span> = <span style="color:#e6db74">&#34;&#34;</span>
+}
+</code></pre></div></details>
+</div>
 <h2 id="congratulations">Congratulations!</h2>
-<p>You have successfully prepared the Visual Studio Code IDE for use with this lab. Your vsCode window should look something like the image below (click on the image to magnify).</p>
-<img src="/iac-workshop-intersight/basics/images/vscode_window.png?width=600&classes=shadow"/>
+<p>You used a community-provided Terraform module and its documentation to deploy more than 20 policies with just a few lines of code. Modules are a very powerful construct in Terraform.</p>
+
 
 <footer class="footline">
 	
@@ -1105,7 +1240,6 @@
             
                 
                     
-                    
                 
                 
 
@@ -1118,26 +1252,6 @@
             
             
                 
-                    
-                        
-                        
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
                     
                 
                 
@@ -1155,8 +1269,21 @@
             
                 
                     
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
                         
-                        
+            
+            
+                
                     
                 
                 
@@ -1337,6 +1464,7 @@
             
                 
                     
+                    
                 
                 
 
@@ -1349,6 +1477,9 @@
             
             
                 
+                    
+                        
+                        
                     
                 
                 
@@ -1398,6 +1529,7 @@
             
                 
                     
+                    
                 
                 
 
@@ -1416,6 +1548,9 @@
             
             
                 
+                    
+                        
+                        
                     
                 
                 
@@ -1469,10 +1604,10 @@
 	 
 	 
 		
-			<a class="nav nav-prev" href="/iac-workshop-intersight/basics/verify_environment/" title="Verify connectivity"> <i class="fa fa-chevron-left"></i></a>
+			<a class="nav nav-prev" href="/iac-workshop-intersight/tf_cloud/rollback/" title="Rollback"> <i class="fa fa-chevron-left"></i></a>
 		
 		
-			<a class="nav nav-next" href="/iac-workshop-intersight/basics/api_keys/" title="Obtain API keys" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+			<a class="nav nav-next" href="/iac-workshop-intersight/resources/" title="Resources" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>

@@ -1,3 +1,31 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Terraform remote CLI on Infrastructure as Code Lab</title><link>https://wookie-labs.github.io/iac-workshop-intersight/remote_cli/</link><description>Recent content in Terraform remote CLI on Infrastructure as Code Lab</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Wed, 08 Sep 2021 14:00:28 -0500</lastBuildDate><atom:link href="https://wookie-labs.github.io/iac-workshop-intersight/remote_cli/index.xml" rel="self" type="application/rss+xml"/><item><title>Change backend</title><link>https://wookie-labs.github.io/iac-workshop-intersight/remote_cli/specify_remote/</link><pubDate>Wed, 08 Sep 2021 14:08:10 -0500</pubDate><guid>https://wookie-labs.github.io/iac-workshop-intersight/remote_cli/specify_remote/</guid><description>So far in this lab you have been using the &amp;ldquo;local backend&amp;rdquo; for Terraform. In other words, you&amp;rsquo;ve been using your locally-installed instance of Terraform to execute your configuration. Using the local backend is the default behavior and does not require any additional configuration.
-In this portion of the lab, you will start using a remote backend. This means your local configuration files will actually be executed by Terraform Cloud rather than your local instance of Terraform.</description></item><item><title>Move variables to the cloud</title><link>https://wookie-labs.github.io/iac-workshop-intersight/remote_cli/configure_tfcloud/</link><pubDate>Wed, 08 Sep 2021 14:08:20 -0500</pubDate><guid>https://wookie-labs.github.io/iac-workshop-intersight/remote_cli/configure_tfcloud/</guid><description>Although you have configured Terraform to use Terraform Cloud to execute your configuration, your credentials are still stored as environment variables on your Windows host. Terraform Cloud cannot access those environment variables. In this portion of the lab, you will save your credentials as variables within Terraform Cloud and update your configuration files to use those new variables.
-Configure variables in Terraform Cloud You must add your credentials to Terraform Cloud.</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Terraform remote CLI on Infrastructure as Code Lab</title>
+    <link>https://wookie-labs.github.io/iac-workshop-intersight/remote_cli/</link>
+    <description>Recent content in Terraform remote CLI on Infrastructure as Code Lab</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 08 Sep 2021 14:00:28 -0500</lastBuildDate><atom:link href="https://wookie-labs.github.io/iac-workshop-intersight/remote_cli/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Change backend</title>
+      <link>https://wookie-labs.github.io/iac-workshop-intersight/remote_cli/specify_remote/</link>
+      <pubDate>Wed, 08 Sep 2021 14:08:10 -0500</pubDate>
+      
+      <guid>https://wookie-labs.github.io/iac-workshop-intersight/remote_cli/specify_remote/</guid>
+      <description>So far in this lab you have been using the &amp;ldquo;local backend&amp;rdquo; for Terraform. In other words, you&amp;rsquo;ve been using your locally-installed instance of Terraform to execute your configuration. Using the local backend is the default behavior and does not require any additional configuration.
+In this portion of the lab, you will start using a remote backend. This means your local configuration files will actually be executed by Terraform Cloud rather than your local instance of Terraform.</description>
+    </item>
+    
+    <item>
+      <title>Move variables to the cloud</title>
+      <link>https://wookie-labs.github.io/iac-workshop-intersight/remote_cli/configure_tfcloud/</link>
+      <pubDate>Wed, 08 Sep 2021 14:08:20 -0500</pubDate>
+      
+      <guid>https://wookie-labs.github.io/iac-workshop-intersight/remote_cli/configure_tfcloud/</guid>
+      <description>Although you have configured Terraform to use Terraform Cloud to execute your configuration, your credentials are still stored as environment variables on your Windows host. Terraform Cloud cannot access those environment variables. In this portion of the lab, you will save your credentials as variables within Terraform Cloud and update your configuration files to use those new variables.
+Configure variables in Terraform Cloud You must add your credentials to Terraform Cloud.</description>
+    </item>
+    
+  </channel>
+</rss>

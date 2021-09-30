@@ -1,10 +1,56 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Getting started on Infrastructure as Code Lab</title><link>https://wookie-labs.github.io/iac-workshop-intersight/basics/</link><description>Recent content in Getting started on Infrastructure as Code Lab</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Tue, 07 Sep 2021 10:51:00 -0500</lastBuildDate><atom:link href="https://wookie-labs.github.io/iac-workshop-intersight/basics/index.xml" rel="self" type="application/rss+xml"/><item><title>Verify connectivity</title><link>https://wookie-labs.github.io/iac-workshop-intersight/basics/verify_environment/</link><pubDate>Tue, 07 Sep 2021 11:34:19 -0500</pubDate><guid>https://wookie-labs.github.io/iac-workshop-intersight/basics/verify_environment/</guid><description>In this section of the lab you will
-verify connectivity and credentials for the Windows 10 host you will use for the lab verify credentials for Cisco Intersight Guacamole Guacamole is an open source project that provides remote access such as RDP and SSH over HTTPS. If you are unfamiliar with Guacamole, please read the Guacamole page in the Resources section of this guide before proceeding.
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Getting started on Infrastructure as Code Lab</title>
+    <link>https://wookie-labs.github.io/iac-workshop-intersight/basics/</link>
+    <description>Recent content in Getting started on Infrastructure as Code Lab</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 07 Sep 2021 10:51:00 -0500</lastBuildDate><atom:link href="https://wookie-labs.github.io/iac-workshop-intersight/basics/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Verify connectivity</title>
+      <link>https://wookie-labs.github.io/iac-workshop-intersight/basics/verify_environment/</link>
+      <pubDate>Tue, 07 Sep 2021 11:34:19 -0500</pubDate>
+      
+      <guid>https://wookie-labs.github.io/iac-workshop-intersight/basics/verify_environment/</guid>
+      <description>In this section of the lab you will
+ verify connectivity and credentials for the Windows 10 host you will use for the lab verify credentials for Cisco Intersight  Guacamole Guacamole is an open source project that provides remote access such as RDP and SSH over HTTPS. If you are unfamiliar with Guacamole, please read the Guacamole page in the Resources section of this guide before proceeding.
 Steps:
-Browse to the Guacamole URL provided to you in the lab details email.</description></item><item><title>Configure the IDE</title><link>https://wookie-labs.github.io/iac-workshop-intersight/basics/vscode/</link><pubDate>Wed, 08 Sep 2021 16:33:54 -0500</pubDate><guid>https://wookie-labs.github.io/iac-workshop-intersight/basics/vscode/</guid><description>This lab will use Microsoft Visual Studio Code (vsCode) for the integrated development environment (IDE). This is a very popular and free IDE that has many free extensions for different programming languages. In this section of the lab, you will configure vsCode for use with Terraform.
-Initialize the project directory In this portion of the lab, you will clone a GitHub repository to use as your project directory. It may seem unusual to clone a nearly empty repository, but this specific repository will be important later in the lab when you migrate to Terraform Cloud as a link has been established between your repository and the Terraform Cloud organization.</description></item><item><title>Obtain API keys</title><link>https://wookie-labs.github.io/iac-workshop-intersight/basics/api_keys/</link><pubDate>Tue, 07 Sep 2021 11:31:57 -0500</pubDate><guid>https://wookie-labs.github.io/iac-workshop-intersight/basics/api_keys/</guid><description>Terraform will use an API key to authenticate to Intersight on your behalf. In this section of the lab, you will generate an API key in Intersight and set environment variables on the Windows host so that Terraform can use that API key.
+ Browse to the Guacamole URL provided to you in the lab details email.</description>
+    </item>
+    
+    <item>
+      <title>Configure the IDE</title>
+      <link>https://wookie-labs.github.io/iac-workshop-intersight/basics/vscode/</link>
+      <pubDate>Wed, 08 Sep 2021 16:33:54 -0500</pubDate>
+      
+      <guid>https://wookie-labs.github.io/iac-workshop-intersight/basics/vscode/</guid>
+      <description>This lab will use Microsoft Visual Studio Code (vsCode) for the integrated development environment (IDE). This is a very popular and free IDE that has many free extensions for different programming languages. In this section of the lab, you will configure vsCode for use with Terraform.
+Initialize the project directory In this portion of the lab, you will clone a GitHub repository to use as your project directory. It may seem unusual to clone a nearly empty repository, but this specific repository will be important later in the lab when you migrate to Terraform Cloud as a link has been established between your repository and the Terraform Cloud organization.</description>
+    </item>
+    
+    <item>
+      <title>Obtain API keys</title>
+      <link>https://wookie-labs.github.io/iac-workshop-intersight/basics/api_keys/</link>
+      <pubDate>Tue, 07 Sep 2021 11:31:57 -0500</pubDate>
+      
+      <guid>https://wookie-labs.github.io/iac-workshop-intersight/basics/api_keys/</guid>
+      <description>Terraform will use an API key to authenticate to Intersight on your behalf. In this section of the lab, you will generate an API key in Intersight and set environment variables on the Windows host so that Terraform can use that API key.
 Obtain Intersight API keys You must generate an API key for your user account. Perform the following from within the Intersight user interface.
 Steps:
-From the top navigation bar, select the Settings icon and choose the Settings option from the dropdown.</description></item><item><title>Create alias</title><link>https://wookie-labs.github.io/iac-workshop-intersight/basics/create_alias/</link><pubDate>Tue, 07 Sep 2021 11:31:34 -0500</pubDate><guid>https://wookie-labs.github.io/iac-workshop-intersight/basics/create_alias/</guid><description>Most developers tire of typing the command terraform repeatedly and prefer to abbreviate that as tf. In this section of the lab, you will create an alias on the Windows 10 host to do the same.
+ From the top navigation bar, select the Settings icon and choose the Settings option from the dropdown.</description>
+    </item>
+    
+    <item>
+      <title>Create alias</title>
+      <link>https://wookie-labs.github.io/iac-workshop-intersight/basics/create_alias/</link>
+      <pubDate>Tue, 07 Sep 2021 11:31:34 -0500</pubDate>
+      
+      <guid>https://wookie-labs.github.io/iac-workshop-intersight/basics/create_alias/</guid>
+      <description>Most developers tire of typing the command terraform repeatedly and prefer to abbreviate that as tf. In this section of the lab, you will create an alias on the Windows 10 host to do the same.
 Steps:
-Choose the appropriate syntax below and paste that command into the vsCode terminal. Enter the command tf -version into the vsCode terminal. If you receive a message displaying the running Terraform version, you have successfully created the alias.</description></item></channel></rss>
+ Choose the appropriate syntax below and paste that command into the vsCode terminal. Enter the command tf -version into the vsCode terminal. If you receive a message displaying the running Terraform version, you have successfully created the alias.</description>
+    </item>
+    
+  </channel>
+</rss>
