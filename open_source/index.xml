@@ -1,61 +1,6 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Terraform open source on Infrastructure as Code Lab</title>
-    <link>https://wookie-labs.github.io/iac-workshop-intersight/open_source/</link>
-    <description>Recent content in Terraform open source on Infrastructure as Code Lab</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <lastBuildDate>Wed, 08 Sep 2021 13:48:37 -0500</lastBuildDate><atom:link href="https://wookie-labs.github.io/iac-workshop-intersight/open_source/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Basic validation</title>
-      <link>https://wookie-labs.github.io/iac-workshop-intersight/open_source/first_plan/</link>
-      <pubDate>Wed, 08 Sep 2021 13:53:35 -0500</pubDate>
-      
-      <guid>https://wookie-labs.github.io/iac-workshop-intersight/open_source/first_plan/</guid>
-      <description>In this section of the lab, you will create a very basic Terraform configuration. The goals of this section are to:
- teach you an efficient way to find content in the Terraform docs validate that your credentials are correct  Create a simple HCL file HashiCorp Configuration Language (HCL) files look like a mix between JSON and YAML as you will see momentarily. As discussed in Terraform Primer &amp;gt; Basic validation, Terraform will evaluate all the configuration files in your project directory and treat them as a single document.</description>
-    </item>
-    
-    <item>
-      <title>Create an Intersight policy</title>
-      <link>https://wookie-labs.github.io/iac-workshop-intersight/open_source/ntp_policy/</link>
-      <pubDate>Wed, 08 Sep 2021 13:54:48 -0500</pubDate>
-      
-      <guid>https://wookie-labs.github.io/iac-workshop-intersight/open_source/ntp_policy/</guid>
-      <description>So far, you have only retrieved an existing item from Intersight. In this section, you will create a policy in the organization that you retrieved in the previous step. Terraform can create any policy that can be created by the Intersight API. You will focus on NTP policy as it has multiple parameters yet is self-contained.
-Create an NTP policy in Intersight You will use the Terraform resource block to define a new policy.</description>
-    </item>
-    
-    <item>
-      <title>Destroy operations</title>
-      <link>https://wookie-labs.github.io/iac-workshop-intersight/open_source/destroy/</link>
-      <pubDate>Thu, 09 Sep 2021 13:42:13 -0500</pubDate>
-      
-      <guid>https://wookie-labs.github.io/iac-workshop-intersight/open_source/destroy/</guid>
-      <description>One of the advantages of Terraform and other IaC tools is its ability to remove the infastructure that it created. Some tools, like Ansible, require the administrator to write the delete plan, which is often just as complex as the create plan. Terraform uses the state file and the configuration you&amp;rsquo;ve already written to delete resources that it created, and it knows how to do it in the correct sequence.</description>
-    </item>
-    
-    <item>
-      <title>Employ variables</title>
-      <link>https://wookie-labs.github.io/iac-workshop-intersight/open_source/variables/</link>
-      <pubDate>Wed, 08 Sep 2021 13:55:06 -0500</pubDate>
-      
-      <guid>https://wookie-labs.github.io/iac-workshop-intersight/open_source/variables/</guid>
-      <description>It is a good idea to start implementing variables before the configuration gets too large. Variables are helpful when a value is repeated in multiple places in your configuration but also when you don&amp;rsquo;t know the value at the time of writing the HCL (it will be supplied later by the person using the code).
-Create variable definitions In this section of the lab, you will define the variables that will be used for the remainder of the lab.</description>
-    </item>
-    
-    <item>
-      <title>Create another policy</title>
-      <link>https://wookie-labs.github.io/iac-workshop-intersight/open_source/second_policy/</link>
-      <pubDate>Wed, 08 Sep 2021 13:55:06 -0500</pubDate>
-      
-      <guid>https://wookie-labs.github.io/iac-workshop-intersight/open_source/second_policy/</guid>
-      <description>So far in this lab, you have been copying and pasting either from the lab guide or the online documentation. In this section of the lab, you will create a resource manually but with a lot of help from the Terraform extension for vsCode.
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Terraform open source on Infrastructure as Code Lab</title><link>https://wookie-labs.github.io/iac-workshop-intersight/open_source/</link><description>Recent content in Terraform open source on Infrastructure as Code Lab</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Wed, 08 Sep 2021 13:48:37 -0500</lastBuildDate><atom:link href="https://wookie-labs.github.io/iac-workshop-intersight/open_source/index.xml" rel="self" type="application/rss+xml"/><item><title>Basic validation</title><link>https://wookie-labs.github.io/iac-workshop-intersight/open_source/first_plan/</link><pubDate>Wed, 08 Sep 2021 13:53:35 -0500</pubDate><guid>https://wookie-labs.github.io/iac-workshop-intersight/open_source/first_plan/</guid><description>In this section of the lab, you will create a very basic Terraform configuration. The goals of this section are to:
+teach you an efficient way to find content in the Terraform docs validate that your credentials are correct Create a simple HCL file HashiCorp Configuration Language (HCL) files look like a mix between JSON and YAML as you will see momentarily. As discussed in Terraform Primer &amp;gt; Basic validation, Terraform will evaluate all the configuration files in your project directory and treat them as a single document.</description></item><item><title>Create an Intersight policy</title><link>https://wookie-labs.github.io/iac-workshop-intersight/open_source/ntp_policy/</link><pubDate>Wed, 08 Sep 2021 13:54:48 -0500</pubDate><guid>https://wookie-labs.github.io/iac-workshop-intersight/open_source/ntp_policy/</guid><description>So far, you have only retrieved an existing item from Intersight. In this section, you will create a policy in the organization that you retrieved in the previous step. Terraform can create any policy that can be created by the Intersight API. You will focus on NTP policy as it has multiple parameters yet is self-contained.
+Create an NTP policy in Intersight You will use the Terraform resource block to define a new policy.</description></item><item><title>Destroy operations</title><link>https://wookie-labs.github.io/iac-workshop-intersight/open_source/destroy/</link><pubDate>Thu, 09 Sep 2021 13:42:13 -0500</pubDate><guid>https://wookie-labs.github.io/iac-workshop-intersight/open_source/destroy/</guid><description>One of the advantages of Terraform and other IaC tools is its ability to remove the infastructure that it created. Some tools, like Ansible, require the administrator to write the delete plan, which is often just as complex as the create plan. Terraform uses the state file and the configuration you&amp;rsquo;ve already written to delete resources that it created, and it knows how to do it in the correct sequence.</description></item><item><title>Employ variables</title><link>https://wookie-labs.github.io/iac-workshop-intersight/open_source/variables/</link><pubDate>Wed, 08 Sep 2021 13:55:06 -0500</pubDate><guid>https://wookie-labs.github.io/iac-workshop-intersight/open_source/variables/</guid><description>It is a good idea to start implementing variables before the configuration gets too large. Variables are helpful when a value is repeated in multiple places in your configuration but also when you don&amp;rsquo;t know the value at the time of writing the HCL (it will be supplied later by the person using the code).
+Create variable definitions In this section of the lab, you will define the variables that will be used for the remainder of the lab.</description></item><item><title>Create another policy</title><link>https://wookie-labs.github.io/iac-workshop-intersight/open_source/second_policy/</link><pubDate>Wed, 08 Sep 2021 13:55:06 -0500</pubDate><guid>https://wookie-labs.github.io/iac-workshop-intersight/open_source/second_policy/</guid><description>So far in this lab, you have been copying and pasting either from the lab guide or the online documentation. In this section of the lab, you will create a resource manually but with a lot of help from the Terraform extension for vsCode.
 Enjoy Terraform extension for vsCode The Terraform extension for vsCode is particularly powerful at autocompletion. In this section of the lab, you will explore that.
-Steps:</description>
-    </item>
-    
-  </channel>
-</rss>
+Steps:</description></item></channel></rss>
