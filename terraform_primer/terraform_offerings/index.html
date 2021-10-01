@@ -7,18 +7,18 @@
 <meta name=author content="Cisco Systems, Inc.">
 <link rel=icon href=/iac-workshop-intersight/images/favicon.png type=image/png>
 <title>Terraform Offerings :: Infrastructure as Code Lab</title>
-<link href=/iac-workshop-intersight/css/nucleus.css?1633055939 rel=stylesheet>
-<link href=/iac-workshop-intersight/css/fontawesome-all.min.css?1633055939 rel=stylesheet>
-<link href=/iac-workshop-intersight/css/hybrid.css?1633055939 rel=stylesheet>
-<link href=/iac-workshop-intersight/css/featherlight.min.css?1633055939 rel=stylesheet>
-<link href=/iac-workshop-intersight/css/perfect-scrollbar.min.css?1633055939 rel=stylesheet>
-<link href=/iac-workshop-intersight/css/auto-complete.css?1633055939 rel=stylesheet>
-<link href=/iac-workshop-intersight/css/atom-one-dark-reasonable.css?1633055939 rel=stylesheet>
-<link href=/iac-workshop-intersight/css/theme.css?1633055939 rel=stylesheet>
-<link href=/iac-workshop-intersight/css/tabs.css?1633055939 rel=stylesheet>
-<link href=/iac-workshop-intersight/css/hugo-theme.css?1633055939 rel=stylesheet>
-<link href=/iac-workshop-intersight/css/theme-blue.css?1633055939 rel=stylesheet>
-<script src=/iac-workshop-intersight/js/jquery-3.3.1.min.js?1633055939></script>
+<link href=/iac-workshop-intersight/css/nucleus.css?1633119827 rel=stylesheet>
+<link href=/iac-workshop-intersight/css/fontawesome-all.min.css?1633119827 rel=stylesheet>
+<link href=/iac-workshop-intersight/css/hybrid.css?1633119827 rel=stylesheet>
+<link href=/iac-workshop-intersight/css/featherlight.min.css?1633119827 rel=stylesheet>
+<link href=/iac-workshop-intersight/css/perfect-scrollbar.min.css?1633119827 rel=stylesheet>
+<link href=/iac-workshop-intersight/css/auto-complete.css?1633119827 rel=stylesheet>
+<link href=/iac-workshop-intersight/css/atom-one-dark-reasonable.css?1633119827 rel=stylesheet>
+<link href=/iac-workshop-intersight/css/theme.css?1633119827 rel=stylesheet>
+<link href=/iac-workshop-intersight/css/tabs.css?1633119827 rel=stylesheet>
+<link href=/iac-workshop-intersight/css/hugo-theme.css?1633119827 rel=stylesheet>
+<link href=/iac-workshop-intersight/css/theme-blue.css?1633119827 rel=stylesheet>
+<script src=/iac-workshop-intersight/js/jquery-3.3.1.min.js?1633119827></script>
 <style>:root #header+#content>#left>#rlblock_left{display:none!important}</style>
 <link href=/iac-workshop-intersight/css/custom.css rel=stylesheet>
 <style>:not(div.featherlight-content)>img{cursor:zoom-in!important}:not(pre)>code.disable-clipboard+span.copy-to-clipboard{display:none}</style>
@@ -38,10 +38,10 @@ This lab guide is currently <strong>NOT</strong> associated with a pod assignmen
 <input data-search-input id=search-by type=search placeholder=Search...>
 <span data-search-clear><i class="fas fa-times"></i></span>
 </div>
-<script type=text/javascript src=/iac-workshop-intersight/js/lunr.min.js?1633055939></script>
-<script type=text/javascript src=/iac-workshop-intersight/js/auto-complete.js?1633055939></script>
+<script type=text/javascript src=/iac-workshop-intersight/js/lunr.min.js?1633119827></script>
+<script type=text/javascript src=/iac-workshop-intersight/js/auto-complete.js?1633119827></script>
 <script type=text/javascript>var baseurl="https://wookie-labs.github.io/iac-workshop-intersight/"</script>
-<script type=text/javascript src=/iac-workshop-intersight/js/search.js?1633055939></script>
+<script type=text/javascript src=/iac-workshop-intersight/js/search.js?1633119827></script>
 </div>
 <div class=highlightable>
 <ul class=topics>
@@ -324,8 +324,67 @@ Terraform Primer > Core Concepts
 <p>State in TFC is centrally stored, encrypted, versioned and facilitates locking during concurrent run requests solving the most challenging component of Terraform team collaboration. With all of these pieces combined, the workflow looks similar to the figure below:</p>
 <img src=/iac-workshop-intersight/terraform_primer/images/tfc_overview.png>
 <p>Operators in the figure above are simply managing configuration files in a GitHub repo. Whenever changes are committed to the repo, a trigger is automatically made to TFC telling it that a new run should be performed on the associated <strong>Workspace</strong>. TFC then instantiates a container instance running the target Terraform version, retrieves the configuration code from GitHub, injects any sensitive variables values, and performs the lifecycle actions dictated by the configuration changes. This process is referred to as a <strong>Run</strong> and all logging associated with the Run can be monitored within the TFC UI.</p>
+<p>Below is a summary of the pros vs cons of Terraform Cloud.</p>
+<table>
+<tr>
+<th>Pros <i class="fas fa-check" style=color:#2ecc71></i></th>
+<th>Cons <i class="fas fa-times" style=color:#e74c3c></th>
+</tr>
+<tr>
+<td>Single source of truth for IaC code</td>
+<td>Not Free</td>
+</tr>
+<tr>
+<td>Centralized credentials management</td>
+<td></td>
+</tr>
+<tr>
+<td>Built for team collaboration with RBAC</td>
+<td></td>
+</tr>
+<tr>
+<td>Integrated state management (locking/encryption/versioning)</td>
+<td></td>
+</tr>
+<tr>
+<td>Full audit trail of Terraform Runs</td>
+<td></td>
+</tr>
+<tr>
+<td>SSO Integration</td>
+<td></td>
+</tr>
+<tr>
+<td>Consistent Terraform execution environment (in the cloud)</td>
+<td></td>
+</tr>
+<tr>
+<td>
+<a href=https://www.terraform.io/docs/cloud/sentinel/index.html target=_blank>Sentinel</a> support for added governance</td>
+<td></td>
+</tr>
+</table>
 <h2 id=terraform-enterprise>Terraform Enterprise</h2>
 <p>Terraform Enterprise is the self-hosted distribution of Terraform Cloud. It offers enterprises a private instance of the Terraform Cloud application, with no resource limits and with additional enterprise-grade architectural features like audit logging and SAML single sign-on.</p>
+<p>Below is a summary of the pros vs cons of Terraform Enterprise.</p>
+<table>
+<tr>
+<th>Pros <i class="fas fa-check" style=color:#2ecc71></i></th>
+<th>Cons <i class="fas fa-times" style=color:#e74c3c></th>
+</tr>
+<tr>
+<td>Private instance of Terraform Cloud (hosted on-premise)</td>
+<td>Self Managed</td>
+</tr>
+<tr>
+<td>Unlimited Runs</td>
+<td>Not Free</td>
+</tr>
+<tr>
+<td>LDAP Integration</td>
+<td></td>
+</tr>
+</table>
 <h2 id=congratulations>Congratulations!</h2>
 <p>You have now learned the the fundamentals of Terraform and are ready to move on to writing configuration code. Please proceed to the next chapter to start the hands-on portion of this workshop.</p>
 <footer class=footline>
@@ -340,18 +399,18 @@ Terraform Primer > Core Concepts
 <div style=left:-1000px;overflow:scroll;position:absolute;top:-1000px;border:none;box-sizing:content-box;height:200px;margin:0;padding:0;width:200px>
 <div style=border:none;box-sizing:content-box;height:200px;margin:0;padding:0;width:200px></div>
 </div>
-<script src=/iac-workshop-intersight/js/clipboard.min.js?1633055939></script>
-<script src=/iac-workshop-intersight/js/perfect-scrollbar.min.js?1633055939></script>
-<script src=/iac-workshop-intersight/js/perfect-scrollbar.jquery.min.js?1633055939></script>
-<script src=/iac-workshop-intersight/js/jquery.sticky.js?1633055939></script>
-<script src=/iac-workshop-intersight/js/featherlight.min.js?1633055939></script>
-<script src=/iac-workshop-intersight/js/highlight.pack.js?1633055939></script>
+<script src=/iac-workshop-intersight/js/clipboard.min.js?1633119827></script>
+<script src=/iac-workshop-intersight/js/perfect-scrollbar.min.js?1633119827></script>
+<script src=/iac-workshop-intersight/js/perfect-scrollbar.jquery.min.js?1633119827></script>
+<script src=/iac-workshop-intersight/js/jquery.sticky.js?1633119827></script>
+<script src=/iac-workshop-intersight/js/featherlight.min.js?1633119827></script>
+<script src=/iac-workshop-intersight/js/highlight.pack.js?1633119827></script>
 <script>hljs.highlightAll()</script>
-<script src=/iac-workshop-intersight/js/modernizr.custom-3.6.0.js?1633055939></script>
-<script src=/iac-workshop-intersight/js/learn.js?1633055939></script>
-<script src=/iac-workshop-intersight/js/hugo-learn.js?1633055939></script>
-<script type=text/javascript src=/iac-workshop-intersight/js/terraform.js?1633055939></script>
+<script src=/iac-workshop-intersight/js/modernizr.custom-3.6.0.js?1633119827></script>
+<script src=/iac-workshop-intersight/js/learn.js?1633119827></script>
+<script src=/iac-workshop-intersight/js/hugo-learn.js?1633119827></script>
+<script type=text/javascript src=/iac-workshop-intersight/js/terraform.js?1633119827></script>
 <script type=text/javascript>hljs.registerLanguage('terraform',window.hljsDefineTerraform),hljs.highlightAll(),hljs.configure({ignoreUnescapedHTML:!0})</script>
-<script type=text/javascript src=/iac-workshop-intersight/js/user_navigation.js?1633055939></script>
+<script type=text/javascript src=/iac-workshop-intersight/js/user_navigation.js?1633119827></script>
 </body>
 </html>

@@ -7,18 +7,18 @@
 <meta name=author content="Cisco Systems, Inc.">
 <link rel=icon href=/iac-workshop-intersight/images/favicon.png type=image/png>
 <title>Verify connectivity :: Infrastructure as Code Lab</title>
-<link href=/iac-workshop-intersight/css/nucleus.css?1633055939 rel=stylesheet>
-<link href=/iac-workshop-intersight/css/fontawesome-all.min.css?1633055939 rel=stylesheet>
-<link href=/iac-workshop-intersight/css/hybrid.css?1633055939 rel=stylesheet>
-<link href=/iac-workshop-intersight/css/featherlight.min.css?1633055939 rel=stylesheet>
-<link href=/iac-workshop-intersight/css/perfect-scrollbar.min.css?1633055939 rel=stylesheet>
-<link href=/iac-workshop-intersight/css/auto-complete.css?1633055939 rel=stylesheet>
-<link href=/iac-workshop-intersight/css/atom-one-dark-reasonable.css?1633055939 rel=stylesheet>
-<link href=/iac-workshop-intersight/css/theme.css?1633055939 rel=stylesheet>
-<link href=/iac-workshop-intersight/css/tabs.css?1633055939 rel=stylesheet>
-<link href=/iac-workshop-intersight/css/hugo-theme.css?1633055939 rel=stylesheet>
-<link href=/iac-workshop-intersight/css/theme-blue.css?1633055939 rel=stylesheet>
-<script src=/iac-workshop-intersight/js/jquery-3.3.1.min.js?1633055939></script>
+<link href=/iac-workshop-intersight/css/nucleus.css?1633119827 rel=stylesheet>
+<link href=/iac-workshop-intersight/css/fontawesome-all.min.css?1633119827 rel=stylesheet>
+<link href=/iac-workshop-intersight/css/hybrid.css?1633119827 rel=stylesheet>
+<link href=/iac-workshop-intersight/css/featherlight.min.css?1633119827 rel=stylesheet>
+<link href=/iac-workshop-intersight/css/perfect-scrollbar.min.css?1633119827 rel=stylesheet>
+<link href=/iac-workshop-intersight/css/auto-complete.css?1633119827 rel=stylesheet>
+<link href=/iac-workshop-intersight/css/atom-one-dark-reasonable.css?1633119827 rel=stylesheet>
+<link href=/iac-workshop-intersight/css/theme.css?1633119827 rel=stylesheet>
+<link href=/iac-workshop-intersight/css/tabs.css?1633119827 rel=stylesheet>
+<link href=/iac-workshop-intersight/css/hugo-theme.css?1633119827 rel=stylesheet>
+<link href=/iac-workshop-intersight/css/theme-blue.css?1633119827 rel=stylesheet>
+<script src=/iac-workshop-intersight/js/jquery-3.3.1.min.js?1633119827></script>
 <style>:root #header+#content>#left>#rlblock_left{display:none!important}</style>
 <link href=/iac-workshop-intersight/css/custom.css rel=stylesheet>
 <style>:not(div.featherlight-content)>img{cursor:zoom-in!important}:not(pre)>code.disable-clipboard+span.copy-to-clipboard{display:none}</style>
@@ -38,10 +38,10 @@ This lab guide is currently <strong>NOT</strong> associated with a pod assignmen
 <input data-search-input id=search-by type=search placeholder=Search...>
 <span data-search-clear><i class="fas fa-times"></i></span>
 </div>
-<script type=text/javascript src=/iac-workshop-intersight/js/lunr.min.js?1633055939></script>
-<script type=text/javascript src=/iac-workshop-intersight/js/auto-complete.js?1633055939></script>
+<script type=text/javascript src=/iac-workshop-intersight/js/lunr.min.js?1633119827></script>
+<script type=text/javascript src=/iac-workshop-intersight/js/auto-complete.js?1633119827></script>
 <script type=text/javascript>var baseurl="https://wookie-labs.github.io/iac-workshop-intersight/"</script>
-<script type=text/javascript src=/iac-workshop-intersight/js/search.js?1633055939></script>
+<script type=text/javascript src=/iac-workshop-intersight/js/search.js?1633119827></script>
 </div>
 <div class=highlightable>
 <ul class=topics>
@@ -288,8 +288,8 @@ Verify connectivity
 <p>Guacamole is an open source project that provides remote access such as RDP and SSH over HTTPS. If you are unfamiliar with Guacamole, please read the <a href=/iac-workshop-intersight/resources/guacamole/>Guacamole</a> page in the <strong>Resources</strong> section of this guide before proceeding.</p>
 <p>Steps:</p>
 <ol>
-<li>Browse to the Guacamole URL provided to you in the lab details email.</li>
-<li>Enter the username and <strong>not</strong> full email address provided to you as shown in the figure below.</li>
+<li>Browse to the Guacamole URL provided to you in the lab details email. The URL has the Guacamole username and password embedded, so you should be logged in and not have to follow the next steps in this section. If instead you see a login prompt like the one shown below, proceed to step 2.</li>
+<li>Enter the <strong>username</strong> provided to you as shown in the figure below (your username will not have a number instead of an &ldquo;X&rdquo; in it).</li>
 <li>Enter the password provided to you.</li>
 <li>Click <strong>Login</strong></li>
 </ol>
@@ -303,7 +303,10 @@ Verify connectivity
 <ol>
 <li>Click on the following link to take you to
 <a href=https://intersight.com target=_blank><a href=https://intersight.com>https://intersight.com</a></a>.</li>
-<li>There are two login options available for Intersight. Use the SSO login option on the right. Enter the <strong>email address</strong> provided to you for this lab as shown in the image below.</li>
+<li>There are two login options available for Intersight. Use the SSO login option on the right. SSO requires a full email address. Use your assigned <strong>username</strong> and <strong>SSO domain</strong> provided to you for this lab.</li>
+</ol>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>iac-user-<span style=color:#f92672>{{</span>pod<span style=color:#f92672>}}</span>@auslab.cisco.com
+</code></pre></div><ol start=3>
 <li>Click <strong>Sign In with SSO</strong>.</li>
 </ol>
 <img src="/iac-workshop-intersight/basics/images/intersight_login.png?width=600&classes=shadow">
@@ -328,18 +331,18 @@ Verify connectivity
 <div style=left:-1000px;overflow:scroll;position:absolute;top:-1000px;border:none;box-sizing:content-box;height:200px;margin:0;padding:0;width:200px>
 <div style=border:none;box-sizing:content-box;height:200px;margin:0;padding:0;width:200px></div>
 </div>
-<script src=/iac-workshop-intersight/js/clipboard.min.js?1633055939></script>
-<script src=/iac-workshop-intersight/js/perfect-scrollbar.min.js?1633055939></script>
-<script src=/iac-workshop-intersight/js/perfect-scrollbar.jquery.min.js?1633055939></script>
-<script src=/iac-workshop-intersight/js/jquery.sticky.js?1633055939></script>
-<script src=/iac-workshop-intersight/js/featherlight.min.js?1633055939></script>
-<script src=/iac-workshop-intersight/js/highlight.pack.js?1633055939></script>
+<script src=/iac-workshop-intersight/js/clipboard.min.js?1633119827></script>
+<script src=/iac-workshop-intersight/js/perfect-scrollbar.min.js?1633119827></script>
+<script src=/iac-workshop-intersight/js/perfect-scrollbar.jquery.min.js?1633119827></script>
+<script src=/iac-workshop-intersight/js/jquery.sticky.js?1633119827></script>
+<script src=/iac-workshop-intersight/js/featherlight.min.js?1633119827></script>
+<script src=/iac-workshop-intersight/js/highlight.pack.js?1633119827></script>
 <script>hljs.highlightAll()</script>
-<script src=/iac-workshop-intersight/js/modernizr.custom-3.6.0.js?1633055939></script>
-<script src=/iac-workshop-intersight/js/learn.js?1633055939></script>
-<script src=/iac-workshop-intersight/js/hugo-learn.js?1633055939></script>
-<script type=text/javascript src=/iac-workshop-intersight/js/terraform.js?1633055939></script>
+<script src=/iac-workshop-intersight/js/modernizr.custom-3.6.0.js?1633119827></script>
+<script src=/iac-workshop-intersight/js/learn.js?1633119827></script>
+<script src=/iac-workshop-intersight/js/hugo-learn.js?1633119827></script>
+<script type=text/javascript src=/iac-workshop-intersight/js/terraform.js?1633119827></script>
 <script type=text/javascript>hljs.registerLanguage('terraform',window.hljsDefineTerraform),hljs.highlightAll(),hljs.configure({ignoreUnescapedHTML:!0})</script>
-<script type=text/javascript src=/iac-workshop-intersight/js/user_navigation.js?1633055939></script>
+<script type=text/javascript src=/iac-workshop-intersight/js/user_navigation.js?1633119827></script>
 </body>
 </html>

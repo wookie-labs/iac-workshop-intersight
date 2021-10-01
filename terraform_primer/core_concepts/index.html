@@ -7,18 +7,18 @@
 <meta name=author content="Cisco Systems, Inc.">
 <link rel=icon href=/iac-workshop-intersight/images/favicon.png type=image/png>
 <title>Core Concepts :: Infrastructure as Code Lab</title>
-<link href=/iac-workshop-intersight/css/nucleus.css?1633055939 rel=stylesheet>
-<link href=/iac-workshop-intersight/css/fontawesome-all.min.css?1633055939 rel=stylesheet>
-<link href=/iac-workshop-intersight/css/hybrid.css?1633055939 rel=stylesheet>
-<link href=/iac-workshop-intersight/css/featherlight.min.css?1633055939 rel=stylesheet>
-<link href=/iac-workshop-intersight/css/perfect-scrollbar.min.css?1633055939 rel=stylesheet>
-<link href=/iac-workshop-intersight/css/auto-complete.css?1633055939 rel=stylesheet>
-<link href=/iac-workshop-intersight/css/atom-one-dark-reasonable.css?1633055939 rel=stylesheet>
-<link href=/iac-workshop-intersight/css/theme.css?1633055939 rel=stylesheet>
-<link href=/iac-workshop-intersight/css/tabs.css?1633055939 rel=stylesheet>
-<link href=/iac-workshop-intersight/css/hugo-theme.css?1633055939 rel=stylesheet>
-<link href=/iac-workshop-intersight/css/theme-blue.css?1633055939 rel=stylesheet>
-<script src=/iac-workshop-intersight/js/jquery-3.3.1.min.js?1633055939></script>
+<link href=/iac-workshop-intersight/css/nucleus.css?1633119827 rel=stylesheet>
+<link href=/iac-workshop-intersight/css/fontawesome-all.min.css?1633119827 rel=stylesheet>
+<link href=/iac-workshop-intersight/css/hybrid.css?1633119827 rel=stylesheet>
+<link href=/iac-workshop-intersight/css/featherlight.min.css?1633119827 rel=stylesheet>
+<link href=/iac-workshop-intersight/css/perfect-scrollbar.min.css?1633119827 rel=stylesheet>
+<link href=/iac-workshop-intersight/css/auto-complete.css?1633119827 rel=stylesheet>
+<link href=/iac-workshop-intersight/css/atom-one-dark-reasonable.css?1633119827 rel=stylesheet>
+<link href=/iac-workshop-intersight/css/theme.css?1633119827 rel=stylesheet>
+<link href=/iac-workshop-intersight/css/tabs.css?1633119827 rel=stylesheet>
+<link href=/iac-workshop-intersight/css/hugo-theme.css?1633119827 rel=stylesheet>
+<link href=/iac-workshop-intersight/css/theme-blue.css?1633119827 rel=stylesheet>
+<script src=/iac-workshop-intersight/js/jquery-3.3.1.min.js?1633119827></script>
 <style>:root #header+#content>#left>#rlblock_left{display:none!important}</style>
 <link href=/iac-workshop-intersight/css/custom.css rel=stylesheet>
 <style>:not(div.featherlight-content)>img{cursor:zoom-in!important}:not(pre)>code.disable-clipboard+span.copy-to-clipboard{display:none}</style>
@@ -38,10 +38,10 @@ This lab guide is currently <strong>NOT</strong> associated with a pod assignmen
 <input data-search-input id=search-by type=search placeholder=Search...>
 <span data-search-clear><i class="fas fa-times"></i></span>
 </div>
-<script type=text/javascript src=/iac-workshop-intersight/js/lunr.min.js?1633055939></script>
-<script type=text/javascript src=/iac-workshop-intersight/js/auto-complete.js?1633055939></script>
+<script type=text/javascript src=/iac-workshop-intersight/js/lunr.min.js?1633119827></script>
+<script type=text/javascript src=/iac-workshop-intersight/js/auto-complete.js?1633119827></script>
 <script type=text/javascript>var baseurl="https://wookie-labs.github.io/iac-workshop-intersight/"</script>
-<script type=text/javascript src=/iac-workshop-intersight/js/search.js?1633055939></script>
+<script type=text/javascript src=/iac-workshop-intersight/js/search.js?1633119827></script>
 </div>
 <div class=highlightable>
 <ul class=topics>
@@ -284,31 +284,22 @@ Core Concepts
 </h1>
 <h2 id=configuration-files>Configuration Files</h2>
 <p>When managing infrastructure with Terraform, all configuration is written into documents called <strong>Configuration files</strong> using the <strong>Terraform Language</strong>, which is Terraform&rsquo;s primary user interface. Terraform’s configuration language is <em>declarative</em>, meaning that it describes the desired end-state for your infrastructure, in contrast to procedural programming languages that require step-by-step instructions to perform tasks (more on this later).</p>
-<p>Terraform language is a rich language designed to be relatively easy for humans to read and write. The constructs in the Terraform language can also be expressed in JSON syntax, which is harder for humans to read and edit but easier to generate and parse programmatically. Code in the Terraform language is stored in plain text files with the <code>.tf</code> file extension while files written in the JSON-based variant of the language are named with <code class=disable-clipboard>.tf.json</code>.</p>
+<p>Terraform language is a rich language designed to be relatively easy for humans to read and write. The constructs in the Terraform language can also be expressed in JSON syntax, which is harder for humans to read and edit but easier to generate and parse programmatically. Code in the Terraform language is stored in plain text files with the <code>.tf</code> file extension while files written in the JSON-based variant of the language are named with <code class=disable-clipboard>.tf.json</code>. Below is an example code snippet for creating an NTP policy in Cisco Intersight (the contents of this code will be explained thoroughly during the lab sections of this guide).</p>
+<img src=/iac-workshop-intersight/terraform_primer/images/tf_language_1.png>
 <p>Terraform language is built upon a broadly used syntax called Hashicorp Configuration Language (<strong>HCL</strong>), which is commonly used in other HashiCorp products and applications. The full Terraform language documentation can be found
-<a href=https://www.terraform.io/docs/language/index.html target=_blank>here</a>.</p>
-<p>Below is an example code snippet for creating an NTP policy in Cisco Intersight (the contents of this code will be explained thoroughly during the lab sections of this guide).</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-terraform data-lang=terraform><span style=color:#66d9ef>resource</span> <span style=color:#e6db74>&#34;intersight_ntp_policy&#34;</span> <span style=color:#e6db74>&#34;east&#34;</span> {
-  <span style=color:#a6e22e>name</span>        = <span style=color:#e6db74>&#34;east_coast&#34;</span>
-  <span style=color:#a6e22e>description</span> = <span style=color:#e6db74>&#34;IaC lab NTP policy for east coast&#34;</span>
-  <span style=color:#a6e22e>enabled</span>     = <span style=color:#66d9ef>true</span>
-  <span style=color:#a6e22e>ntp_servers</span> = [
-    <span style=color:#e6db74>&#34;ntp.esl.cisco.com&#34;</span>,
-    <span style=color:#e6db74>&#34;time-a-g.nist.gov&#34;</span>,
-    <span style=color:#e6db74>&#34;time-b-g.nist.gov&#34;</span>
-  ]
-  <span style=color:#a6e22e>organization</span> {
-    <span style=color:#a6e22e>object_type</span> = <span style=color:#e6db74>&#34;organization.Organization&#34;</span>
-    <span style=color:#a6e22e>moid</span>        = data.<span style=color:#a6e22e>intersight_organization_organization</span>.<span style=color:#a6e22e>iac</span>.<span style=color:#a6e22e>results</span>[<span style=color:#ae81ff>0</span>].<span style=color:#a6e22e>moid</span>
-  }
-}
-</code></pre></div><h2 id=directories-and-modules>Directories and Modules</h2>
-<p>A <strong>module</strong> is a collection of <code>.tf</code> and/or <code class=disable-clipboard>.tf.json</code> files kept together in a directory.</p>
+<a href=https://www.terraform.io/docs/language/index.html target=_blank>here</a>. Below are some basic capabilities found in HCL that will be explained in more detail in the coming sections:</p>
+<img src=/iac-workshop-intersight/terraform_primer/images/tf_language_2.png>
+<h2 id=directories-and-modules>Directories and Modules</h2>
+<p>You will often come across the term <strong>module</strong> as you learn more about Terraform. A module simply refers to a collection of configuration files (<code>.tf</code> and/or <code class=disable-clipboard>.tf.json</code>) kept together in a directory.</p>
 <p>A Terraform module only consists of the top-level configuration files in a directory; nested directories are treated as completely separate modules, and are not automatically included in the configuration. The place where Terraform begins evaluating a configuration is referred to as the <strong>root module</strong> (or <strong>Workspace</strong> in Terraform Cloud and Terraform Enterprise).</p>
-<p>Terraform evaluates all of the configuration files in a module, effectively treating the entire module as a single document. Separating various configuration blocks into different files is purely for the convenience of readers and maintainers, and has no effect on the module&rsquo;s behavior.</p>
+<p>Terraform evaluates all of the configuration files in a module, effectively treating the entire module as a single document. Separating various configuration blocks into different files is purely for the convenience of readers and maintainers, and has no effect on the module&rsquo;s behavior. The figure below is a snaphsot of a working directory called
+<code class=disable-clipboard>IAC-USER-1</code> (also known as <strong>root module</strong>) containing several different configuration files ending with <code>.tf</code> and
+<code class=disable-clipboard>.tfvars</code> (explained in the lab).</p>
+<img src="/iac-workshop-intersight/tf_cloud/images/modified_file.png?classes=shadow">
+<p>When Terraform runs an action (covered in the <a href=/iac-workshop-intersight/terraform_primer/actions/>Actions</a> section of this Chapter) against this directory, all of the files configuration files are combined into a single <strong>Configuration Document</strong>.</p>
 <p>A Terraform module can also use
 <a href=https://www.terraform.io/docs/language/modules/syntax.html target=_blank>module blocks</a> to explicitly include other modules into the configuration. These child modules can come from local directories (nested in the parent module&rsquo;s directory, or anywhere else on disk), or from external sources like the
-<a href=https://registry.terraform.io target=_blank>Terraform Registry</a>.</p>
+<a href=https://registry.terraform.io target=_blank>Terraform Registry</a>. Modules help follow the <strong>DRY</strong> principle (Don&rsquo;t Repeat Yourself) by promoting reusability and best practice sharing of Terraform configuration. Modules help take a set of related tasks like setting up all of the configuration needed to deploy an Intersight Managed Mode domain, Intersight Kubernetes Services cluster, or a Cisco Hyperflex cluster and packaging that into a single module with a simpler set of user inputs.</p>
 <h2 id=state>State</h2>
 <p>Terraform must store state about your managed infrastructure and configuration. This state is used by Terraform to map real world resources to your configuration, keep track of metadata, and to improve performance for large infrastructures.</p>
 <p>State is stored by default in a local file named <code class=disable-clipboard>terraform.tfstate</code>, but it can also be stored remotely, which works better in a team environment. Terraform uses this local state to create plans and make changes to your infrastructure. Prior to any operation, Terraform does a refresh to update the state with the real infrastructure.</p>
@@ -342,18 +333,18 @@ Core Concepts
 <div style=left:-1000px;overflow:scroll;position:absolute;top:-1000px;border:none;box-sizing:content-box;height:200px;margin:0;padding:0;width:200px>
 <div style=border:none;box-sizing:content-box;height:200px;margin:0;padding:0;width:200px></div>
 </div>
-<script src=/iac-workshop-intersight/js/clipboard.min.js?1633055939></script>
-<script src=/iac-workshop-intersight/js/perfect-scrollbar.min.js?1633055939></script>
-<script src=/iac-workshop-intersight/js/perfect-scrollbar.jquery.min.js?1633055939></script>
-<script src=/iac-workshop-intersight/js/jquery.sticky.js?1633055939></script>
-<script src=/iac-workshop-intersight/js/featherlight.min.js?1633055939></script>
-<script src=/iac-workshop-intersight/js/highlight.pack.js?1633055939></script>
+<script src=/iac-workshop-intersight/js/clipboard.min.js?1633119827></script>
+<script src=/iac-workshop-intersight/js/perfect-scrollbar.min.js?1633119827></script>
+<script src=/iac-workshop-intersight/js/perfect-scrollbar.jquery.min.js?1633119827></script>
+<script src=/iac-workshop-intersight/js/jquery.sticky.js?1633119827></script>
+<script src=/iac-workshop-intersight/js/featherlight.min.js?1633119827></script>
+<script src=/iac-workshop-intersight/js/highlight.pack.js?1633119827></script>
 <script>hljs.highlightAll()</script>
-<script src=/iac-workshop-intersight/js/modernizr.custom-3.6.0.js?1633055939></script>
-<script src=/iac-workshop-intersight/js/learn.js?1633055939></script>
-<script src=/iac-workshop-intersight/js/hugo-learn.js?1633055939></script>
-<script type=text/javascript src=/iac-workshop-intersight/js/terraform.js?1633055939></script>
+<script src=/iac-workshop-intersight/js/modernizr.custom-3.6.0.js?1633119827></script>
+<script src=/iac-workshop-intersight/js/learn.js?1633119827></script>
+<script src=/iac-workshop-intersight/js/hugo-learn.js?1633119827></script>
+<script type=text/javascript src=/iac-workshop-intersight/js/terraform.js?1633119827></script>
 <script type=text/javascript>hljs.registerLanguage('terraform',window.hljsDefineTerraform),hljs.highlightAll(),hljs.configure({ignoreUnescapedHTML:!0})</script>
-<script type=text/javascript src=/iac-workshop-intersight/js/user_navigation.js?1633055939></script>
+<script type=text/javascript src=/iac-workshop-intersight/js/user_navigation.js?1633119827></script>
 </body>
 </html>
