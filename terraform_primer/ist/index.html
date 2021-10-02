@@ -6,7 +6,7 @@
 <meta name=description content="Cisco IaC Lab">
 <meta name=author content="Cisco Systems, Inc.">
 <link rel=icon href=/iac-workshop-intersight/images/favicon.png type=image/png>
-<title>Destroy operations :: Infrastructure as Code Lab</title>
+<title>IST :: Infrastructure as Code Lab</title>
 <link href=/iac-workshop-intersight/css/nucleus.css?1633196739 rel=stylesheet>
 <link href=/iac-workshop-intersight/css/fontawesome-all.min.css?1633196739 rel=stylesheet>
 <link href=/iac-workshop-intersight/css/hybrid.css?1633196739 rel=stylesheet>
@@ -26,7 +26,7 @@
 This lab guide is currently <strong>NOT</strong> associated with a pod assignment. To avoid confusion and incomplete documentation please access this lab guide using the URL emailed to you.
 </p></div>
 </head>
-<body data-url=/iac-workshop-intersight/open_source/destroy/>
+<body data-url=/iac-workshop-intersight/terraform_primer/ist/>
 <nav id=sidebar class=showVisitedLinks>
 <div id=header-wrapper>
 <div id=header>
@@ -45,7 +45,8 @@ This lab guide is currently <strong>NOT</strong> associated with a pod assignmen
 </div>
 <div class=highlightable>
 <ul class=topics>
-<li data-nav-id=/iac-workshop-intersight/terraform_primer/ title="Terraform Primer" class=dd-item>
+<li data-nav-id=/iac-workshop-intersight/terraform_primer/ title="Terraform Primer" class="dd-item
+parent">
 <a href=/iac-workshop-intersight/terraform_primer/>
 <b>1. </b>Terraform Primer
 <i class="fas fa-check read-icon"></i>
@@ -63,7 +64,7 @@ Terraform Offerings
 <i class="fas fa-check read-icon"></i>
 </a>
 </li>
-<li data-nav-id=/iac-workshop-intersight/terraform_primer/ist/ title=IST class=dd-item>
+<li data-nav-id=/iac-workshop-intersight/terraform_primer/ist/ title=IST class="dd-item active">
 <a href=/iac-workshop-intersight/terraform_primer/ist/>
 IST
 <i class="fas fa-check read-icon"></i>
@@ -127,8 +128,7 @@ Create alias
 </li>
 </ul>
 </li>
-<li data-nav-id=/iac-workshop-intersight/open_source/ title="Terraform open source" class="dd-item
-parent">
+<li data-nav-id=/iac-workshop-intersight/open_source/ title="Terraform open source" class=dd-item>
 <a href=/iac-workshop-intersight/open_source/>
 <b>3. </b>Terraform open source
 <i class="fas fa-check read-icon"></i>
@@ -146,7 +146,7 @@ Create an Intersight policy
 <i class="fas fa-check read-icon"></i>
 </a>
 </li>
-<li data-nav-id=/iac-workshop-intersight/open_source/destroy/ title="Destroy operations" class="dd-item active">
+<li data-nav-id=/iac-workshop-intersight/open_source/destroy/ title="Destroy operations" class=dd-item>
 <a href=/iac-workshop-intersight/open_source/destroy/>
 Destroy operations
 <i class="fas fa-check read-icon"></i>
@@ -263,15 +263,14 @@ Terraform background
 </span>
 <span id=toc-menu><i class="fas fa-list-alt"></i></span>
 <span class=links>
-<a href=/iac-workshop-intersight/>IaC Fundamentals with Intersight</a> > <a href=/iac-workshop-intersight/open_source/>Terraform open source</a> > Destroy operations
+<a href=/iac-workshop-intersight/>IaC Fundamentals with Intersight</a> > <a href=/iac-workshop-intersight/terraform_primer/>Terraform Primer</a> > IST
 </span>
 </div>
 <div class=progress>
 <div class=wrapper>
 <nav id=TableOfContents>
 <ul>
-<li><a href=#delete-the-infrastructure>Delete the infrastructure</a></li>
-<li><a href=#congratulations>Congratulations!</a></li>
+<li><a href=#coming-very-soon>Coming very soon</a></li>
 </ul>
 </nav>
 </div>
@@ -282,29 +281,16 @@ Terraform background
 </div>
 <div id=body-inner>
 <h1>
-Destroy operations
+IST
 </h1>
-<p>One of the advantages of Terraform and other IaC tools is its ability to remove the infastructure that it created. Some tools, like Ansible, require the administrator to write the delete plan, which is often just as complex as the create plan. Terraform uses the state file and the configuration you&rsquo;ve already written to delete resources that it created, and it knows how to do it in the correct sequence.</p>
-<h2 id=delete-the-infrastructure>Delete the infrastructure</h2>
-<p>In this section of the lab, you will delete and then recreate your NTP policy and prove that the recreated policy is <em>new</em> even though it is configured identically.</p>
-<p>Steps:</p>
-<ol>
-<li>In the Intersight GUI, browse to the NTP policy you created. Notice that the URL follows the format <code class=disable-clipboard><a href=https://intersight.com/an/policy/policies/ntp-policy/613a2a4a6275722d300c7646/view>https://intersight.com/an/policy/policies/ntp-policy/613a2a4a6275722d300c7646/view</a></code>. The sequence of numbers and characters in the URL is the MOID of that policy and uniquely identifies that object within the Intersight account. Make note of that MOID. The MOID should also appear in the vsCode terminal at the end of your last Terraform run since the NTP policy MOID is one of the outputs you defined.</li>
-<li>From the vsCode terminal, run the command <code>tf destroy</code>. Note the red minus (<code class=disable-clipboard>-</code>) symbols indicating the resources and properties that Terraform will delete. Note that Terraform will not delete your organization but will simply remove the organization as a data source in your state file. Resources are deleted from Intersight and data sources are not. Type &ldquo;yes&rdquo; to proceed.</li>
-<li>Check the Intersight GUI and notice that the NTP policy has been removed.</li>
-<li>Check the Terraform state file and notice that the NTP policy is absent.</li>
-<li>From the vsCode terminal, run the command <code>tf apply</code> and type &ldquo;yes&rdquo; to confirm.</li>
-<li>Notice the MOID displayed in the console is <em>different</em> than the MOID of the policy that you had created (and deleted) earlier. Even though this policy has the same name and is configured identically to the former policy, it is a <em>new</em> policy.</li>
-</ol>
-<h2 id=congratulations>Congratulations!</h2>
-<p>You learned that Terraform can remove all of the objects it created without having to write any additional code. You deleted a policy and then recreated an identical policy and proved that the two policies are different even though they are configured identically.</p>
+<h2 id=coming-very-soon>Coming very soon</h2>
 <footer class=footline>
 </footer>
 </div>
 </div>
 <div id=navigation>
-<a class="nav nav-prev" href=/iac-workshop-intersight/open_source/ntp_policy/ title="Create an Intersight policy"> <i class="fa fa-chevron-left"></i></a>
-<a class="nav nav-next" href=/iac-workshop-intersight/open_source/variables/ title="Employ variables" style=margin-right:0><i class="fa fa-chevron-right"></i></a>
+<a class="nav nav-prev" href=/iac-workshop-intersight/terraform_primer/terraform_offerings/ title="Terraform Offerings"> <i class="fa fa-chevron-left"></i></a>
+<a class="nav nav-next" href=/iac-workshop-intersight/terraform_primer/core_concepts/ title="Core Concepts" style=margin-right:0><i class="fa fa-chevron-right"></i></a>
 </div>
 </section>
 <div style=left:-1000px;overflow:scroll;position:absolute;top:-1000px;border:none;box-sizing:content-box;height:200px;margin:0;padding:0;width:200px>

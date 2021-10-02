@@ -7,18 +7,18 @@
 <meta name=author content="Cisco Systems, Inc.">
 <link rel=icon href=/iac-workshop-intersight/images/favicon.png type=image/png>
 <title>Terraform Offerings :: Infrastructure as Code Lab</title>
-<link href=/iac-workshop-intersight/css/nucleus.css?1633119827 rel=stylesheet>
-<link href=/iac-workshop-intersight/css/fontawesome-all.min.css?1633119827 rel=stylesheet>
-<link href=/iac-workshop-intersight/css/hybrid.css?1633119827 rel=stylesheet>
-<link href=/iac-workshop-intersight/css/featherlight.min.css?1633119827 rel=stylesheet>
-<link href=/iac-workshop-intersight/css/perfect-scrollbar.min.css?1633119827 rel=stylesheet>
-<link href=/iac-workshop-intersight/css/auto-complete.css?1633119827 rel=stylesheet>
-<link href=/iac-workshop-intersight/css/atom-one-dark-reasonable.css?1633119827 rel=stylesheet>
-<link href=/iac-workshop-intersight/css/theme.css?1633119827 rel=stylesheet>
-<link href=/iac-workshop-intersight/css/tabs.css?1633119827 rel=stylesheet>
-<link href=/iac-workshop-intersight/css/hugo-theme.css?1633119827 rel=stylesheet>
-<link href=/iac-workshop-intersight/css/theme-blue.css?1633119827 rel=stylesheet>
-<script src=/iac-workshop-intersight/js/jquery-3.3.1.min.js?1633119827></script>
+<link href=/iac-workshop-intersight/css/nucleus.css?1633196739 rel=stylesheet>
+<link href=/iac-workshop-intersight/css/fontawesome-all.min.css?1633196739 rel=stylesheet>
+<link href=/iac-workshop-intersight/css/hybrid.css?1633196739 rel=stylesheet>
+<link href=/iac-workshop-intersight/css/featherlight.min.css?1633196739 rel=stylesheet>
+<link href=/iac-workshop-intersight/css/perfect-scrollbar.min.css?1633196739 rel=stylesheet>
+<link href=/iac-workshop-intersight/css/auto-complete.css?1633196739 rel=stylesheet>
+<link href=/iac-workshop-intersight/css/atom-one-dark-reasonable.css?1633196739 rel=stylesheet>
+<link href=/iac-workshop-intersight/css/theme.css?1633196739 rel=stylesheet>
+<link href=/iac-workshop-intersight/css/tabs.css?1633196739 rel=stylesheet>
+<link href=/iac-workshop-intersight/css/hugo-theme.css?1633196739 rel=stylesheet>
+<link href=/iac-workshop-intersight/css/theme-blue.css?1633196739 rel=stylesheet>
+<script src=/iac-workshop-intersight/js/jquery-3.3.1.min.js?1633196739></script>
 <style>:root #header+#content>#left>#rlblock_left{display:none!important}</style>
 <link href=/iac-workshop-intersight/css/custom.css rel=stylesheet>
 <style>:not(div.featherlight-content)>img{cursor:zoom-in!important}:not(pre)>code.disable-clipboard+span.copy-to-clipboard{display:none}</style>
@@ -38,10 +38,10 @@ This lab guide is currently <strong>NOT</strong> associated with a pod assignmen
 <input data-search-input id=search-by type=search placeholder=Search...>
 <span data-search-clear><i class="fas fa-times"></i></span>
 </div>
-<script type=text/javascript src=/iac-workshop-intersight/js/lunr.min.js?1633119827></script>
-<script type=text/javascript src=/iac-workshop-intersight/js/auto-complete.js?1633119827></script>
+<script type=text/javascript src=/iac-workshop-intersight/js/lunr.min.js?1633196739></script>
+<script type=text/javascript src=/iac-workshop-intersight/js/auto-complete.js?1633196739></script>
 <script type=text/javascript>var baseurl="https://wookie-labs.github.io/iac-workshop-intersight/"</script>
-<script type=text/javascript src=/iac-workshop-intersight/js/search.js?1633119827></script>
+<script type=text/javascript src=/iac-workshop-intersight/js/search.js?1633196739></script>
 </div>
 <div class=highlightable>
 <ul class=topics>
@@ -55,6 +55,18 @@ parent">
 <li data-nav-id=/iac-workshop-intersight/terraform_primer/infrastructure_as_code/ title="Infrastructure as Code" class=dd-item>
 <a href=/iac-workshop-intersight/terraform_primer/infrastructure_as_code/>
 Infrastructure as Code
+<i class="fas fa-check read-icon"></i>
+</a>
+</li>
+<li data-nav-id=/iac-workshop-intersight/terraform_primer/terraform_offerings/ title="Terraform Offerings" class="dd-item active">
+<a href=/iac-workshop-intersight/terraform_primer/terraform_offerings/>
+Terraform Offerings
+<i class="fas fa-check read-icon"></i>
+</a>
+</li>
+<li data-nav-id=/iac-workshop-intersight/terraform_primer/ist/ title=IST class=dd-item>
+<a href=/iac-workshop-intersight/terraform_primer/ist/>
+IST
 <i class="fas fa-check read-icon"></i>
 </a>
 </li>
@@ -79,12 +91,6 @@ State Management
 <li data-nav-id=/iac-workshop-intersight/terraform_primer/actions/ title=Actions class=dd-item>
 <a href=/iac-workshop-intersight/terraform_primer/actions/>
 Actions
-<i class="fas fa-check read-icon"></i>
-</a>
-</li>
-<li data-nav-id=/iac-workshop-intersight/terraform_primer/terraform_offerings/ title="Terraform Offerings" class="dd-item active">
-<a href=/iac-workshop-intersight/terraform_primer/terraform_offerings/>
-Terraform Offerings
 <i class="fas fa-check read-icon"></i>
 </a>
 </li>
@@ -282,9 +288,7 @@ Terraform Offerings
 </h1>
 <p>Terraform is available in three different offerings from Hashicorp today: <strong>Terraform OSS</strong>, <strong>Terraform Enterprise</strong>, and <strong>Terraform Cloud</strong>. Which offering you choose will depend upon things like your operational team size, security needs, version control support, governance needs, etc. Below we will discuss each Terraform offering.</p>
 <h2 id=terraform-oss-cli>Terraform OSS (CLI)</h2>
-<p>As mentioned in the <a href=/iac-workshop-intersight/terraform_primer/core_concepts/#terraform-binary-terraform-oss>
-Terraform Primer > Core Concepts
-</a> section, the core of Terraform&rsquo;s capability is distributed as a standalone executable called Terraform OSS (Open Source Software). Terraform Enterprise and Terraform Cloud wrap additional operational tooling around the Terraform OSS executable but under the hood all three of these offerings ultimately use Terraform OSS to manage infrastructure configuration. If you are an operational team of one or are just looking to run a quick experiment then you can download terraform and run it directly on your workstation.</p>
+<p>The core of Terraform&rsquo;s capability is distributed as a standalone executable called Terraform OSS (Open Source Software). Terraform Enterprise and Terraform Cloud wrap additional operational tooling around the Terraform OSS executable but under the hood all three of these offerings ultimately use Terraform OSS to manage infrastructure configuration. If you are an operational team of one or are just looking to run a quick experiment then you can download terraform and run it directly on your workstation.</p>
 <img src="/iac-workshop-intersight/terraform_primer/images/tf_oss_single_user.png?width=800">
 <p>When using Terraform OSS you must take careful consideration around how you choose to store and backup your state files. State files can contain sensitive data in clear text so encrypting those files is critical. If state files were to become corrupt or lost then Terraform has no way to identify the real resources it created during previous runs.</p>
 <p>If your operational team expands beyond a single individual, then you can quickly run into challenges around configuration sharing and state locking. Sharing the configuration code can be achieved using a source control solution such as GitHub but if two operators are both running Terraform locally then they each have their own respective state files and are unaware of what configuration has already been provisioned. This can easily lead to conflicts.</p>
@@ -386,31 +390,31 @@ Terraform Primer > Core Concepts
 </tr>
 </table>
 <h2 id=congratulations>Congratulations!</h2>
-<p>You have now learned the the fundamentals of Terraform and are ready to move on to writing configuration code. Please proceed to the next chapter to start the hands-on portion of this workshop.</p>
+<p>Building upon the benefits of Terraform Cloud, the next section will discuss how TFC can be used to manage on-premise infrastructure in a private enterprise.</p>
 <footer class=footline>
 </footer>
 </div>
 </div>
 <div id=navigation>
-<a class="nav nav-prev" href=/iac-workshop-intersight/terraform_primer/actions/ title=Actions> <i class="fa fa-chevron-left"></i></a>
-<a class="nav nav-next" href=/iac-workshop-intersight/basics/ title="Getting started" style=margin-right:0><i class="fa fa-chevron-right"></i></a>
+<a class="nav nav-prev" href=/iac-workshop-intersight/terraform_primer/infrastructure_as_code/ title="Infrastructure as Code"> <i class="fa fa-chevron-left"></i></a>
+<a class="nav nav-next" href=/iac-workshop-intersight/terraform_primer/ist/ title=IST style=margin-right:0><i class="fa fa-chevron-right"></i></a>
 </div>
 </section>
 <div style=left:-1000px;overflow:scroll;position:absolute;top:-1000px;border:none;box-sizing:content-box;height:200px;margin:0;padding:0;width:200px>
 <div style=border:none;box-sizing:content-box;height:200px;margin:0;padding:0;width:200px></div>
 </div>
-<script src=/iac-workshop-intersight/js/clipboard.min.js?1633119827></script>
-<script src=/iac-workshop-intersight/js/perfect-scrollbar.min.js?1633119827></script>
-<script src=/iac-workshop-intersight/js/perfect-scrollbar.jquery.min.js?1633119827></script>
-<script src=/iac-workshop-intersight/js/jquery.sticky.js?1633119827></script>
-<script src=/iac-workshop-intersight/js/featherlight.min.js?1633119827></script>
-<script src=/iac-workshop-intersight/js/highlight.pack.js?1633119827></script>
+<script src=/iac-workshop-intersight/js/clipboard.min.js?1633196739></script>
+<script src=/iac-workshop-intersight/js/perfect-scrollbar.min.js?1633196739></script>
+<script src=/iac-workshop-intersight/js/perfect-scrollbar.jquery.min.js?1633196739></script>
+<script src=/iac-workshop-intersight/js/jquery.sticky.js?1633196739></script>
+<script src=/iac-workshop-intersight/js/featherlight.min.js?1633196739></script>
+<script src=/iac-workshop-intersight/js/highlight.pack.js?1633196739></script>
 <script>hljs.highlightAll()</script>
-<script src=/iac-workshop-intersight/js/modernizr.custom-3.6.0.js?1633119827></script>
-<script src=/iac-workshop-intersight/js/learn.js?1633119827></script>
-<script src=/iac-workshop-intersight/js/hugo-learn.js?1633119827></script>
-<script type=text/javascript src=/iac-workshop-intersight/js/terraform.js?1633119827></script>
+<script src=/iac-workshop-intersight/js/modernizr.custom-3.6.0.js?1633196739></script>
+<script src=/iac-workshop-intersight/js/learn.js?1633196739></script>
+<script src=/iac-workshop-intersight/js/hugo-learn.js?1633196739></script>
+<script type=text/javascript src=/iac-workshop-intersight/js/terraform.js?1633196739></script>
 <script type=text/javascript>hljs.registerLanguage('terraform',window.hljsDefineTerraform),hljs.highlightAll(),hljs.configure({ignoreUnescapedHTML:!0})</script>
-<script type=text/javascript src=/iac-workshop-intersight/js/user_navigation.js?1633119827></script>
+<script type=text/javascript src=/iac-workshop-intersight/js/user_navigation.js?1633196739></script>
 </body>
 </html>
