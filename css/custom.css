@@ -1,0 +1,128 @@
+:root {
+    --showUserWarnings: none;
+}
+
+div.user-warning {
+    display: var(--showUserWarnings) !important;
+    margin-left: 300px;
+}
+
+#body > div.highlightable {
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    max-width: 1300px;
+    /* max-width: 1200px; */
+    /* display: flex; */
+    /* align-content: center; */
+}
+
+img.h2--image {
+    display: inline-block !important;
+    width: 40px !important;
+    margin: 0 !important;
+}
+
+div.checkpoint {
+    border-top: 30px solid #6AB0DE;
+    background: #E7F2FA;
+    margin: 2rem 0;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+div.checkpoint details {
+    margin-left: 16px;
+}
+
+div.checkpoint > div.notice {
+    margin: 10px;
+}
+
+div.checkpoint > div.notice::before {
+    position: absolute;
+    top: -27px;
+    color: #fff;
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    content: "\f06a";
+    left: 10px;
+}
+
+div.checkpoint > div.notice::after {
+    content: 'Checkpoint';
+    position: absolute;
+    top: -27px;
+    color: #fff;
+    left: 2rem;
+}
+
+details > summary {
+    display: list-item !important;
+}
+
+div.highlight table td:first-of-type span.copy-to-clipboard {
+    display: none;
+}
+
+div.highlight table td:first-of-type pre {
+    padding-right: 0;
+}
+div.highlight table td:first-of-type pre code {
+    border-top-right-radius: 0%;
+    border-bottom-right-radius: 0%;
+}
+
+div.highlight table td:last-of-type pre {
+    padding-left: 0;
+}
+div.highlight table td:last-of-type pre code {
+    border-top-left-radius: 0%;
+    border-bottom-left-radius: 0%;
+}
+
+span.hidden {
+    display: none !important;
+}
+span.api_key {
+    font-size: 16px;
+    /* font-weight: bold; */
+    margin-left: 10px;
+}
+button.api-button {
+    background-color: #F44336;
+    color: white;
+}
+button.api-button:hover {
+    background-color: #D32F2F !important;
+}
+span.api-key-placeholder {
+    border: 1px solid rgb(97, 97, 97);
+    padding: 4px 12px 4px 8px;
+    border-top-left-radius: 4px !important;
+    border-bottom-left-radius: 4px !important;
+    width: 100%;
+    font-family: "Consolas", menlo, monospace;
+    word-break: break-all;
+}
+
+.bold--red {
+    font-weight: bold;
+    color: #E74C3C;
+}
+
+.bold--green {
+    font-weight: bold;
+    color: #2ECC71;
+}
+
+/* img:hover {
+    transition: transform .2s;
+    transform: scale(2.0);
+    transition-delay: 400ms;
+    z-index: 99;
+}
+
+span.copy-to-clipboard {
+    z-index: 1;
+} */
