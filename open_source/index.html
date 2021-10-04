@@ -7,20 +7,20 @@
 <meta name=author content="Cisco Systems, Inc.">
 <link rel=icon href=/iac-workshop-intersight/images/favicon.png type=image/png>
 <title>Terraform open source :: Infrastructure as Code Lab</title>
-<link href=/iac-workshop-intersight/css/nucleus.css?1633358208 rel=stylesheet>
-<link href=/iac-workshop-intersight/css/fontawesome-all.min.css?1633358208 rel=stylesheet>
-<link href=/iac-workshop-intersight/css/hybrid.css?1633358208 rel=stylesheet>
-<link href=/iac-workshop-intersight/css/featherlight.min.css?1633358208 rel=stylesheet>
-<link href=/iac-workshop-intersight/css/perfect-scrollbar.min.css?1633358208 rel=stylesheet>
-<link href=/iac-workshop-intersight/css/auto-complete.css?1633358208 rel=stylesheet>
-<link href=/iac-workshop-intersight/css/atom-one-dark-reasonable.css?1633358208 rel=stylesheet>
-<link href=/iac-workshop-intersight/css/theme.css?1633358208 rel=stylesheet>
-<link href=/iac-workshop-intersight/css/tabs.css?1633358208 rel=stylesheet>
-<link href=/iac-workshop-intersight/css/hugo-theme.css?1633358208 rel=stylesheet>
-<link href=/iac-workshop-intersight/css/theme-blue.css?1633358208 rel=stylesheet>
-<script src=/iac-workshop-intersight/js/jquery-3.3.1.min.js?1633358208></script>
+<link href=/iac-workshop-intersight/css/nucleus.css?1633363832 rel=stylesheet>
+<link href=/iac-workshop-intersight/css/fontawesome-all.min.css?1633363832 rel=stylesheet>
+<link href=/iac-workshop-intersight/css/hybrid.css?1633363832 rel=stylesheet>
+<link href=/iac-workshop-intersight/css/featherlight.min.css?1633363832 rel=stylesheet>
+<link href=/iac-workshop-intersight/css/perfect-scrollbar.min.css?1633363832 rel=stylesheet>
+<link href=/iac-workshop-intersight/css/auto-complete.css?1633363832 rel=stylesheet>
+<link href=/iac-workshop-intersight/css/atom-one-dark-reasonable.css?1633363832 rel=stylesheet>
+<link href=/iac-workshop-intersight/css/theme.css?1633363832 rel=stylesheet>
+<link href=/iac-workshop-intersight/css/tabs.css?1633363832 rel=stylesheet>
+<link href=/iac-workshop-intersight/css/hugo-theme.css?1633363832 rel=stylesheet>
+<link href=/iac-workshop-intersight/css/theme-blue.css?1633363832 rel=stylesheet>
+<script src=/iac-workshop-intersight/js/jquery-3.3.1.min.js?1633363832></script>
 <style>:root #header+#content>#left>#rlblock_left{display:none!important}</style>
-<link href=/iac-workshop-intersight/css/custom.css rel=stylesheet>
+<link href=/iac-workshop-intersight/css/custom.css1633363832 rel=stylesheet>
 <style>:not(div.featherlight-content)>img{cursor:zoom-in!important}:not(pre)>code.disable-clipboard+span.copy-to-clipboard{display:none}</style>
 <div class="notices warning user-warning"><p>
 This lab guide is currently <strong>NOT</strong> associated with a pod assignment. To avoid confusion and incomplete documentation please access this lab guide using the URL emailed to you.
@@ -38,10 +38,10 @@ This lab guide is currently <strong>NOT</strong> associated with a pod assignmen
 <input data-search-input id=search-by type=search placeholder=Search...>
 <span data-search-clear><i class="fas fa-times"></i></span>
 </div>
-<script type=text/javascript src=/iac-workshop-intersight/js/lunr.min.js?1633358208></script>
-<script type=text/javascript src=/iac-workshop-intersight/js/auto-complete.js?1633358208></script>
+<script type=text/javascript src=/iac-workshop-intersight/js/lunr.min.js?1633363832></script>
+<script type=text/javascript src=/iac-workshop-intersight/js/auto-complete.js?1633363832></script>
 <script type=text/javascript>var baseurl="https://wookie-labs.github.io/iac-workshop-intersight/"</script>
-<script type=text/javascript src=/iac-workshop-intersight/js/search.js?1633358208></script>
+<script type=text/javascript src=/iac-workshop-intersight/js/search.js?1633363832></script>
 </div>
 <div class=highlightable>
 <ul class=topics>
@@ -237,12 +237,6 @@ Guacamole
 <i class="fas fa-check read-icon"></i>
 </a>
 </li>
-<li data-nav-id=/iac-workshop-intersight/resources/tf_background/ title="Terraform background" class=dd-item>
-<a href=/iac-workshop-intersight/resources/tf_background/>
-Terraform background
-<i class="fas fa-check read-icon"></i>
-</a>
-</li>
 </ul>
 </li>
 </ul>
@@ -281,7 +275,7 @@ Terraform background
 <h3 id=chapter-3>Chapter 3</h3>
 <h1 id=terraform-open-source>Terraform open source</h1>
 <p>This chapter of the lab focuses entirely on Terraform &ldquo;open source&rdquo; (OSS) &ndash; the free command line version of Terraform. Terraform can be installed on a Mac using brew, Windows PC using Chocolatey, or many different platform via direct download from <a href=https://www.terraform.io/downloads.html>here</a>. For the purposes of this lab, Terraform has already been installed for you as you discovered in the previous section when you verified the Terraform version.</p>
-<p>You should be familiar with the purpose of <strong>providers</strong> and <strong>modules</strong> in Terraform. If you are not and want to do some additional reading, look <a href=/iac-workshop-intersight/resources/tf_background/>here</a>.</p>
+<p>You should be familiar with the purpose of <strong>providers</strong> and <strong>modules</strong> in Terraform. If you are not and want to do some additional reading, look <a href=/iac-workshop-intersight/terraform_primer/core_concepts/>here</a>.</p>
 <footer class=footline>
 </footer>
 </div>
@@ -295,18 +289,18 @@ Terraform background
 <div style=left:-1000px;overflow:scroll;position:absolute;top:-1000px;border:none;box-sizing:content-box;height:200px;margin:0;padding:0;width:200px>
 <div style=border:none;box-sizing:content-box;height:200px;margin:0;padding:0;width:200px></div>
 </div>
-<script src=/iac-workshop-intersight/js/clipboard.min.js?1633358208></script>
-<script src=/iac-workshop-intersight/js/perfect-scrollbar.min.js?1633358208></script>
-<script src=/iac-workshop-intersight/js/perfect-scrollbar.jquery.min.js?1633358208></script>
-<script src=/iac-workshop-intersight/js/jquery.sticky.js?1633358208></script>
-<script src=/iac-workshop-intersight/js/featherlight.min.js?1633358208></script>
-<script src=/iac-workshop-intersight/js/highlight.pack.js?1633358208></script>
+<script src=/iac-workshop-intersight/js/clipboard.min.js?1633363832></script>
+<script src=/iac-workshop-intersight/js/perfect-scrollbar.min.js?1633363832></script>
+<script src=/iac-workshop-intersight/js/perfect-scrollbar.jquery.min.js?1633363832></script>
+<script src=/iac-workshop-intersight/js/jquery.sticky.js?1633363832></script>
+<script src=/iac-workshop-intersight/js/featherlight.min.js?1633363832></script>
+<script src=/iac-workshop-intersight/js/highlight.pack.js?1633363832></script>
 <script>hljs.highlightAll()</script>
-<script src=/iac-workshop-intersight/js/modernizr.custom-3.6.0.js?1633358208></script>
-<script src=/iac-workshop-intersight/js/learn.js?1633358208></script>
-<script src=/iac-workshop-intersight/js/hugo-learn.js?1633358208></script>
-<script type=text/javascript src=/iac-workshop-intersight/js/terraform.js?1633358208></script>
+<script src=/iac-workshop-intersight/js/modernizr.custom-3.6.0.js?1633363832></script>
+<script src=/iac-workshop-intersight/js/learn.js?1633363832></script>
+<script src=/iac-workshop-intersight/js/hugo-learn.js?1633363832></script>
+<script type=text/javascript src=/iac-workshop-intersight/js/terraform.js?1633363832></script>
 <script type=text/javascript>hljs.registerLanguage('terraform',window.hljsDefineTerraform),hljs.highlightAll(),hljs.configure({ignoreUnescapedHTML:!0})</script>
-<script type=text/javascript src=/iac-workshop-intersight/js/user_navigation.js?1633358208></script>
+<script type=text/javascript src=/iac-workshop-intersight/js/user_navigation.js?1633363832></script>
 </body>
 </html>
