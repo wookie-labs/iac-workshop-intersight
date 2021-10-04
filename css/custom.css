@@ -95,6 +95,7 @@ button.api-button {
 }
 button.api-button:hover {
     background-color: #D32F2F !important;
+    color: white !important;
 }
 span.api-key-placeholder {
     border: 1px solid rgb(97, 97, 97);
@@ -105,7 +106,10 @@ span.api-key-placeholder {
     font-family: "Consolas", menlo, monospace;
     word-break: break-all;
 }
-
+#api_key {
+    border-top-right-radius: 0px !important;
+    border-bottom-right-radius: 0px !important;
+}
 .bold--red {
     font-weight: bold;
     color: #E74C3C;
@@ -118,6 +122,17 @@ span.api-key-placeholder {
 
 .pull--left {
     text-align: left !important;
+}
+
+button.btn.api_key {
+    border-top-left-radius: 0px !important;
+    border-bottom-left-radius: 0px !important;
+    background-color: #3498DB;
+    color: white;
+}
+button.btn.api_key:hover {
+    background-color: #2980B9;
+    color: white !important;
 }
 
 /* img:hover {

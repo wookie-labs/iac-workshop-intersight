@@ -7,20 +7,20 @@
 <meta name=author content="Cisco Systems, Inc.">
 <link rel=icon href=/iac-workshop-intersight/images/favicon.png type=image/png>
 <title>Obtain API keys :: Infrastructure as Code Lab</title>
-<link href=/iac-workshop-intersight/css/nucleus.css?1633365209 rel=stylesheet>
-<link href=/iac-workshop-intersight/css/fontawesome-all.min.css?1633365209 rel=stylesheet>
-<link href=/iac-workshop-intersight/css/hybrid.css?1633365209 rel=stylesheet>
-<link href=/iac-workshop-intersight/css/featherlight.min.css?1633365209 rel=stylesheet>
-<link href=/iac-workshop-intersight/css/perfect-scrollbar.min.css?1633365209 rel=stylesheet>
-<link href=/iac-workshop-intersight/css/auto-complete.css?1633365209 rel=stylesheet>
-<link href=/iac-workshop-intersight/css/atom-one-dark-reasonable.css?1633365209 rel=stylesheet>
-<link href=/iac-workshop-intersight/css/theme.css?1633365209 rel=stylesheet>
-<link href=/iac-workshop-intersight/css/tabs.css?1633365209 rel=stylesheet>
-<link href=/iac-workshop-intersight/css/hugo-theme.css?1633365209 rel=stylesheet>
-<link href=/iac-workshop-intersight/css/theme-blue.css?1633365209 rel=stylesheet>
-<script src=/iac-workshop-intersight/js/jquery-3.3.1.min.js?1633365209></script>
+<link href=/iac-workshop-intersight/css/nucleus.css?1633365841 rel=stylesheet>
+<link href=/iac-workshop-intersight/css/fontawesome-all.min.css?1633365841 rel=stylesheet>
+<link href=/iac-workshop-intersight/css/hybrid.css?1633365841 rel=stylesheet>
+<link href=/iac-workshop-intersight/css/featherlight.min.css?1633365841 rel=stylesheet>
+<link href=/iac-workshop-intersight/css/perfect-scrollbar.min.css?1633365841 rel=stylesheet>
+<link href=/iac-workshop-intersight/css/auto-complete.css?1633365841 rel=stylesheet>
+<link href=/iac-workshop-intersight/css/atom-one-dark-reasonable.css?1633365841 rel=stylesheet>
+<link href=/iac-workshop-intersight/css/theme.css?1633365841 rel=stylesheet>
+<link href=/iac-workshop-intersight/css/tabs.css?1633365841 rel=stylesheet>
+<link href=/iac-workshop-intersight/css/hugo-theme.css?1633365841 rel=stylesheet>
+<link href=/iac-workshop-intersight/css/theme-blue.css?1633365841 rel=stylesheet>
+<script src=/iac-workshop-intersight/js/jquery-3.3.1.min.js?1633365841></script>
 <style>:root #header+#content>#left>#rlblock_left{display:none!important}</style>
-<link href=/iac-workshop-intersight/css/custom.css?1633365209 rel=stylesheet>
+<link href=/iac-workshop-intersight/css/custom.css?1633365841 rel=stylesheet>
 <style>:not(div.featherlight-content)>img{cursor:zoom-in!important}:not(pre)>code.disable-clipboard+span.copy-to-clipboard{display:none}</style>
 <div class="notices warning user-warning"><p>
 This lab guide is currently <strong>NOT</strong> associated with a pod assignment. To avoid confusion and incomplete documentation please access this lab guide using the URL emailed to you.
@@ -38,10 +38,10 @@ This lab guide is currently <strong>NOT</strong> associated with a pod assignmen
 <input data-search-input id=search-by type=search placeholder=Search...>
 <span data-search-clear><i class="fas fa-times"></i></span>
 </div>
-<script type=text/javascript src=/iac-workshop-intersight/js/lunr.min.js?1633365209></script>
-<script type=text/javascript src=/iac-workshop-intersight/js/auto-complete.js?1633365209></script>
+<script type=text/javascript src=/iac-workshop-intersight/js/lunr.min.js?1633365841></script>
+<script type=text/javascript src=/iac-workshop-intersight/js/auto-complete.js?1633365841></script>
 <script type=text/javascript>var baseurl="https://wookie-labs.github.io/iac-workshop-intersight/"</script>
-<script type=text/javascript src=/iac-workshop-intersight/js/search.js?1633365209></script>
+<script type=text/javascript src=/iac-workshop-intersight/js/search.js?1633365841></script>
 </div>
 <div class=highlightable>
 <ul class=topics>
@@ -312,7 +312,7 @@ Obtain API keys
 </ol>
 <img src="/iac-workshop-intersight/basics/images/show_api_secret.png?height=500&classes=shadow">
 <ol start=7>
-<li>Copy the API Key ID to the clipboard using the icon to the right of the API Key ID (as shown in the image below) and paste it in the text box below. You wouldn&rsquo;t normally paste your API key into a lab guide, but doing so will simplify some of the copy/paste operations you have to do later in this lab. Make sure to click <strong>Apply</strong>. <div style=display:flex;flex:1><span style=max-width:900px;width:100%;display:flex;cursor:not-allowed class=hidden><span class=api-key-placeholder><i class="fas fa-key"></i><span class=api_key id=api_key_placeholder>Something</span></span><button type=button style="padding:3px 6px!important;border-top-left-radius:0!important;border-bottom-left-radius:0!important" class="btn api-button" onclick="change_api_key('api_key')"><i class="fas fa-times"></i></button></span><span style=display:flex;max-width:900px;width:100%><input type=text id=api_key style=margin-bottom:0><button type=button class=btn onclick="set_api_key('api_key')">Apply</button></span></div></li>
+<li>Copy the API Key ID to the clipboard using the icon to the right of the API Key ID (as shown in the image below) and paste it in the text box below. You wouldn&rsquo;t normally paste your API key into a lab guide, but doing so will simplify some of the copy/paste operations you have to do later in this lab. Make sure to click <strong>Apply</strong>. <div style=display:flex;flex:1><span style=max-width:900px;width:100%;display:flex;cursor:not-allowed class=hidden><span class=api-key-placeholder><i class="fas fa-key"></i><span class=api_key id=api_key_placeholder>Something</span></span><button type=button style="padding:3px 6px!important;border-top-left-radius:0!important;border-bottom-left-radius:0!important" class="btn api-button" onclick="change_api_key('api_key')"><i class="fas fa-times"></i></button></span><span style=display:flex;max-width:900px;width:100%><input type=text id=api_key style=margin-bottom:0><button type=button class="btn api_key" onclick="set_api_key('api_key')">Apply</button></span></div></li>
 </ol>
 <img src="/iac-workshop-intersight/basics/images/show_api_key.png?height=500&classes=shadow">
 <ol start=8>
@@ -367,18 +367,18 @@ export INTERSIGHT_ENDPOINT_URL<span style=color:#f92672>=</span>intersight.com
 <div style=left:-1000px;overflow:scroll;position:absolute;top:-1000px;border:none;box-sizing:content-box;height:200px;margin:0;padding:0;width:200px>
 <div style=border:none;box-sizing:content-box;height:200px;margin:0;padding:0;width:200px></div>
 </div>
-<script src=/iac-workshop-intersight/js/clipboard.min.js?1633365209></script>
-<script src=/iac-workshop-intersight/js/perfect-scrollbar.min.js?1633365209></script>
-<script src=/iac-workshop-intersight/js/perfect-scrollbar.jquery.min.js?1633365209></script>
-<script src=/iac-workshop-intersight/js/jquery.sticky.js?1633365209></script>
-<script src=/iac-workshop-intersight/js/featherlight.min.js?1633365209></script>
-<script src=/iac-workshop-intersight/js/highlight.pack.js?1633365209></script>
+<script src=/iac-workshop-intersight/js/clipboard.min.js?1633365841></script>
+<script src=/iac-workshop-intersight/js/perfect-scrollbar.min.js?1633365841></script>
+<script src=/iac-workshop-intersight/js/perfect-scrollbar.jquery.min.js?1633365841></script>
+<script src=/iac-workshop-intersight/js/jquery.sticky.js?1633365841></script>
+<script src=/iac-workshop-intersight/js/featherlight.min.js?1633365841></script>
+<script src=/iac-workshop-intersight/js/highlight.pack.js?1633365841></script>
 <script>hljs.highlightAll()</script>
-<script src=/iac-workshop-intersight/js/modernizr.custom-3.6.0.js?1633365209></script>
-<script src=/iac-workshop-intersight/js/learn.js?1633365209></script>
-<script src=/iac-workshop-intersight/js/hugo-learn.js?1633365209></script>
-<script type=text/javascript src=/iac-workshop-intersight/js/terraform.js?1633365209></script>
+<script src=/iac-workshop-intersight/js/modernizr.custom-3.6.0.js?1633365841></script>
+<script src=/iac-workshop-intersight/js/learn.js?1633365841></script>
+<script src=/iac-workshop-intersight/js/hugo-learn.js?1633365841></script>
+<script type=text/javascript src=/iac-workshop-intersight/js/terraform.js?1633365841></script>
 <script type=text/javascript>hljs.registerLanguage('terraform',window.hljsDefineTerraform),hljs.highlightAll(),hljs.configure({ignoreUnescapedHTML:!0})</script>
-<script type=text/javascript src=/iac-workshop-intersight/js/user_navigation.js?1633365209></script>
+<script type=text/javascript src=/iac-workshop-intersight/js/user_navigation.js?1633365841></script>
 </body>
 </html>
