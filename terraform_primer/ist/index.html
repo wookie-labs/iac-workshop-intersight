@@ -6,19 +6,19 @@
 <meta name=description content="Cisco IaC Lab">
 <meta name=author content="Cisco Systems, Inc.">
 <link rel=icon href=/iac-workshop-intersight/images/favicon.png type=image/png>
-<title>IST :: Infrastructure as Code Lab</title>
-<link href=/iac-workshop-intersight/css/nucleus.css?1633196739 rel=stylesheet>
-<link href=/iac-workshop-intersight/css/fontawesome-all.min.css?1633196739 rel=stylesheet>
-<link href=/iac-workshop-intersight/css/hybrid.css?1633196739 rel=stylesheet>
-<link href=/iac-workshop-intersight/css/featherlight.min.css?1633196739 rel=stylesheet>
-<link href=/iac-workshop-intersight/css/perfect-scrollbar.min.css?1633196739 rel=stylesheet>
-<link href=/iac-workshop-intersight/css/auto-complete.css?1633196739 rel=stylesheet>
-<link href=/iac-workshop-intersight/css/atom-one-dark-reasonable.css?1633196739 rel=stylesheet>
-<link href=/iac-workshop-intersight/css/theme.css?1633196739 rel=stylesheet>
-<link href=/iac-workshop-intersight/css/tabs.css?1633196739 rel=stylesheet>
-<link href=/iac-workshop-intersight/css/hugo-theme.css?1633196739 rel=stylesheet>
-<link href=/iac-workshop-intersight/css/theme-blue.css?1633196739 rel=stylesheet>
-<script src=/iac-workshop-intersight/js/jquery-3.3.1.min.js?1633196739></script>
+<title>Challenges with On-premise :: Infrastructure as Code Lab</title>
+<link href=/iac-workshop-intersight/css/nucleus.css?1633318107 rel=stylesheet>
+<link href=/iac-workshop-intersight/css/fontawesome-all.min.css?1633318107 rel=stylesheet>
+<link href=/iac-workshop-intersight/css/hybrid.css?1633318107 rel=stylesheet>
+<link href=/iac-workshop-intersight/css/featherlight.min.css?1633318107 rel=stylesheet>
+<link href=/iac-workshop-intersight/css/perfect-scrollbar.min.css?1633318107 rel=stylesheet>
+<link href=/iac-workshop-intersight/css/auto-complete.css?1633318107 rel=stylesheet>
+<link href=/iac-workshop-intersight/css/atom-one-dark-reasonable.css?1633318107 rel=stylesheet>
+<link href=/iac-workshop-intersight/css/theme.css?1633318107 rel=stylesheet>
+<link href=/iac-workshop-intersight/css/tabs.css?1633318107 rel=stylesheet>
+<link href=/iac-workshop-intersight/css/hugo-theme.css?1633318107 rel=stylesheet>
+<link href=/iac-workshop-intersight/css/theme-blue.css?1633318107 rel=stylesheet>
+<script src=/iac-workshop-intersight/js/jquery-3.3.1.min.js?1633318107></script>
 <style>:root #header+#content>#left>#rlblock_left{display:none!important}</style>
 <link href=/iac-workshop-intersight/css/custom.css rel=stylesheet>
 <style>:not(div.featherlight-content)>img{cursor:zoom-in!important}:not(pre)>code.disable-clipboard+span.copy-to-clipboard{display:none}</style>
@@ -38,10 +38,10 @@ This lab guide is currently <strong>NOT</strong> associated with a pod assignmen
 <input data-search-input id=search-by type=search placeholder=Search...>
 <span data-search-clear><i class="fas fa-times"></i></span>
 </div>
-<script type=text/javascript src=/iac-workshop-intersight/js/lunr.min.js?1633196739></script>
-<script type=text/javascript src=/iac-workshop-intersight/js/auto-complete.js?1633196739></script>
+<script type=text/javascript src=/iac-workshop-intersight/js/lunr.min.js?1633318107></script>
+<script type=text/javascript src=/iac-workshop-intersight/js/auto-complete.js?1633318107></script>
 <script type=text/javascript>var baseurl="https://wookie-labs.github.io/iac-workshop-intersight/"</script>
-<script type=text/javascript src=/iac-workshop-intersight/js/search.js?1633196739></script>
+<script type=text/javascript src=/iac-workshop-intersight/js/search.js?1633318107></script>
 </div>
 <div class=highlightable>
 <ul class=topics>
@@ -64,9 +64,9 @@ Terraform Offerings
 <i class="fas fa-check read-icon"></i>
 </a>
 </li>
-<li data-nav-id=/iac-workshop-intersight/terraform_primer/ist/ title=IST class="dd-item active">
+<li data-nav-id=/iac-workshop-intersight/terraform_primer/ist/ title="Challenges with On-premise" class="dd-item active">
 <a href=/iac-workshop-intersight/terraform_primer/ist/>
-IST
+Challenges with On-premise
 <i class="fas fa-check read-icon"></i>
 </a>
 </li>
@@ -263,14 +263,17 @@ Terraform background
 </span>
 <span id=toc-menu><i class="fas fa-list-alt"></i></span>
 <span class=links>
-<a href=/iac-workshop-intersight/>IaC Fundamentals with Intersight</a> > <a href=/iac-workshop-intersight/terraform_primer/>Terraform Primer</a> > IST
+<a href=/iac-workshop-intersight/>IaC Fundamentals with Intersight</a> > <a href=/iac-workshop-intersight/terraform_primer/>Terraform Primer</a> > Challenges with On-premise
 </span>
 </div>
 <div class=progress>
 <div class=wrapper>
 <nav id=TableOfContents>
 <ul>
-<li><a href=#coming-very-soon>Coming very soon</a></li>
+<li><a href=#poking-holes>Poking Holes</a></li>
+<li><a href=#terraform-cloud-agents>Terraform Cloud Agents</a></li>
+<li><a href=#intersight-services-for-hashicorp-terraform-ist>Intersight Services for Hashicorp Terraform (IST)</a></li>
+<li><a href=#moving-forward>Moving Forward</a></li>
 </ul>
 </nav>
 </div>
@@ -281,9 +284,54 @@ Terraform background
 </div>
 <div id=body-inner>
 <h1>
-IST
+Challenges with On-premise
 </h1>
-<h2 id=coming-very-soon>Coming very soon</h2>
+<p>In the previous chapter we discussed the many benefits of consuming Terraform via the Terraform Cloud SaaS offering. If you are only managing infrastructure with publicly accessible API endpoints (e.g. Intersight, AWS, Azure, GCP, etc) then the Terraform instances running within Terraform Cloud can talk to those services directly. However, if you plan to manage infrastructure within your private enterprise (e.g. ACI, vCenter, Infoblox, Firewalls, etc) then you run into a common challenge with SaaS offerings which is &ldquo;How can you securely communicate from the public cloud to on-premise?&rdquo;</p>
+<h2 id=poking-holes>Poking Holes</h2>
+<p>One option is to use a combination of firewall rules, proxies and NATs (network address translations) to allow TFC to directly communicate with those on-premise resources as shown below.</p>
+<img src="/iac-workshop-intersight/terraform_primer/images/ist_1.png?width=600">
+<p>This option is not typically considered due to the fact it can be:</p>
+<ul>
+<li>
+<p><span class=bold--red>Messy:</span> Prone to configuration and communication errors as orchestration and automation requirements change and grow across data center environments</p>
+</li>
+<li>
+<p><span class=bold--red>Uncomfortable:</span> Integrations require the exposure of on-prem infrastructure directly to external automation and orchestration platforms</p>
+</li>
+</ul>
+<h2 id=terraform-cloud-agents>Terraform Cloud Agents</h2>
+<p>Thankfully Terraform Cloud offers a more elegant solution through the use of agents supported with their
+<a href=https://www.hashicorp.com/products/terraform/pricing target=_blank>Business</a> licensing tier. Terraform Agents are docker images that establish a simple connection between your on-prem resources and Terraform Cloud, enabling provisioning and management. The number of agents needed to be deployed depends on the number of infrastructure resources under management along with the desired number of concurrent <strong>runs</strong> (Terraform executions). These agents (docker containers) would need to be deployed manually somewhere on-premise with network reachability to the resources being managed by Terraform.</p>
+<img src="/iac-workshop-intersight/terraform_primer/images/ist_2.png?width=600">
+<p>This solves the secure connectivity challenge but manually maintaining agents on-prem can be:</p>
+<ul>
+<li>
+<p><span class=bold--red>Complex:</span> Users must manage the end-to-end lifecycle (deployments, upgrades, scaling, networking) of Terraform Agents</p>
+</li>
+<li>
+<p><span class=bold--red>Limited:</span> Communication proxy is restricted to infrastructure that is compatible with Terraform and the broader IaC pipeline</p>
+</li>
+</ul>
+<h2 id=intersight-services-for-hashicorp-terraform-ist>Intersight Services for Hashicorp Terraform (IST)</h2>
+<p>Cisco solved a similar challenge when developing the Cisco Intersight SaaS service via the
+<a href=https://intersight.com/help/saas/resources/Intersight_Assist target=_blank>Intersight Assist</a>. Intersight Assist is a private appliance (packaged as an OVA) deployed on-premise that, once initially configured, establishes a secure connection to Intersight SaaS and is fully managed from that point forward by Intersight (no more manual management). This capability allows Intersight to pull resources like storage arrays, vCenter, etc into its operational control.</p>
+<p>Hashicorp and Cisco partnered together to build upon the Intersight Assist capability with the launch of Intersight Services for Hashicorp Terraform (IST). With IST, a Terraform cloud organization can be
+<a href=https://intersight.com/help/saas/resources/Cisco_Intersight_Service_for_HashiCorp_Terraform_User_Guide#terraform_cloud_integration_with_intersight target=_blank>claimed</a> into Intersight enabling you to then easily deploy Terraform Agent pools on target Intersight Assists as shown below.</p>
+<img src="/iac-workshop-intersight/terraform_primer/images/ist_3.png?width=800">
+<p>With this solution, operators no longer have to manually deploy agents on-premise nor deal with the care and feed of those agents over time. Overall IST improves TFC management of on-premise infrastructure by making it:</p>
+<ul>
+<li>
+<p><span class=bold--green>Simple:</span> Intersight manages the end-to-end lifecycle (deployments, upgrades, scaling, networking) of Terraform Agents</p>
+</li>
+<li>
+<p><span class=bold--green>Integrated:</span> Reduces the operational overhead of connecting IaC pipelines with infrastructure domain management</p>
+</li>
+<li>
+<p><span class=bold--green>Extensible:</span> Intersight Assist delivers a growing library of integrations with Terraform, Pure Storage, NetApp, Hitachi and VMware to help up-level IT operations</p>
+</li>
+</ul>
+<h2 id=moving-forward>Moving Forward</h2>
+<p>The remainder of this chapter will dive deeper into Terraform terminology and concepts. Each of these concepts will be put into practice when you get to the hands-on portion of the lab.</p>
 <footer class=footline>
 </footer>
 </div>
@@ -296,18 +344,18 @@ IST
 <div style=left:-1000px;overflow:scroll;position:absolute;top:-1000px;border:none;box-sizing:content-box;height:200px;margin:0;padding:0;width:200px>
 <div style=border:none;box-sizing:content-box;height:200px;margin:0;padding:0;width:200px></div>
 </div>
-<script src=/iac-workshop-intersight/js/clipboard.min.js?1633196739></script>
-<script src=/iac-workshop-intersight/js/perfect-scrollbar.min.js?1633196739></script>
-<script src=/iac-workshop-intersight/js/perfect-scrollbar.jquery.min.js?1633196739></script>
-<script src=/iac-workshop-intersight/js/jquery.sticky.js?1633196739></script>
-<script src=/iac-workshop-intersight/js/featherlight.min.js?1633196739></script>
-<script src=/iac-workshop-intersight/js/highlight.pack.js?1633196739></script>
+<script src=/iac-workshop-intersight/js/clipboard.min.js?1633318107></script>
+<script src=/iac-workshop-intersight/js/perfect-scrollbar.min.js?1633318107></script>
+<script src=/iac-workshop-intersight/js/perfect-scrollbar.jquery.min.js?1633318107></script>
+<script src=/iac-workshop-intersight/js/jquery.sticky.js?1633318107></script>
+<script src=/iac-workshop-intersight/js/featherlight.min.js?1633318107></script>
+<script src=/iac-workshop-intersight/js/highlight.pack.js?1633318107></script>
 <script>hljs.highlightAll()</script>
-<script src=/iac-workshop-intersight/js/modernizr.custom-3.6.0.js?1633196739></script>
-<script src=/iac-workshop-intersight/js/learn.js?1633196739></script>
-<script src=/iac-workshop-intersight/js/hugo-learn.js?1633196739></script>
-<script type=text/javascript src=/iac-workshop-intersight/js/terraform.js?1633196739></script>
+<script src=/iac-workshop-intersight/js/modernizr.custom-3.6.0.js?1633318107></script>
+<script src=/iac-workshop-intersight/js/learn.js?1633318107></script>
+<script src=/iac-workshop-intersight/js/hugo-learn.js?1633318107></script>
+<script type=text/javascript src=/iac-workshop-intersight/js/terraform.js?1633318107></script>
 <script type=text/javascript>hljs.registerLanguage('terraform',window.hljsDefineTerraform),hljs.highlightAll(),hljs.configure({ignoreUnescapedHTML:!0})</script>
-<script type=text/javascript src=/iac-workshop-intersight/js/user_navigation.js?1633196739></script>
+<script type=text/javascript src=/iac-workshop-intersight/js/user_navigation.js?1633318107></script>
 </body>
 </html>

@@ -105,6 +105,17 @@ span.api-key-placeholder {
     font-family: "Consolas", menlo, monospace;
     word-break: break-all;
 }
+
+.bold--red {
+    font-weight: bold;
+    color: #E74C3C;
+}
+
+.bold--green {
+    font-weight: bold;
+    color: #2ECC71;
+}
+
 /* img:hover {
     transition: transform .2s;
     transform: scale(2.0);
