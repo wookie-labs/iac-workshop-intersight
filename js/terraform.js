@@ -71,7 +71,7 @@ function hljsDefineTerraform(hljs) {
 return {
 	aliases: ['tf', 'hcl'],
 	keywords: {
-		keyword: 'resource variable provider output locals module data terraform|10 backend var local',
+		keyword: 'resource variable provider output locals module data terraform|10 backend var local for count for_each',
 		type: 'string number object map list set',
 		literal: 'false true null'
 	},

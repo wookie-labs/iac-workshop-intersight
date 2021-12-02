@@ -48,3 +48,8 @@ function change_api_key(val) {
     placeholder.parentElement.parentElement.classList.add("hidden");
     document.getElementById(val).parentElement.classList.remove("hidden");
 }
+
+let h2_objects = document.querySelectorAll("h2 img.h2--image");
+h2_objects.forEach( h => {
+    h.parentElement.classList.add("h2--image");
+})

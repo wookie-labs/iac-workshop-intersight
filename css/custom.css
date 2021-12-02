@@ -17,10 +17,21 @@ div.user-warning {
     /* align-content: center; */
 }
 
+a.h2--image {
+    vertical-align: middle;
+}
+
 img.h2--image {
     display: inline-block !important;
     width: 40px !important;
     margin: 0 !important;
+}
+
+img.notice--image {
+    display: inline-block !important;
+    width: 20px !important;
+    margin: 0 !important;
+    vertical-align: sub;
 }
 
 div.checkpoint {
